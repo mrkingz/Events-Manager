@@ -7,6 +7,33 @@
     border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
+  .signin-form {
+    margin: 0% 8%; 
+    padding: 5px; 
+  }
+
+  .signin-form label{
+    color:rgb(0, 0, 0);
+  }
+
+  a.recovery {
+    color: brown;
+    font-size: 12px;
+  }
+
+  .inner-wrap {
+    padding: 10px 20px 0px 20px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1); 
+  }
+
+  .btn-wrap {
+    padding: 0px;
+    margin-top: 5px;
+    order: 1px solid rgba(0,0,0,.1); 
+  }
+
+  form.wrap,
   div.wrap {
     padding: 3px;
     border: 1px solid rgba(0,0,0,.1);
