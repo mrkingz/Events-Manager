@@ -1,0 +1,138 @@
+.carousel-item{
+    height: 20rem;
+    background-color: #777;
+  }
+
+  hr.file-line {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+
+  div.wrap {
+    padding: 3px;
+    border: 1px solid rgba(0,0,0,.1);
+  }
+
+  div.align-sides {
+    margin-left: 15px; 
+    margin-right: 15px
+  }
+
+  .description-header:before {
+      content: "Description";
+  }
+  .icon-at:before {
+    content: "@";
+    font-weight: bold;
+  }
+
+  .search-conatiner {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgb(235, 235, 235)
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .btn-group button{
+    padding: .3rem 1rem;
+    font-size: 13px;
+    padding: 8px 5px;
+    color: rgba(0,0,0,.5);
+    border: 1px solid rgba(0,0,0,.25);
+    background: rgb(235, 235, 235)
+  }
+
+  .btn-group button:hover{
+    background: rgba(0, 0, 0, .55);
+    border: 1px solid rgba(0,0,0,.25);
+  }
+
+  .btn-group button:active{
+    background: rgba(0, 0, 0, .55);
+    border: 1px solid rgba(0,0,0,.25);
+  }
+
+  .user-btn,
+  .search-btn-div {
+    border: 1px solid rgba(0,0,0,.25);
+    padding: 1px; 
+    background: #fff;
+    border-radius: 3px;
+  }
+
+
+  .user-btn {
+    border: 1px solid  rgba(0,0,0,.5);
+  }
+
+  .user-btn a {
+      color: rgba(0, 0, 0, .75)
+  }
+
+  .user-btn a:hover {
+    color: rgb(2, 117, 216);
+  }
+
+  .search-div {
+    margin:0px 5px;
+    padding: 0px;
+    *border: 1px solid rgba(0,0,0,.25);;
+    background: #ffffff;
+    border-radius: 3px;
+  }
+
+  .search-div [type='search'],
+  .search-div select{
+    text-indent: 8px;
+    padding: 0px; 
+    font-size: 14px; 
+    border: none;
+    height: 38px;
+    border-radius: 0px;
+    border: 1px solid rgba(0,0,0,.25);
+  }
+
+  .search-div [type='search']{
+    text-align: start;
+    text-indent: 8px;
+    border: 1px solid rgba(0,0,0,.25);
+  }
+
+  .search-div button.search-btn {
+    border: none;
+    margin: 1px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .center-name {
+    margin: 10px 0px;
+  }
+
+  .center {
+    text-align: center;
+  }
+  .description {
+      text-align: center;
+      font-size: 12px;
+      margin: 10px 15px 10px 15px;
+      min-height: 100px;
+  }
+
+  a.read-more {
+      font-size: 12px;
+  }
+
+  .page-item.active .page-link{
+    background-color: rgba(0,0,0,.15);
+    border-color: rgba(0, 0, 0, .25);
+  }
+
+  .pagination-link {
+      font-size: 12px;
+      padding: .3rem .50rem;
+  }
