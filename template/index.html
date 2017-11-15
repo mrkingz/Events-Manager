@@ -45,8 +45,8 @@
                     <li><i class="fa fa-instagram"></i> <a href="#" class="text-white"> Instagram</a></li>
                     <li><br></li>
                     <li class="btn-group user-btn" role="group">
-                      <a class="btn btn-outline btn-md " href="#" role="button">Signin</a>
-                      <a class="btn btn-outline btn-md " href="#" role="button">Signup</a>
+                      <a class="btn btn-outline btn-md signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signin">Signin</a>
+                      <a class="btn btn-outline btn-md signup" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signup">Signup</a>
                     </li>
                   </ul>
                 </div>
@@ -82,8 +82,8 @@
                       <h1>Conference hall...</h1>
                       <p>One of our conference hall with state-of-the-art facilities...<br> Won't you rather book with us?</p>
                       <p class="btn-group overlay-btn-div" role="group">
-                        <a class="btn btn-md btn-info" href="#" role="button">Signin</a>
-                        <a class="btn btn-md btn-info" href="#" role="button">Signup</a>
+                        <a class="btn btn-md btn-info signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signin">Signin</a>
+                        <a class="btn btn-md btn-info signup" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signup">Signup</a>
                       </p>
                     </div>
                   </div>
@@ -96,8 +96,8 @@
                       <p>A stage like no other!!! 
                         <br>...let the audience hear you better. </p>
                       <p class="btn-group overlay-btn-div" role="group">
-                        <a class="btn btn-md btn-info" href="#" role="button">Signin</a>
-                        <a class="btn btn-md btn-info" href="#" role="button">Signup</a>
+                        <a class="btn btn-md btn-info signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signin">Signin</a>
+                        <a class="btn btn-md btn-info signup" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signup">Signup</a>
                       </p>
                     </div>
                   </div>
@@ -111,8 +111,8 @@
                         <br>book with us, let our interior designs do just that...
                       </p>
                       <p class="btn-group overlay-btn-div" role="group">
-                        <a class="btn btn-md btn-info" href="#" role="button">Signin</a>
-                         <a class="btn btn-md btn-info" href="#" role="button">Signup</a>
+                        <a class="btn btn-md btn-info signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signin">Signin</a>
+                         <a class="btn btn-md btn-info signup" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Signup">Signup</a>
                       </p>
                     </div>
                   </div>
@@ -183,7 +183,7 @@
                         It has a very spacious parking lot that can accommodate more than 50 cars...
                         <a class="read-more" href="">read more</a>
                       </p> 
-                      <p><a class="btn btn-secondary btn-sm" href="#" role="button">View details &raquo;</a></p>                      
+                      <p><a class="btn btn-secondary btn-sm signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Please signin">View details &raquo;</a></p>                      
                     </div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@
                         It has a very spacious parking lot that can accommodate more than 50 cars...
                         <a class="read-more" href="">read more</a>
                       </p> 
-                      <p><a class="btn btn-secondary btn-sm" href="#" role="button">View details &raquo;</a></p>                      
+                      <p><a class="btn btn-secondary btn-sm signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Please signin">View details &raquo;</a></p>                      
                     </div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@
                         It has a very spacious parking lot that can accommodate more than 50 cars...
                         <a class="read-more" href="">read more</a>
                       </p> 
-                      <p><a class="btn btn-secondary btn-sm" href="#" role="button">View details &raquo;</a></p>                      
+                      <p><a class="btn btn-secondary btn-sm signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Please signin">View details &raquo;</a></p>                      
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@
                         It has a very spacious parking lot that can accommodate more than 50 cars...
                         <a class="read-more" href="">read more</a>
                       </p> 
-                      <p><a class="btn btn-secondary btn-sm" href="#" role="button">View details &raquo;</a></p>                      
+                      <p><a class="btn btn-secondary btn-sm signin" href="#" role="button" data-toggle="modal" data-target="#accountModal" data-whatever="Please signin">View details &raquo;</a></p>                      
                     </div>
                   </div>
                 </div>
@@ -276,6 +276,47 @@
             </nav>
           </div>
         </div>
+        
+        <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close hide" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="wrap signin-form">
+                    <div class="inner-wrap">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Username or email:</label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Username or email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="recipient-name" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="btn-wrap center">
+                        <p style="margin: 5px 5px; font-size: 12px;">
+                            <a class="recovery" href="">Forgot password?</a>
+                        </p>
+                        <button type="button" class="btn btn-info w-100 option"></button>
+                    </div>
+                    <p style="margin: 5px 5px; font-size: 12px; text-align: gotend">
+                        Don't have account? <a href="" class="toggle-action">Sign up </a>
+                    </p>
+                </form>
+              </div>
+              <div class="modal-footer" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Quit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
       <footer>
         <p style="float: right">&copy; Andela21, <script>document.write(new Date().getFullYear())</script>.</p>
       </footer>
@@ -288,6 +329,18 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script-->
     <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $('#accountModal').on('show.bs.modal', function (event) {
+            let anchor = $(event.relatedTarget),
+                action = anchor.data('whatever'),
+                modal = $(this); 
+                //alert(anchor.hasClass('signin'))
+
+            modal.find('.modal-title').text(action)
+            let array =  action.split(' ');
+            modal.find('.option').text((array.length > 1) ? array[1] : array[0]).css({'text-transform':'capitalize'});
+        })
+    </script>
   </body>
 </html>
 
