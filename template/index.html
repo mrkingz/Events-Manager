@@ -289,14 +289,18 @@
               <div class="modal-body">
                 <form class="wrap signin-form">
                     <div class="inner-wrap">
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Username or email:</label>
-                            <input type="text" class="form-control" id="recipient-name" placeholder="Username or email">
+                        <div class="form-group no-margin">
+                            <label for="username" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username">
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Password:</label>
-                            <input type="password" class="form-control" id="recipient-name" placeholder="Password">
+                        <div class="form-group no-margin hide toggle-div">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
+                        <div class="form-group no-margin">
+                            <label for="password" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div><br>
                     </div>
                     <div class="btn-wrap center">
                         <p style="margin: 5px 5px; font-size: 12px;">
@@ -304,8 +308,8 @@
                         </p>
                         <button type="button" class="btn btn-info w-100 option"></button>
                     </div>
-                    <p style="margin: 5px 5px; font-size: 12px; text-align: gotend">
-                        Don't have account? <a href="" class="toggle-action">Sign up </a>
+                    <p class="toggle-action" style="margin: 5px 5px; font-size: 12px; text-align: end">
+                        <span></span> have account? <a href="" id="userAction"></a>
                     </p>
                 </form>
               </div>
@@ -331,15 +335,40 @@
     <script src="./js/bootstrap.min.js"></script>
     <script>
         $('#accountModal').on('show.bs.modal', function (event) {
-            let anchor = $(event.relatedTarget),
-                action = anchor.data('whatever'),
-                modal = $(this); 
-                //alert(anchor.hasClass('signin'))
+            toggleAction($(event.relatedTarget), $(this));
+        });
 
-            modal.find('.modal-title').text(action)
+        $('#userAction').on('click', function (event) {
+            event.preventDefault();
+            toggleAction($(event.target), $('#accountModal'));
+        });
+
+        const toggleAction = function(target, modal) {
+            let anchor = target,
+                action = anchor.data('whatever') || target.text().toLowerCase(),
+                toggleAction = {signin :'Signup', signup : 'Signin'} 
+                
+                if(anchor.hasClass('signin') || action === 'signin') {
+                    modal.find('#username').attr({'placeholder': 'Username or email'});
+                    modal.find('#username').siblings('label[for="username"]').text('Username or email');
+                    modal.find('div.toggle-div').addClass('hide'); 
+                    modal.find('p.toggle-action span').text('Don\'t ');
+                    modal.find('a.recovery').show();
+                } else if(anchor.hasClass('signup') || action === 'signup') {
+                    modal.find('#username').attr({'placeholder': 'Username'});
+                    modal.find('#username').siblings('label[for="username"]').text('Username');
+                    modal.find('div.toggle-div').removeClass('hide');
+                    modal.find('p.toggle-action span').text('Already '); 
+                    modal.find('a.recovery').hide();
+                }
+
+            modal.find('.modal-title').text(action).css({'text-transform':'capitalize'})
             let array =  action.split(' ');
-            modal.find('.option').text((array.length > 1) ? array[1] : array[0]).css({'text-transform':'capitalize'});
-        })
+            action = (array.length > 1) ? array[1] : array[0];
+
+            modal.find('.option').text(action).css({'text-transform':'capitalize'});
+            modal.find('p.toggle-action a').text(toggleAction[action.toLowerCase()]);
+        }
     </script>
   </body>
 </html>
