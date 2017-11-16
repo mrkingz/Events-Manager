@@ -154,8 +154,8 @@
                   <div class="row">
                       <div class="col-sm-5">
                       <div class="btn-group search-btn-div w-100" role="group">
-                        <button class="btn btn-outline-success w-100"><i class="fa fa-search"></i> Search</button>
-                        <button class="btn btn-outline-success w-100"><i class="fa fa-filter"></i> Filter</button>
+                        <button class="btn btn-outline-secondary w-100"><i class="fa fa-search"></i> Search</button>
+                        <button class="btn btn-outline-secondary w-100"><i class="fa fa-filter"></i> Filter</button>
                       </div>
                     </div>
                   </div>
@@ -287,7 +287,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form class="wrap signin-form">
+                <form class="wrap signin-form" action="">
                     <div class="inner-wrap">
                         <div class="form-group no-margin">
                             <label for="username" class="col-form-label">Username:</label>
@@ -306,7 +306,7 @@
                         <p style="margin: 5px 5px; font-size: 12px;">
                             <a class="recovery" href="">Forgot password?</a>
                         </p>
-                        <button type="button" class="btn btn-info w-100 option"></button>
+                        <button type="submit" class="btn btn-info w-100 option"></button>
                     </div>
                     <p class="toggle-action" style="margin: 5px 5px; font-size: 12px; text-align: end">
                         <span></span> have account? <a href="" id="userAction"></a>
@@ -319,8 +319,6 @@
             </div>
           </div>
         </div>
-
-        
       <footer>
         <p style="float: right">&copy; Andela21, <script>document.write(new Date().getFullYear())</script>.</p>
       </footer>
@@ -354,12 +352,14 @@
                     modal.find('div.toggle-div').addClass('hide'); 
                     modal.find('p.toggle-action span').text('Don\'t ');
                     modal.find('a.recovery').show();
+                    modal.find('form.signin-form').attr({'action': 'centers.html'});
                 } else if(anchor.hasClass('signup') || action === 'signup') {
                     modal.find('#username').attr({'placeholder': 'Username'});
                     modal.find('#username').siblings('label[for="username"]').text('Username');
                     modal.find('div.toggle-div').removeClass('hide');
                     modal.find('p.toggle-action span').text('Already '); 
                     modal.find('a.recovery').hide();
+                    modal.find('form.signin-form').attr({'action': ''});
                 }
 
             modal.find('.modal-title').text(action).css({'text-transform':'capitalize'})
