@@ -40,6 +40,12 @@
     order: 1px solid rgba(0,0,0,.1); 
   }
 
+  .fac-wrap {
+    background: #ffffff; 
+    border-color: rgba(0,0,0,.2);
+    border-radius: 5px;
+  }
+
   form.wrap,
   div.wrap {
     padding: 3px;
@@ -65,7 +71,12 @@
     font-weight: bold;
   }
 
-  .search-conatiner {
+  .content-container {
+    padding: 10px;
+    background: rgb(235, 235, 235);
+  }
+
+  .search-container {
     padding: 10px;
     margin-bottom: 20px;
     background: rgb(235, 235, 235);
@@ -77,12 +88,16 @@
     border-top: 1px solid rgba(0,0,0,.20)
   }
   
-
   .hide{
     display: none;
   }
 
-  .btn-group button{
+  .search-btn-div button {
+    background: rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0,0,0,.25);
+  }
+
+  .search-btn-div button{
     padding: .3rem 1rem;
     font-size: 13px;
     padding: 8px 5px;
@@ -91,18 +106,28 @@
     background: rgb(235, 235, 235)
   }
 
-  .btn-group button:hover{
+  .search-btn-div button:hover{
     background: rgba(0, 0, 0, .5);
     border: 1px solid rgba(0,0,0,.25);
   }
 
-  button.btn {
-    cursor: pointer;
+  .new-center button {
+    margin: 3px;
+    font-size: 11px;
+    padding: 5px;
   }
 
-  .btn-group button {
-    background: rgba(0, 0, 0, .1);
-    border: 1px solid rgba(0,0,0,.25);
+  .facilities {
+    margin: 2% 5%;
+  }
+
+  .facilities ol{
+    font-size: 13px; 
+    font-weight: normal
+  }
+
+  button.btn {
+    cursor: pointer;
   }
 
   .user-btn,
@@ -211,3 +236,31 @@
   .no-margin {
     margin: 0px;
   }
+
+  .review {
+    background: #ffffff; 
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    font-weight: normal;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+ }
+ 
+ div:empty::before {
+   color: #464a4c;
+   font-size: 1rem;
+   font-weight: normal;
+ }
+
+ div[placeholder]:focus {
+   cursor: none;
+   border: 1px solid transparent
+ }
+
+ div[placeholder]:not([placeholder=""]):empty::before {
+   content: attr(placeholder);
+ }
