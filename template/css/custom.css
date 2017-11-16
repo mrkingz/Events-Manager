@@ -13,9 +13,12 @@
     margin: 0px;
   }
 
+   select,
+  .signin-form div.review,
   .signin-form input{
     padding: .4rem .75rem;
     font-size: 13px;
+    height: 33px;
   }
 
   .signin-form {
