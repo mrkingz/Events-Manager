@@ -68,6 +68,20 @@
   .description-header:before {
       content: "Description";
   }
+
+  .card-header {
+    font-size: 16px;
+    font-weight: bold;
+    padding: .80rem 1rem;
+    margin-bottom: 0;
+    background-color: #f7f7f9;
+    border-bottom: 1px solid rgba(0,0,0,.125);  
+  }
+
+  .details-header:before {
+    content: "Details";
+  }
+
   .icon-at:before {
     content: "@";
     font-weight: bold;
@@ -232,7 +246,7 @@
     text-align: start;
   }
 
-  .detials-list {
+  .details-list {
     font-size: 12px;
     list-style-type:none;
     margin: 10px;
@@ -240,7 +254,7 @@
   }
 
   p.details span,
-  ul.detials-list span {
+  ul.details-list span {
     color: #5bc0de;
     font-size: 12px;
     margin: 0px 10px;
@@ -262,6 +276,19 @@
 
   .no-margin {
     margin: 0px;
+  }
+
+  .left {
+    text-align: start;
+  }
+
+  /* .event-details .description {
+    font-size: 
+  } */
+
+  .event-details {
+    margin: 10px;
+    font-size: 12px;
   }
 
   .review {
