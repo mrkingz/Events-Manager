@@ -65,73 +65,84 @@
         <div class="row">
             <div class="col sm-12 align-sides wrap">
                 <div class="row">
-                    <div class="w-100 align-sides content-container">
+                    <div class="w-100 align-sides search-container">
+                      <div class="row no-gutters">
+                        <div class="col-sm-7">
+                          <div class="row no-gutters search-div">
+                            <div class="col-sm-4">
+                              <select class="form-control w-100">
+                                <option value="">--Select location--</option>
+                                <option></option>
+                                <option>Abuja</option>
+                                <option>Lagos</option>
+                                <option>Warri</option>
+                              </select>
+                            </div>
+                            <div class="col-sm-8">
+                              <input class="form-control" type="search" placeholder="Search here..." aria-label="Search">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-5" style="padding-left: 5px; padding-right: 5px">
+                          <div class="row">
+                              <div class="col-sm-5">
+                              <div class="btn-group search-btn-div w-100" role="group">
+                                <button class="btn btn-outline-secondary w-100"><i class="fa fa-search"></i> Search</button>
+                                <button class="btn btn-outline-secondary w-100"><i class="fa fa-filter"></i> Filter</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="w-100 align-sides content-container" style="margin-top:-15px">
+                      
                         <div class="row">
-                            <div class="col-sm-7 photo">
+                            <div class="col-sm-6 photo">
                                 <div class="row">
                                     <div class="col-sm-11">
-                                        <img src="./images/blank.png" alt="..." class="img-fluid img-thumbnail" style="width:100%; height: 100%">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label style="font-size: 12px; color: rgba(0,0,0,.75)">Upload photo <br> You can upload multipile photos</label>
-                                             <input type="file" class="form-control-file" id="photo" 
-                                            style="padding: 0px; font-size: .70rem; width: auto">
-                                        </div>
+                                        <img src="./images/bar.jpg" alt="..." class="img-fluid img-thumbnail" style="width:100%; height: 100%">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <form class="form" style="margin: 2% 5%">
-                                            <div class="form-group no-margin">
-                                                <label for="name" class="col-form-label">Center name</label>
-                                                <input type="text" class="form-control custom-input col-sm-10" autocomplete="off" id="name" placeholder="Center name">
-                                            </div>
-                                            <div class="form-group no-margin">
-                                                <label for="capacity" class="col-form-label">Capacity</label>
-                                                <input type="text" class="form-control custom-input col-sm-10" autocomplete="off" id="capacity" placeholder="Capacity">
-                                            </div>
-                                            <div class="form-group no-margin">
-                                                <label for="price" class="col-form-label">Price</label>
-                                                <input type="text" class="form-control custom-input col-sm-10" autocomplete="off" id="price" placeholder="Price">
-                                            </div>
-                                            <div class="form-group no-margin">
-                                                <label for="location" class="col-form-label">Location</label>
-                                                <input type="text" class="form-control custom-input col-sm-10" autocomplete="off" id="location" placeholder="Location">
-                                            </div>
-                                            <div class="form-group no-margin">
-                                                <label style="padding-top: calc(.5rem - 1px * 2);" for="address">Address</label>
-                                                <div style="margin-top: -4px" class="review col-sm-10" id="address" contenteditable="true" placeholder="Address"></div>
-                                            </div>
-                                            <div class="form-group no-margin">
-                                                <label style="padding-top: calc(.5rem - 1px * 2);" for="description">Brief description</label>
-                                                <div style="margin-top: -4px" class="review col-sm-10" id="description" contenteditable="true" placeholder="Enter brief description here..."></div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 facilities">
-                                        <h6>List of added facilities</h6>
-                                        <ol>
-                                            <li>Chairs (150)</li>
-                                            <li>Air conditions (22)</li>
-                                            <li>Tables (39)</li>
-                                            <li>...</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12" style="margin: 2% 5%">
-                                        <div class="btn-group new-center" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-outline-dark btn-md" title="Add facilities"><i class="fa fa-plus"></i> facilities</button>
-                                            <button type="button" class="btn btn-outline-dark btn-md" title="View facilities"><i class="fa fa-eye"></i> facilities</button>
-                                            <button type="button" class="btn btn-info btn-md" title="Save center"> <i class="fa fa-upload"></i> Save </buttoen>
-                                        </div>
+                                    <div class="col-sm-12"><br>
+                                        <h5> A.B. auditorium</h5>
+                                        <p class="details">Status: <span>Available</span></p>
+                                        <h6>Description</h6>
+                                        <p class="details">
+                                          Royal crown is the first step to make your event a memorable one.
+                                          Its uniqueness is like no other.
+                                          It is located in the heart of Ikeja.
+                                          It has a very spacious parking lot that can accommodate more than 50 cars...
+                                          <a class="read-more" href="">read more</a>
+                                        </p> 
+                                        <h6>Details</h6>    
+                                        <p class="details">
+                                          <ul class="detials-list"> 
+                                            <li>
+                                                <i class="fa fa-map-marker" style="font-size: 13px"></i> Location:  <span>Mushin</span>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-users" style="font-size: 13px"></i> Capacity: <span>500</span>
+                                            </li>
+                                            <li>
+                                              <i class="fa fa-money" style="font-size: 13px"></i> Price:  <span> &#8358 200, 000</span>
+                                            </li>
+                                          </ul>
+                                        </p>  
+                                        <h6>Facilities</h6>    
+                                        <p class="details">
+                                          <ul class="detials-list"> 
+                                            <li>Chairs:  <span>200</span></li>
+                                            <li>Air conditions: <span>20</span></li>
+                                            <li>Tables:  <span> 40</span></li>
+                                            <li><a class="read-more" href="">see more</a></li>
+                                          </ul>
+                                        </p>                                
                                     </div>
                                 </div>
                             </div>

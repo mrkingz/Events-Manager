@@ -14,11 +14,10 @@
   }
 
    select,
-  .signin-form div.review,
   .signin-form input{
     padding: .4rem .75rem;
     font-size: 13px;
-    height: 33px;
+    height: 28px;
   }
 
   .signin-form {
@@ -154,6 +153,10 @@
     color: rgb(2, 117, 216);
   }
 
+  a.dropdown-item {
+    font-size: 12px;
+  }
+
   a.dropdown-toggle {
     color: rgba(255,255,255,.5);
     padding: 5px 10px; 
@@ -215,11 +218,32 @@
   .center {
     text-align: center;
   }
+
   .description {
       text-align: center;
       font-size: 12px;
       margin: 10px 15px 10px 15px;
       min-height: 100px;
+  }
+  
+  .details {
+    margin: 10px;
+    font-size: 12px;
+    text-align: start;
+  }
+
+  .detials-list {
+    font-size: 12px;
+    list-style-type:none;
+    margin: 10px;
+    padding: 0px;
+  }
+
+  p.details span,
+  ul.detials-list span {
+    color: #5bc0de;
+    font-size: 12px;
+    margin: 0px 10px;
   }
 
   a.read-more {
@@ -247,16 +271,24 @@
     border-radius: .25rem;
     font-weight: normal;
     width: 100%;
-    padding: .5rem .75rem;
-    font-size: 1rem;
+    padding: .2rem .5rem;
+    font-size: 13px;
     line-height: 1.25;
     color: #464a4c;
+    min-height: 28px;
+ }
+
+ .custom-input {
+   height: 28px;
+   font-size: 13px;
  }
  
  div:empty::before {
    color: #464a4c;
-   font-size: 1rem;
+   font-size: 14px;
+   padding: .5rem 0rem;
    font-weight: normal;
+   min-height: 28px;
  }
 
  div[placeholder]:focus {
