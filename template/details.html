@@ -16,8 +16,12 @@
     </head>
     <body>
         <div class="container file-line">
+
+            <!-- row for navbar starts here -->
             <div class="row no-gutters wrap">
                 <div class="col-sm-12">
+
+                    <!-- navbar starts here -->
                     <div class="row navbar navbar-toggleable-md navbar-inverse bg-inverse" style="margin: .03rem">
                         <div class="col-sm-3">
                             <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#target" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,11 +63,18 @@
                         </div>
                     </div>
                 </div>
+                <!-- navbar ends here -->
             </div>
         </div>
+        <!-- row fro navbar ends here -->
+
         <hr class="fine-line" style="margin: 10px 0px">
+
+        <!-- row for contents starts here -->
         <div class="row">
             <div class="col sm-12 align-sides wrap">
+
+                <!-- row for starts here -->
                 <div class="row">
                     <div class="w-100 align-sides search-container">
                       <div class="row no-gutters">
@@ -95,11 +106,15 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
+                <!-- row for search ends here -->
+                
+                <!-- row to dsiplay centers starts here -->
                 <div class="row">
                     <div class="w-100 align-sides content-container" style="margin-top:-15px">
-                      
                         <div class="row">
+
+                            <!-- column for center photo starts here -->
                             <div class="col-sm-6 photo">
                                 <div class="row">
                                     <div class="col-sm-11">
@@ -107,11 +122,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- column for center phot ends here -->
+
+                            <!-- column to display centers details starts here -->
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-12"><br>
                                         <h5> A.B. auditorium</h5>
                                         <p class="details">Status: <span>Available</span></p>
+
+                                        <!-- description and details starts here-->
                                         <h6>Description</h6>
                                         <p class="details">
                                           Royal crown is the first step to make your event a memorable one.
@@ -133,19 +153,32 @@
                                               <i class="fa fa-money" style="font-size: 13px"></i> Price:  <span> &#8358 200, 000</span>
                                             </li>
                                           </ul>
-                                        </p>  
+                                        </p> 
+                                        <!-- description and details ends here -->
+                                        
+                                        <!-- list of added facilities starts here-->
                                         <h6>Facilities</h6>    
                                         <p class="details">
-                                          <ul class="details-list"> 
+                                          <ol class="facilities-list"> 
                                             <li>Chairs:  <span>200</span></li>
                                             <li>Air conditions: <span>20</span></li>
                                             <li>Tables:  <span> 40</span></li>
-                                            <li><a class="read-more" href="">see more</a></li>
-                                          </ul>
-                                        </p>                                
+                                            <a class="see-more" href="">see more</a>
+                                          </ol>
+                                        </p>  
+                                        <!-- list of added facilities ends here -->
+
+                                        <span class="card-link center">
+                                            <span class="btn-group btn-group-padding" role="group" aria-label="Basic example">
+                                                <button type="button" onclick="location.href='newcenter.html'" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> Edit</button>
+                                                <button type="button" class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#deleteModal" > <i class="fa fa-trash"></i> Delete</buttoen>
+                                            </span>                            
+                                        </span>                                                                      
                                     </div>
                                 </div>
                             </div>
+                            <!-- column to dsiplay center details ends here -->
+
                         </div>
                     </div>
                 </div>
@@ -156,6 +189,8 @@
             </div>
         </div>
         <hr>
+
+        <!-- footer starts here -->
         <div class="container footer">
             <div class="row">
                 <div class="col-sm-4 offset-sm-3 py-4">
@@ -178,6 +213,30 @@
                 </div>
             </div>
         </div>
+        <!-- footer ends here -->
+
+        <!-- delete confirmation modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Delete">Please, confirm <i class="fa fa-exclamation"></i></h5>
+                        <button type="button" class="close hide" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body center">
+                        <div class="alert alert-danger" role="alert">Are you sure you want to delete this center?</div>
+                    </div>
+                    <div class="modal-footer py-2" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
+                        <div class="btn-group btn-group-padding" role="group">
+                            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">cancel</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
         <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -185,6 +244,8 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script-->
         <script src="./js/bootstrap.min.js"></script>   
+        <script>
+        </script>
     </body>
 </html>
 

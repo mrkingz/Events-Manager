@@ -277,6 +277,7 @@
           </div>
         </div>
         
+        <!-- signin and signup modal starts here-->
         <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -313,12 +314,14 @@
                     </p>
                 </form>
               </div>
-              <div class="modal-footer" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
+              <div class="modal-footer py-3" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Quit</button>
               </div>
             </div>
           </div>
         </div>
+        <!-- signin and signup modal ends here -->
+
       <footer>
         <p style="float: right">&copy; Andela21, <script>document.write(new Date().getFullYear())</script>.</p>
       </footer>
@@ -346,20 +349,24 @@
                 action = anchor.data('whatever') || target.text().toLowerCase(),
                 toggleAction = {signin :'Signup', signup : 'Signin'} 
                 
-                if(anchor.hasClass('signin') || action === 'signin') {
+                if (anchor.hasClass('signin') || action === 'signin') {
+
                     modal.find('#username').attr({'placeholder': 'Username or email'});
                     modal.find('#username').siblings('label[for="username"]').text('Username or email');
                     modal.find('div.toggle-div').addClass('hide'); 
                     modal.find('p.toggle-action span').text('Don\'t ');
                     modal.find('a.recovery').show();
                     modal.find('form.signin-form').attr({'action': 'centers.html'});
-                } else if(anchor.hasClass('signup') || action === 'signup') {
+
+                } else if (anchor.hasClass('signup') || action === 'signup') {
+
                     modal.find('#username').attr({'placeholder': 'Username'});
                     modal.find('#username').siblings('label[for="username"]').text('Username');
                     modal.find('div.toggle-div').removeClass('hide');
                     modal.find('p.toggle-action span').text('Already '); 
                     modal.find('a.recovery').hide();
                     modal.find('form.signin-form').attr({'action': ''});
+
                 }
 
             modal.find('.modal-title').text(action).css({'text-transform':'capitalize'})

@@ -127,19 +127,11 @@
     border: 1px solid rgba(0,0,0,.25);
   }
 
+  .btn-group-padding button,
   .new-center button {
     margin: 3px;
     font-size: 11px;
     padding: 5px;
-  }
-
-  .facilities {
-    margin: 2% 5%;
-  }
-
-  .facilities ol{
-    font-size: 13px; 
-    font-weight: normal
   }
 
   button.btn {
@@ -248,9 +240,20 @@
 
   .details-list {
     font-size: 12px;
-    list-style-type:none;
     margin: 10px;
     padding: 0px;
+    list-style-type: none
+  }
+
+  .facilities-list {
+    font-size: 12px;
+    margin: 10px;
+    padding: 0px 10px;
+  }
+
+  .facilities ol{
+    font-size: 13px; 
+    font-weight: normal
   }
 
   p.details span,
@@ -260,7 +263,7 @@
     margin: 0px 10px;
   }
 
-  a.read-more {
+  a.see-more {
       font-size: 12px;
   }
 
