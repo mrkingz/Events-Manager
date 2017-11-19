@@ -125,8 +125,8 @@
                                             </p>                                        
                                             <span class="card-link center">
                                                 <span class="btn-group new-center" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete"> <i class="fa fa-trash"></i> Delete</buttoen>
+                                                    <button type="button" class="btn btn-info btn-sm" title="Edit" data-toggle="modal" data-target="#eventModal" data-whatever="Update event"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#deleteModal"> <i class="fa fa-trash"></i> Delete</buttoen>
                                                     </span>                            
                                             </span>
                                         </div>
@@ -159,8 +159,8 @@
                                             </p>                                        
                                             <span class="card-link center">
                                                 <span class="btn-group new-center" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete"> <i class="fa fa-trash"></i> Delete</buttoen>
+                                                    <button type="button" class="btn btn-info btn-sm" title="Edit" data-toggle="modal" data-target="#eventModal" data-whatever="Update event"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#deleteModal"> <i class="fa fa-trash"></i> Delete</buttoen>
                                                     </span>                            
                                             </span>
                                         </div>
@@ -193,9 +193,9 @@
                                             </p>                                        
                                             <span class="card-link center">
                                                 <span class="btn-group new-center" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-info btn-sm" title="Edit"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete"> <i class="fa fa-trash"></i> Delete</buttoen>
-                                                    </span>                            
+                                                    <button type="button" class="btn btn-info btn-sm" title="Edit" data-toggle="modal" data-target="#eventModal" data-whatever="Update event"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button type="button" class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#deleteModal"> <i class="fa fa-trash"></i> Delete</buttoen>
+                                                </span>                            
                                             </span>
                                         </div>
                                     </div>
@@ -210,6 +210,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- pagination links here starts here -->
         <div class="row no-gutters">
             <div class="col-sm-12" style="margin-top:10px;">
                 <nav aria-label="...">
@@ -230,8 +232,11 @@
                     </ul>
                 </nav>
             </div>
-        </div>            
+        </div>   
+         <!-- pagination links here ends here -->
         <hr>
+
+        <!-- footer starts here -->
         <div class="container footer">
             <div class="row">
                 <div class="col-sm-4 offset-sm-3 py-4">
@@ -254,6 +259,87 @@
                 </div>
             </div>
         </div>
+        <!-- footer ends here -->
+
+        <!-- delete confirmation modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Delete">Please, confirm <i class="fa fa-exclamation"></i></h5>
+                        <button type="button" class="close hide" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body center">
+                        <div class="alert alert-danger" role="alert">Are you sure you want to delete this event?</div>
+                    </div>
+                    <div class="modal-footer py-2" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
+                        <div class="btn-group btn-group-padding" role="group">
+                            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">cancel</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- delete confirmation modal ends here -->    
+        
+
+    <!-- add event modal starts here -->
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabel"></h5>
+                  <button type="button" class="close hide" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form class="wrap signin-form" action="">
+                      <div class="inner-wrap">
+                          <div class="form-group no-margin">
+                              <label for="title" class="col-form-label">Title:</label>
+                              <input type="text" class="form-control" id="title" placeholder="Event title">
+                          </div>
+                          <div class="form-group  no-margin">
+                            <label for="centers">Center</label>
+                            <select id="centers" class="form-control " style="height: 28px; padding: 0px; font-size: 13px">
+                              <option>--Select center--</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group no-margin">
+                              <label for="date" class="col-form-label">Date:</label>
+                              <input type="date" class="form-control" id="date" placeholder="Date">
+                          </div>
+                          <div class="form-group no-margin">
+                              <label for="time" class="col-form-label">Time</label>
+                              <input type="time" class="form-control" id="time" placeholder="Time">
+                          </div>
+                          <div class="form-group no-margin">
+                              <label for="estimate" class="col-form-label">Estimated invitees</label>
+                              <input type="number" class="form-control" id="estimate" placeholder="Estimated invitees">
+                          </div>
+                          <div class="">
+                              <label style="padding-top: calc(.5rem - 1px * 2);" for="description">Brief details</label>
+                              <div class="review" id="description" contenteditable="true" placeholder="Brief details here..."></div><br>
+                          </div>
+                      </div>
+                      <div class="btn-wrap" style="direction: rtl">
+                          <button type="submit" class="btn btn-info btn-sm" style="direction: ltr"><i class="fa fa-upload"></i> Save</button>
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer" style="background: rgb(235, 235, 235); border-color: rgba(0,0,0,.20)">
+                  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Quit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- add event modal starts here -->
+        
     </div>
         <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -261,6 +347,16 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script-->
         <script src="./js/bootstrap.min.js"></script>   
+        <script>
+            $(function(){
+                $('#eventModal').on('show.bs.modal', function (event) {
+                    const button = $(event.relatedTarget),
+                          modal = $(this);
+
+                    modal.find('.modal-title').text(button.data('whatever'))
+                  })
+            })
+        </script>
     </body>
 </html>
 
