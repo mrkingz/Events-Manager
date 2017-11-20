@@ -19,10 +19,9 @@ class AuthenticationService {
 	static generateJWT(credentials, secret) {
 		 return new Promise((resolve, reject) => {
 		 	const options = {
-		 		//algorithms: process.env.ALGORITHM,
 		 		issuer: process.env.ISSUER,
 		 		subject: process.env.SUBJECT,
-		 		//expiresIn: process.env.MAX_AGE
+		 		expiresIn: process.env.EXPIRATION
 		 	};
 
 			return jwt.sign(credentials, secret, options, (error, token) => {

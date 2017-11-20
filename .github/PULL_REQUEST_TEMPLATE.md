@@ -1,16 +1,27 @@
 ## What does this PR do?
 
 
-
 ## Description of Task to be completed?
+Have the following endpoint working
 
-It shows the details of an event center
 
 ## How should this be manually tested?
+Cloning the repo
+Setup up your environment variables as follows:
+    DB_USERNAME = your database username
+    DB_NAME = your database name
+    DB_PASSWORD = your password
+    DB_HOST = localhost
+    DB_DIALECT = postgres
 
-Clone the repo in the templates folder, open file index.html with a browser, and click any of the signin links on the landing page, then click the signin button on the modal that display to navigate to centers.html or you can just navigate to centers.html directly. After centers.html is loaded, click on any of the view details link
+then, run the following commands:
+
+- npm install
+- npm run migrate:dev
+- npm run start:dev
+
+finally, launch Postman and navigate to the above route
+### Required fields
+
 
 ## What are the relevant pivotal tracker stories?
-
-
-##
