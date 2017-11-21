@@ -10,6 +10,7 @@ class ValidationService extends UtilityService {
 	/**
 	 * @description Validates if param is a valid resource identfifier
 	 * Note: this method only validate for a number param
+	 * @method IsValidInetgerURI
 	 * @static
 	 * @memberof ValidationService
 	 * @returns {function} A middleware function thhat handles the validation
@@ -37,7 +38,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates it is an empty string
-	 * @static 
+	 * @static isEmpty
 	 * @memberof ValidationService
 	 * @param {String} str The string to validate
 	 * @returns {Boolean} true, if str is not empty; false, if otherwise
@@ -50,7 +51,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates if an imput is a number
-	 * @method
+	 * @method isInteger
 	 * @memberof ValidationService
 	 * @param {string} value
 	 * @returns {boolean} true if value is a Integer; false, if otherwise
@@ -64,7 +65,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates phone number
-	 * @method
+	 * @method isValidPhoneNumber
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is a valid phone number; false, if otherwise
@@ -80,7 +81,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates email address
-	 * @method
+	 * @method isEmail
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is a valid email; false, if otherwise
@@ -98,22 +99,23 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates if a string is alphanumeric
-	 * @method
+	 * @method isAlphanumeric
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is alphanumeric; false, if otherwise
 	 */
-	static isAlphaNumeric(str) {
+	static isAlphanumeric(str) {
 		if(typeof str == 'undefined')
 			throw syntaxError;
 		else {
-		  const exp = /^([a-zA-Z]+[0-9])|([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+[a-zA-Z]+)$/;
-	 	  return (str.toString().match(exp)) ? true : false;
+		  	const exp = /^([a-zA-Z]+[0-9])|([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+[a-zA-Z]+)$/;
+	 	  	return (str.toString().match(exp)) ? true : false;
 		}
 	}
+
 	/**
 	 * @description Validates password
-	 * @method
+	 * @method isValidPassword
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is valid password; false, if otherwise
@@ -127,10 +129,25 @@ class ValidationService extends UtilityService {
 	 	}
 	}
 
+	/**
+	 * @description Validates currency amount
+	 * @method isValidCurrency
+	 * @memberof ValidationService
+	 * @param {string} str
+	 * @returns {boolean} true if str is numeric; false, if otherwise
+	 */
+	static isValidCurrency(str) {
+		if(typeof str == 'undefined')
+			throw syntaxError
+		else {
+			str = this.removeWhiteSpace(str.replace(',', ''));
+		 	return (this.isNumeric(str))? true : false;
+		}
+	}
 
 	/**
 	 * @description Validates if a string is numeric
-	 * @method
+	 * @method isNumeric
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is numeric; false, if otherwise
@@ -143,7 +160,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates if a string is float
-	 * @method
+	 * @method isFloat
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is float; false, if otherwise
@@ -158,7 +175,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates if a string is alphabet
-	 * @method
+	 * @method isAlphabetic
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is alphabet; false, if otherwise
@@ -171,7 +188,7 @@ class ValidationService extends UtilityService {
 
 	/**
 	 * @description Validates if a value is string
-	 * @method
+	 * @method isString
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is string; false, if otherwise
@@ -179,24 +196,23 @@ class ValidationService extends UtilityService {
 	static isString(str) {
 		if(typeof str == 'undefined')
 			throw syntaxError;
-	  else return (str.constructor === String) ? true : false;
+	  	else return (str.constructor === String) ? true : false;
 	}
 
 	/**
-	 * @description Validates if a is string is a valid name
-	 * Note: name can only contain letters, hyphen and apostrophy
-	 * @method
+	 * @description Validates center name and event title.
+	 * Note: name can only contain letters, hyphen and apostrophy and a period
+	 * @method isValidName
 	 * @memberof ValidationService
 	 * @param {string} str
 	 * @returns {boolean} true if str is string; false, if otherwise
 	 */
 	static isValidName(str) {
 		if(typeof str == 'undefined')
-			throw syntaxError;	
-		else
-		{
-			const exp = /(^[a-zA-Z]+$)|(^[a-zA-Z]+[-|']?[a-zA-Z]+$)/;
-			return (str.toString().match(exp)) ? true : false;
+			throw syntaxError;
+		else {
+		  const exp = /^[a-zA-Z0-9-.'\s]+$/;
+	 	  return (str.toString().match(exp)) ? true : false;
 		}
 	}
 } 

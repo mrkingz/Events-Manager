@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 app.use(cookieParser());
 
 app.use(routes.authRoutes);
+app.use(routes.centerRoutes);
 
 app.all('*', (req, res) => {
     res.send('Oops! Request not supported.')
