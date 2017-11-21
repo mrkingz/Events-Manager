@@ -62,8 +62,7 @@ class CenterController extends ModelService {
      * @memberof CenterController
      * @returns {function} A middleware function that handles the GET request
      */
-    static getCenters()
-    {
+    static getCenters() {
         return (req, res) => {
             return this.findAllModelObjects(Center, {
                 order: [['name', 'ASC']],
@@ -86,8 +85,7 @@ class CenterController extends ModelService {
      * @memberof CenterController
      * @returns {function} A middleware function that handles the GET request
      */
-    static getCenter()
-    {
+    static getCenter() {
         return (req, res) => {
             return this.findAllModelObjects(Center, {
                 where: { centerId: req.params.centerId }
