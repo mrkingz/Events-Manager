@@ -30,7 +30,7 @@ class UtilityService {
 		if(typeof attributes === 'object') {
 			attr = {};
 			for(let key in attributes) {
-				if(attributes.hasOwnProperty(key)) {
+				if(typeof key !== 'undefined') {
 					if(typeof attributes[key] === 'string') {
 						if(bool) {
 							const array = attributes[key].split(' ');
@@ -57,7 +57,7 @@ class UtilityService {
 					str = str.toString().trim();
 					return (skip.includes(str))
 							? str 
-							: str.charAt(0).toUpperCase() + str.substr(1);
+							: this.removeWhiteSpace(str.charAt(0).toUpperCase() + str.substr(1));
 				}).join(' ');
 			} else {
 				const str = attributes.toString().trim()
@@ -98,7 +98,7 @@ class UtilityService {
 	 */
 	static removeWhiteSpace(string, removeAll) {
 	 	let all = (typeof removeAll  !== 'undefined') ? removeAll : true ; //set true as default
-	 	return (all) ? string.replace(/[ ]+/g, '') : string.replace(/[ ]+/g, ' ')
+	 	return (all) ? string.trim().replace(/[ ]+/g, '') : string.trim().replace(/[ ]+/g, ' ')
 	}
 }
 
