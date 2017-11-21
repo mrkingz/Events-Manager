@@ -56,8 +56,8 @@ import UtilityService from './utilityService';
 						   });
 
 		for (let i = 0; i < commonElem.length; i++) {
-    		//Check if at least one attribute of the object has been edited
-    		if (updates[commonElem[0]].toString().toLowerCase() != modelObject[commonElem[0]].toString().toLowerCase()) {
+			//Check if at least one attribute of the object has been edited
+    		if (updates[commonElem[i]].toString().toLowerCase() != modelObject[commonElem[i]].toString().toLowerCase()) {
 	  			edited = true;
 	  			break
 	  		}
@@ -206,7 +206,9 @@ import UtilityService from './utilityService';
 	 * is successful; rejects if otherwise
 	 */
     static updateModelObject(model, options, updatesObj) {
-		return this.findOneModelObject(model, {where: this.trimAttributes(options.where)})
+		return this.findOneModelObject(model, {
+			where: this.trimAttributes(options.where),
+		})
 		.then((modelObject) => {	
 			const attributes = this.trimAttributes(options.attributes);
 		    const verify = this.verifyUpdate(updatesObj, modelObject);
@@ -250,17 +252,17 @@ import UtilityService from './utilityService';
 			switch(err.name) {
 				case 'SequelizeValidationError':
 				case 'SequelizeUniqueConstraintError':
-							const errorInfo = err.errors[0];
-						  const path = errorInfo.path;
-						  error.code = 400;
+					const errorInfo = err.errors[0];
+					const path = errorInfo.path;
+					error.code = 400;
 
-							if(errorInfo.type.toLowerCase() === 'notnull violation')
-						   	 	message = this.upperCaseFirst(path) + ' is required!';
-						  else message = err.errors[0].message;
-							break;
+					if (errorInfo.type.toLowerCase() === 'notnull violation')
+						message = this.upperCaseFirst(path) + ' is required!';
+					//else message = err.errors[0].message;
+					break;
 				default:
-							error.code = 500;
-							serverErr = true;
+					error.code = 500;
+					serverErr = true;
 			}
 			error.code = error.code || err.code;
 			error.message = (serverErr) ? `Server error! `+message : message

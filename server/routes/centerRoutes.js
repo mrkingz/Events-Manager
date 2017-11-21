@@ -7,11 +7,19 @@ const { CenterController, UserController } = controllers,
       { CenterValidations } = validations,
       centerRouter = express.Router();
 
-centerRouter.post('/api/v1/centers', 
-    UserController.validateUserAccess(),
-    UserController.checkPrivilege(),
-    CenterValidations.validateCenter(),
+centerRouter.route('/api/v1/centers')
+.all(UserController.validateUserAccess(),
+    UserController.checkPrivilege())
+.post(CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
     CenterController.createCenter());
+
+centerRouter.route('/api/v1/centers/:centerId')
+.all(UserController.validateUserAccess(),
+    UserController.checkPrivilege())
+.put(CenterValidations.validateCenter(),
+    CenterValidations.ifExistCenter(),
+    CenterController.updateCenter())
+.get()
 
 export default centerRouter;

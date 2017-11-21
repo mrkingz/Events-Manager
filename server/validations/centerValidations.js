@@ -103,40 +103,52 @@ class CenterValidations extends ValidationService {
                     else if (!this.isValidName(req.body.name))
                         error.message = 'Center name can only contain letters, numbers and these characters -,\''
 
-                } else if (!error.message && typeof req.body.capacity != 'undefined') { 
+                } 
+                if (!error.message && typeof req.body.capacity != 'undefined') { 
                     if (this.isEmpty(req.body.capacity))
                         error.message = 'Capacity cannot be empty!';
 
                     else if (!this.isInteger(req.body.capacity))
                         error.message =  'Invalid entry for capacity, must be an integer!';
 
-                } else if (!error.message && typeof req.body.price !== 'undefined') {
-                    if (!this.isEmpty(req.body.price))
+                } 
+                if (!error.message && typeof req.body.price !== 'undefined') {
+                    if (this.isEmpty(req.body.price))
                         error.message = 'Price cannot bet empty!';
 
                     else if (!this.isValidCurrency(req.body.price))
                         error.message = 'Invalid entry for price, must be numeric!';
 
-                } else if (!error.message && typeof req.body.location !== 'undefined') {
-                    if (!this.isEmpty(req.body.location))
+                }
+                if (!error.message && typeof req.body.location !== 'undefined') {
+                    if (this.isEmpty(req.body.location))
                         error.message = 'Location cannot bet empty!';
 
                     else if (!this.isAlphabetic(req.body.location))
                         error.message = 'Location can only contain letter!';
 
-                } else if (!error.message && typeof req.body.address !== 'undefined') {
-                    if (!this.isEmpty(req.body.address))
-                        error.message = 'Price cannot bet empty!';
+                } 
+                if (!error.message && typeof req.body.address !== 'undefined') {
+                    if (this.isEmpty(req.body.address))
+                        error.message = 'Address cannot bet empty!';
 
                     else if (!this.isString(req.body.address))
                         error.message = 'Invalid entry for address, must be in word(s)!';
 
-                } else if (!error.message && typeof req.body.description !== 'undefined') {
-                    if (!this.isEmpty(req.body.description))
+                }
+                if (!error.message && typeof req.body.description !== 'undefined') {
+                    if (this.isEmpty(req.body.description))
                         error.message = 'Description cannot bet empty!';
 
                     else if (!this.isString(req.body.description))
                         error.message = 'Invalid entry for address, must be in word(s)!';
+                }
+                if (!error.message && typeof req.body.availability !== 'undefined') {
+                    if (this.isEmpty(req.body.availability))
+                       error.message = 'Availability cannot bet empty!';
+
+                     else if (!this.isBoolean(req.body.availability))
+                         error.message = 'Please, enter true or false for availability';
                 }
             }
 
