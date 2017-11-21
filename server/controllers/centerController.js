@@ -66,8 +66,9 @@ class CenterController extends ModelService {
     {
         return (req, res) => {
             return this.findAllModelObjects(Center, {
-                where: { userId: req.body.user.userId },
-                order: [['name', 'ASC']]
+                order: [['name', 'ASC']],
+                offset: req.query.page || 0,
+                limit: 10
             })
             .then((centers) => {
                 this.successResponse(res, {centers: centers});
