@@ -4,6 +4,7 @@ import services from '../services';
 import validations from '../validations';
 
 const { CenterController, UserController } = controllers,
+      { ValidationService } = services,
       { CenterValidations } = validations,
       centerRouter = express.Router();
 
@@ -16,11 +17,14 @@ centerRouter.route('/api/v1/centers')
 .get(CenterController.getCenters())
 
 centerRouter.route('/api/v1/centers/:centerId')
-.all(UserController.validateUserAccess())
-.put(UserController.checkPrivilege(),
+.put(UserController.validateUserAccess(),
+    UserController.checkPrivilege(),
     CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
     CenterController.updateCenter())
+.get(ValidationService.isValidIntegerURI(),
+     CenterController.getCenter())
+
 
 
 export default centerRouter;
