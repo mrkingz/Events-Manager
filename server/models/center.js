@@ -112,9 +112,11 @@ export default (sequelize, DataTypes) => {
                     args: true,
                     msg: 'Availability cannot be empty!'
                 },
-                isIn: {
-                    args: [[true, false, 1, 0]],
-                    msg: 'Incorrect value. Enter true or false, or 1 for true, 0 for false'
+                isBool: (value) => {
+                    if(!ValidationService.isBoolean(value)) {
+                        error.message = 'Please, enter true or false for availability';
+                        throw error;
+                    }
                 },
             },
         },

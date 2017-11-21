@@ -11,6 +11,7 @@ class CenterController extends ModelService {
     /**
      * @description Creates a center
      * @static
+     * @method createCenter
      * @memberof CenterController
      * @return {Function} A middleware function that handles the POST request 
      */
@@ -26,6 +27,32 @@ class CenterController extends ModelService {
                 this.errorResponse(res, error);
             });
         };
+    }
+
+    /**
+     * @description Updates an event center details
+     * @static
+     * @method updateCenter
+     * @memberof CenterController
+     * @return {Function} A middleware function that handles the PUT request 
+     */
+    static updateCenter() {
+        return (req, res) => {
+            const {user, ...update} = req.body
+            return this.updateModelObject(Center, {
+                where: {
+                    centerId: req.params.centerId,
+                    userId: req.body.user.userId
+                },
+                attributes: update
+            }, req.body)
+            .then((updated) => {
+                this.successResponse(res, updated);
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })            
+        }
     }
 }
 

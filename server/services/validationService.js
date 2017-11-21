@@ -171,7 +171,24 @@ class ValidationService extends UtilityService {
 		else if(isNaN(Number(str)))
 		  	return false
 		else return str.toString().match(/(^[0-9]*[.]{1}[0-9]*$)/) ? true : false;
-  	}
+	  }
+	  
+	/**
+	 * @description Validates if a value is boolean
+	 * @method isBoolean
+	 * @memberof ValidationService
+	 * @param {string} str
+	 * @returns {boolean} true if str is string; false, if otherwise
+	 */
+	static isBoolean(value) {
+		if(typeof value == 'undefined')
+			throw syntaxError;
+		else if(value.toString().toLowerCase() === 'true' || value.toLowerCase() === 'false')
+			return true;
+		else
+			return toString.call(value) === '[object Boolean]';
+
+	}
 
 	/**
 	 * @description Validates if a string is alphabet
