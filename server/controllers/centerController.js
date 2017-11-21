@@ -54,6 +54,29 @@ class CenterController extends ModelService {
             })            
         }
     }
+
+    /**
+     * @description Gets all event centers
+     * @method getCenters
+     * @static
+     * @memberof CenterController
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static getCenters()
+    {
+        return (req, res) => {
+            return this.findAllModelObjects(Center, {
+                where: { userId: req.body.user.userId },
+                order: [['name', 'ASC']]
+            })
+            .then((centers) => {
+                this.successResponse(res, {centers: centers});
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })
+        }
+    }
 }
 
 export default CenterController;

@@ -12,7 +12,8 @@ centerRouter.route('/api/v1/centers')
     UserController.checkPrivilege())
 .post(CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
-    CenterController.createCenter());
+    CenterController.createCenter())
+.get(CenterController.getCenters())
 
 centerRouter.route('/api/v1/centers/:centerId')
 .all(UserController.validateUserAccess(),
@@ -20,6 +21,6 @@ centerRouter.route('/api/v1/centers/:centerId')
 .put(CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
     CenterController.updateCenter())
-.get()
+
 
 export default centerRouter;
