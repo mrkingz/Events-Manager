@@ -9,8 +9,8 @@ const { CenterController, UserController } = controllers,
       centerRouter = express.Router();
 
 centerRouter.route('/api/v1/centers')
-.all(UserController.validateUserAccess())
-.post(UserController.checkPrivilege(),
+.post(UserController.validateUserAccess(),
+    UserController.checkPrivilege(),
     CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
     CenterController.createCenter())
