@@ -9,11 +9,12 @@ const { EventController, UserController, CenterController } = controllers,
       eventRouter = express.Router();
 
 eventRouter.route('/api/v1/events')
-.post(UserController.validateUserAccess(),
-    EventValidations.validateEvent(),
+.all(UserController.validateUserAccess())
+.post(EventValidations.validateEvent(),
     EventValidations.isExistEvent(),
     CenterController.vaildateCapacity(),
     EventController.createEvent())
+.get(EventController.getEvents())
 
 eventRouter.route('/api/v1/events/:eventId')
 .all(UserController.validateUserAccess(),
