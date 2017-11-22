@@ -47,7 +47,11 @@ module.exports = {
                 },
                 onDelete: 'CASCADE',
                 onUpdate: 'CASCADE'
-            },          
+            }, 
+            approval: {
+                type: Sequelize.BOOLEAN,
+                allowNull: false,
+            },         
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE

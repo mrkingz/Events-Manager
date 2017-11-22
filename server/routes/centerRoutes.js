@@ -25,7 +25,9 @@ centerRouter.route('/api/v1/centers/:centerId')
     CenterValidations.ifExistCenter(),
     CenterController.updateCenter())
 .get(ValidationService.isValidIntegerURI(),
-     CenterController.getCenter())
+    CenterController.getBookings(),
+    CenterController.getCenter()
+)
 
 
 

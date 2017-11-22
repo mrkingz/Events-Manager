@@ -108,10 +108,6 @@ export default (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: true,
             validate: {
-                notEmpty: {
-                    args: true,
-                    msg: 'Availability cannot be empty!'
-                },
                 isBool: (value) => {
                     if(!ValidationService.isBoolean(value)) {
                         error.message = 'Please, enter true or false for availability';
