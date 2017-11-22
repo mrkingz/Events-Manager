@@ -14,7 +14,9 @@ centerRouter.route('/api/v1/centers')
     CenterValidations.validateCenter(),
     CenterValidations.ifExistCenter(),
     CenterController.createCenter())
-.get(CenterController.getCenters())
+.get(CenterController.searchCenters(), 
+    CenterController.getCenters()
+)
 
 centerRouter.route('/api/v1/centers/:centerId')
 .put(UserController.validateUserAccess(),

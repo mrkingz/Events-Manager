@@ -71,7 +71,7 @@ class CenterController extends ModelService {
      * @returns {function} A middleware function that handles the GET request
      */
     static getCenters() {
-        return (req, res) => {
+        return (req, res, next) => {
             return this.findAllModelObjects(Center, {
                 order: [['name', 'ASC']],
                 include: include,
@@ -79,11 +79,77 @@ class CenterController extends ModelService {
                 limit: 10
             })
             .then((centers) => {
-                this.successResponse(res, {centers: centers});
+                this.successResponse(res, {centers: centers}, 302);
             })
             .catch(error => {
                 this.errorResponse(res, error);
             })
+        }
+    }
+
+    /**
+     * @description Searches for event centers by name and/or location
+     * @static
+     * @method searchCenters
+     * @memberof CenterController
+     * @returns {function} A middleware function that handles the search mechanism
+     */
+     static searchCenters() {
+         return (req, res, next) => {
+            if (!req.query.name && !req.query.location) {
+                return next()
+            } else {
+                let name, searchByName,
+                    location, searchByLocation,
+                    searchQuery;
+
+                if (req.query.name) { //If user searches by name
+
+                    name = req.query.name.split(' ');
+                    searchByName = name.map((search) => {
+                        return { name: {$ilike: `%${search}%`}}
+                    });
+                    searchQuery = {$or: searchByName};
+
+                } else if (req.query.location) { // user searches by location
+
+                    location = req.query.location.split(' ');
+                    searchByLocation = location.map((search) => {
+                        return { location: {$ilike: `%${search}%`}}
+                    });
+                    searchQuery = {$or: searchByLocation};
+
+                } else if (req.query.name && req.query.location) { // if user searches by name and location
+
+                    searchByName = name.map((search) => {
+                        return { name: {$ilike: `%${search}%`}}
+                    });
+
+                    searchByLocation = location.map((search) => {
+                        return { location: {$ilike: `%${search}%`}}
+                    });
+                    
+                    searchQuery: {$or: {
+                        searchByName, 
+                        searchByLocation
+                    }}
+                }
+
+                return this.findAllModelObjects(Center, {
+                    where: searchQuery,
+                    order: [['name', 'ASC']],
+                    message: `Sorry, no result matches your search`,
+                    include: include,
+                    offset: req.query.page || 0,
+                    limit: 10
+                })
+                .then((centers) => {
+                    this.successResponse(res, {centers: centers}, 302);
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })
+            }
         }
     }
 
@@ -101,7 +167,7 @@ class CenterController extends ModelService {
                 include: include
             })
             .then((center) => {
-                this.successResponse(res, {center: center});
+                this.successResponse(res, {center: center}, 302);
             })
             .catch(error => {
                 this.errorResponse(res, error);
