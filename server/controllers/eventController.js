@@ -47,7 +47,11 @@ class EventController extends ModelService {
                 where: { 
                     eventId: req.params.eventId,
                     userId: req.body.user.userId
-                }
+                },
+                include: [{
+                    model: User,
+                    attributes: ['userId', 'email','username']
+                }]
             })
             .then((event) => {
                 this.successResponse(res, {event: event});
