@@ -183,7 +183,7 @@ class ValidationService extends UtilityService {
 	static isBoolean(value) {
 		if(typeof value == 'undefined')
 			throw syntaxError;
-		else if(value.toString().toLowerCase() === 'true' || value.toLowerCase() === 'false')
+		else if(value.toString().toLowerCase() === 'true' || value.toString().toLowerCase() === 'false')
 			return true;
 		else
 			return toString.call(value) === '[object Boolean]';

@@ -131,6 +131,7 @@ export default (sequelize, DataTypes) => {
             },
         },   
     })
+
     Center.associate = (models) => {
         Center.belongsTo(models.User, {
             foreignKey: {

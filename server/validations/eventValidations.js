@@ -86,7 +86,7 @@ class EventValidations extends ValidationService {
             } else if (req.method === 'PUT') {
 
                 if(typeof req.body.title !== 'undefined') { 
-                    if (this.isEmpty(req.body.name))
+                    if (this.isEmpty(req.body.title))
                         error.message = 'Event title cannot be empty!';
 
                     else if (!this.isValidName(req.body.title))
@@ -152,7 +152,7 @@ class EventValidations extends ValidationService {
                         title: req.body.title,
                         date: req.body.date
                     },
-                    message: `${Event.name} already slated for this date. `
+                    message: `This ${Event.name.toLowerCase()} has already been slated for this date.`
                 })
                 .then(() => {
                     return next();

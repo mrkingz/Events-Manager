@@ -2,7 +2,11 @@ import models from '../models';
 import services from '../services'
 
 const { Center, User, Event } = models,
-      { ModelService } = services;
+      { ModelService } = services,
+      include = [{
+          model: User,
+          attributes: ['userId', 'email','username']
+      }];
 
 /**
  * @class EventController
@@ -39,7 +43,7 @@ class EventController extends ModelService {
      * @static
      * @method getEvent
      * @memberof EventController
-     * @returns {function} A middleware function that handles the GET request
+     * @returns {function} An express middleware function that handles the GET request
      */
     static getEvent() {
         return (req, res) => {
@@ -48,10 +52,7 @@ class EventController extends ModelService {
                     eventId: req.params.eventId,
                     userId: req.body.user.userId
                 },
-                include: [{
-                    model: User,
-                    attributes: ['userId', 'email','username']
-                }]
+                include: include
             })
             .then((event) => {
                 this.successResponse(res, {event: event});
@@ -59,6 +60,32 @@ class EventController extends ModelService {
             .catch(error => {
                 this.errorResponse(res, error);
             })
+        }
+    }
+
+    /**
+     * @description Updates an event details
+     * @static
+     * @method updateEvent
+     * @memberof EventController
+     * @return {function} A middleware function that handles the PUT request 
+     */
+    static updateEvent() {
+        return (req, res) => {
+            const {user, ...update} = req.body;
+            return this.updateModelObject(Event, {
+                where: {
+                    eventId: req.params.eventId,
+                    userId: req.body.user.userId
+                },
+                attributes: update
+            }, req.body)
+            .then((updated) => {
+                this.successResponse(res, updated);
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })            
         }
     }
 
