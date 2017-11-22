@@ -33,6 +33,34 @@ class EventController extends ModelService {
             });
         };
     }
+
+    /**
+     * @description Gets a single event
+     * @method getEvent
+     * @static
+     * @memberof EventController
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static getEvent() {
+        return (req, res) => {
+            return this.findOneModelObject(Event, {
+                where: { 
+                    eventId: req.params.eventId,
+                    userId: req.body.user.userId
+                },
+                include: [{
+                    model: User,
+                    attributes: ['userId', 'email','username']
+                }]
+            })
+            .then((event) => {
+                this.successResponse(res, {event: event});
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })
+        }
+    }
 }
 
 export default EventController;

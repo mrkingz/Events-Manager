@@ -140,6 +140,14 @@ export default (sequelize, DataTypes) => {
                 onUpdate: 'CASCADE'
             },
         });
+        Center.hasMany(models.Event, {
+            foreignKey: {
+                name: 'userId',
+                allowNull: false,
+                onDelete: 'SET NULL',
+                onUpdate: 'CASCADE'
+            },
+        });
     };
     return Center;
 };
