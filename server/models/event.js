@@ -79,6 +79,19 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
         },
+        approval: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: false,
+            validate: {
+                isBool: (value) => {
+                    if(!ValidationService.isBoolean(value)) {
+                        error.message = 'Please, enter true or false for approval';
+                        throw error;
+                    }
+                },
+            },            
+        },
         centerId: {
             type: DataTypes.INTEGER,
             allowNull: false,

@@ -56,7 +56,7 @@ class EventController extends ModelService {
                 include: include
             })
             .then((event) => {
-                this.successResponse(res, {event: event}, 302);
+                this.successResponse(res, {event: event});
             })
             .catch(error => {
                 this.errorResponse(res, error);
@@ -76,18 +76,17 @@ class EventController extends ModelService {
         return (req, res) => {
             return this.findAllModelObjects(Event, {
                 where: { userId: req.body.user.userId },
-                include: include,
-                offset: req.query.page || 0,
-                limit: 10                
+                include: include
             })
             .then((events) => {
-                this.successResponse(res, {events: events}, 302);
+                this.successResponse(res, {events: events});
             })
             .catch(error => {
                 this.errorResponse(res, error);
             })
         }
     }
+
 
     /**
      * @description Updates an event details

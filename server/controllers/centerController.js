@@ -82,7 +82,7 @@ class CenterController extends ModelService {
                 this.successResponse(res, {centers: centers}, 302);
             })
             .catch(error => {
-                this.errorResponse(res, error);
+                return next(error)//this.errorResponse(res, error);
             })
         }
     }
@@ -145,6 +145,40 @@ class CenterController extends ModelService {
                 })
                 .then((centers) => {
                     this.successResponse(res, {centers: centers}, 302);
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })
+            }
+        }
+    }
+
+    /**
+     * @description Gets all date booked
+     * @static
+     * @method getBookedDate
+     * @memberof CenterController
+     * @return {function} A middleware function that handles the GET request 
+     */
+    static getBookings() {
+        return (req, res, next) => {
+            if(!req.query.approval)
+                return next();
+            else {
+                return this.findAllModelObjects(Center, {
+                    where: { centerId: req.params.centerId},
+                    attributes: ['name'],
+                    include: [{
+                        model: Event,
+                        where: {approval: req.query.approval || false },
+                        attributes: ['title', 'date', 'time', 'approval']
+                    }]
+                })
+                .then((center) => {
+                    this.successResponse(res, {
+                        message: ((req.query.approval.toString() === 'true') ? 'Booked' : 'Proposed')+ ' dates',
+                        center
+                    }, 302);
                 })
                 .catch(error => {
                     this.errorResponse(res, error);
@@ -234,6 +268,42 @@ class CenterController extends ModelService {
                 })
 
             } else return next();
+        }
+    }
+
+    /**
+     * @description Checks if an event center is available for a particular date
+     * @method isCenterAvailable
+     * @static
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static isCenterAvailable() {
+        return (req, res, next) => {
+            let validate = true;
+
+            if (req.method === 'PUT' && !req.body.date)
+                validate = false;
+
+            if (validate) {
+            //     return this.findOneModelObject(, {
+            //         where: { centerId: req.body.centerId },
+            //         attributes: ['availability']
+            //     })
+            //     .then((center) => {
+            //         if(center.availability)
+            //             return next();
+            //         else {
+            //             const error = new Error();
+            //             error.message = `Sorry, ${Center.name.toLowerCase()} has been booked for this date`;
+            //             throw error;
+            //         }
+            //     })
+            //     .catch(error => {
+            //         this.errorResponse(res, error);
+            //     })
+            }
+            else return next();
         }
     }
 }
