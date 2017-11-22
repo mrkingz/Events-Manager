@@ -30,7 +30,7 @@ import UtilityService from './utilityService';
  		})
  		.catch((error) => {
 		  	const err = this.refactorError(`Could not create ${model.name}`, error);
-		  	return Promise.reject(error);
+		  	return Promise.reject(err);
  		});
  	}
 
@@ -258,7 +258,7 @@ import UtilityService from './utilityService';
 
 					if (errorInfo.type.toLowerCase() === 'notnull violation')
 						message = this.upperCaseFirst(path) + ' is required!';
-					//else message = err.errors[0].message;
+					else message = err.errors[0].message
 					break;
 				default:
 					error.code = 500;

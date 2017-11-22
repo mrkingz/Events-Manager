@@ -107,7 +107,7 @@ class UserValidations extends ValidationService {
     		 		return next();
     		    })
                 .catch(error => {
-                    ModelService.errorResponse(res, error, 'Email already exist!')
+                    ModelService.errorResponse(res, error, 'Email has been used!')
                 })
             }
         }
