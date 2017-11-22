@@ -15,8 +15,10 @@ eventRouter.route('/api/v1/events')
     EventController.createEvent())
 
 eventRouter.route('/api/v1/events/:eventId')
-.all(UserController.validateUserAccess())
+.all(UserController.validateUserAccess(),
+    ValidationService.isValidIntegerURI())
 .get(EventController.getEvent())
+.delete(EventController.deleteEvent())
 
 
 
