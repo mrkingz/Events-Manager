@@ -170,13 +170,13 @@ class CenterController extends ModelService {
                     attributes: ['name'],
                     include: [{
                         model: Event,
-                        where: { approval: req.query.approval },
+                        where: {approval: req.query.approval || false },
                         attributes: ['title', 'date', 'time', 'approval']
                     }]
                 })
                 .then((center) => {
                     this.successResponse(res, {
-                        message: 'Booked dates',
+                        message: ((req.query.approval.toString() === 'true') ? 'Booked' : 'Proposed')+ ' dates',
                         center
                     }, 302);
                 })
