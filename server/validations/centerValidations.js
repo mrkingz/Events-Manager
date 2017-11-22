@@ -114,7 +114,7 @@ class CenterValidations extends ValidationService {
                 } 
                 if (!error.message && typeof req.body.price !== 'undefined') {
                     if (this.isEmpty(req.body.price))
-                        error.message = 'Price cannot bet empty!';
+                        error.message = 'Price cannot be empty!';
 
                     else if (!this.isValidCurrency(req.body.price))
                         error.message = 'Invalid entry for price, must be numeric!';
@@ -122,7 +122,7 @@ class CenterValidations extends ValidationService {
                 }
                 if (!error.message && typeof req.body.location !== 'undefined') {
                     if (this.isEmpty(req.body.location))
-                        error.message = 'Location cannot bet empty!';
+                        error.message = 'Location cannot be empty!';
 
                     else if (!this.isAlphabetic(req.body.location))
                         error.message = 'Location can only contain letter!';
@@ -130,7 +130,7 @@ class CenterValidations extends ValidationService {
                 } 
                 if (!error.message && typeof req.body.address !== 'undefined') {
                     if (this.isEmpty(req.body.address))
-                        error.message = 'Address cannot bet empty!';
+                        error.message = 'Address cannot be empty!';
 
                     else if (!this.isString(req.body.address))
                         error.message = 'Invalid entry for address, must be in word(s)!';
@@ -138,14 +138,14 @@ class CenterValidations extends ValidationService {
                 }
                 if (!error.message && typeof req.body.description !== 'undefined') {
                     if (this.isEmpty(req.body.description))
-                        error.message = 'Description cannot bet empty!';
+                        error.message = 'Description cannot be empty!';
 
                     else if (!this.isString(req.body.description))
-                        error.message = 'Invalid entry for address, must be in word(s)!';
+                        error.message = 'Please, enter a valid description!';
                 }
                 if (!error.message && typeof req.body.availability !== 'undefined') {
                     if (this.isEmpty(req.body.availability))
-                       error.message = 'Availability cannot bet empty!';
+                       error.message = 'Availability cannot be empty!';
 
                      else if (!this.isBoolean(req.body.availability))
                          error.message = 'Please, enter true or false for availability';
@@ -161,7 +161,7 @@ class CenterValidations extends ValidationService {
     /**
      * @description validate if center already exist
      * @static
-     * @isExistCenter
+     * @method isExistCenter
      * @memberof CenterValidations
      * @returns {function} A middleware function that handles the validations
      */

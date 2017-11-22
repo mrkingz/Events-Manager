@@ -29,8 +29,8 @@ import UtilityService from './utilityService';
  			};
  		})
  		.catch((error) => {
-		  const err = this.refactorError(`Could not create ${model.name}`, error);
-		  return Promise.reject(err);
+		  	const err = this.refactorError(`Could not create ${model.name}`, error);
+		  	return Promise.reject(error);
  		});
  	}
 
