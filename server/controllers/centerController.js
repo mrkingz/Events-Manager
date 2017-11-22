@@ -1,8 +1,16 @@
 import models from '../models';
 import services from '../services'
 
-const { Center, User } = models,
+const { Center, User, Event } = models,
       { ModelService } = services;
+const include = [{
+            model: Event,
+            order: [['title', 'ASC']],
+            include: [{
+                model: User,
+                attributes: ['username', 'email', 'userId']
+            }]
+        }]
 
 /**
  * @class CenterController
@@ -66,6 +74,7 @@ class CenterController extends ModelService {
         return (req, res) => {
             return this.findAllModelObjects(Center, {
                 order: [['name', 'ASC']],
+                include: include,
                 offset: req.query.page || 0,
                 limit: 10
             })
@@ -87,8 +96,9 @@ class CenterController extends ModelService {
      */
     static getCenter() {
         return (req, res) => {
-            return this.findAllModelObjects(Center, {
-                where: { centerId: req.params.centerId }
+            return this.findOneModelObject(Center, {
+                where: { centerId: req.params.centerId },
+                include: include
             })
             .then((center) => {
                 this.successResponse(res, {center: center});

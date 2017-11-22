@@ -14,6 +14,10 @@ eventRouter.route('/api/v1/events')
     EventValidations.isExistEvent(),
     EventController.createEvent())
 
+eventRouter.route('/api/v1/events/:eventId')
+.all(UserController.validateUserAccess())
+.get(EventController.getEvent())
+
 
 
 export default eventRouter;
