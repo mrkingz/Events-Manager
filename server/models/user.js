@@ -98,7 +98,14 @@ export default (sequelize, DataTypes) => {
                 onDelete: 'SET NULL',
                 onUpdate: 'CASCADE'
             },
-            as: 'centers'
+        })
+        User.hasMany(models.Event, {
+            foreignKey: {
+                name: 'userId',
+                allowNull: false,
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE'
+            },
         })
     };
 

@@ -93,11 +93,11 @@ export default (sequelize, DataTypes) => {
             validate: {
                 notEmpty: {
                     args: true,
-                    msg: 'Address cannot be empty!'
+                    msg: 'Description cannot be empty!'
                 },
                 isValidDescription: (value) => {
                     if (!ValidationService.isString(value)) {
-                        error.message = 'Invalid entry for description, must be in word(s)!'
+                        error.message = 'Please, enter a valid description!'
                         throw error;
                     }
                 }
@@ -139,7 +139,6 @@ export default (sequelize, DataTypes) => {
                 onDelete: 'SET NULL',
                 onUpdate: 'CASCADE'
             },
-            as: 'centers'
         });
     };
     return Center;

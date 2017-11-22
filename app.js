@@ -17,6 +17,7 @@ app.use(cookieParser());
 
 app.use(routes.authRoutes);
 app.use(routes.centerRoutes);
+app.use(routes.eventRoutes);
 
 app.all('*', (req, res) => {
     res.send('Oops! Request not supported.')
