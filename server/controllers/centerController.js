@@ -108,6 +108,68 @@ class CenterController extends ModelService {
             })
         }
     }
+
+    /**
+     * @description Checks if an event center exist
+     * @method isValidCenter
+     * @static
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static isValidCenter() {
+        return (req, res, next) => {
+            if(req.body.centerId) {
+                return this.findOneModelObject(Center, {
+                    where: { centerId: req.body.centerId },
+                    attributes: ['centerId']
+                })
+                .then((center) => {
+                    return next();
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })
+            }
+            else return next();
+        }
+    }
+
+    /**
+     * @description Validatesthe number of estimated guest to make sure it doesn't exceed
+     * the capacity of the given center
+     * @static
+     * @method validateCapacity
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static vaildateCapacity() {
+        return (req, res, next) => {
+            let validate = true;
+
+            if(req.method === 'PUT' && !req.body.estimatedGuests)
+                validate = false;
+
+            if (validate) {
+                return this.findOneModelObject(Center, {
+                    where: { centerId: req.body.centerId },
+                    attributes: ['capacity'],
+                })
+                .then((center) => {
+                    if(parseInt(center.capacity, 10) >= parseInt(req.body.estimatedGuests, 10))
+                        return next();
+                    else {
+                        const error = new Error();
+                        error.message = `Sorry, number of estiamted guests is above the capacity of this ${Center.name.toLowerCase()}`;
+                        throw error;
+                    }
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })
+
+            } else return next();
+        }
+    }
 }
 
 export default CenterController;
