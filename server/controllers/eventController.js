@@ -36,8 +36,8 @@ class EventController extends ModelService {
 
     /**
      * @description Gets a single event
-     * @method getEvent
      * @static
+     * @method getEvent
      * @memberof EventController
      * @returns {function} A middleware function that handles the GET request
      */
@@ -55,6 +55,30 @@ class EventController extends ModelService {
             })
             .then((event) => {
                 this.successResponse(res, {event: event});
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })
+        }
+    }
+
+    /**
+     * @description Deletes a event
+     * @static
+     * @method deleteEvent
+     * @memberof EventController
+     * @returns {Function} A middleware funtion that handlses the DELETE request
+     */
+    static deleteEvent() {
+        return (req, res) => {
+            return this.deleteModelObject(Event, {
+                where: {
+                    eventId: req.params.eventId,
+                    userId: req.body.user.userId
+                }
+            })
+            .then((result) => {
+                this.successResponse(res, result);
             })
             .catch(error => {
                 this.errorResponse(res, error);
