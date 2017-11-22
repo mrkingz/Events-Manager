@@ -39,11 +39,12 @@ class EventController extends ModelService {
     }
 
     /**
-     * @description Gets a single event
+     * @description Gets a single event belonging to a particular user
      * @static
      * @method getEvent
      * @memberof EventController
      * @returns {function} An express middleware function that handles the GET request
+     * @see getEvents()
      */
     static getEvent() {
         return (req, res) => {
@@ -56,6 +57,29 @@ class EventController extends ModelService {
             })
             .then((event) => {
                 this.successResponse(res, {event: event});
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })
+        }
+    }
+
+    /**
+     * @description Gets all events belonging to a particular user
+     * @static
+     * @method getEvents
+     * @memberof EventController
+     * @returns {function} An express middleware function that handles the GET request
+     * @see getEvent()
+     */
+    static getEvents() {
+        return (req, res) => {
+            return this.findAllModelObjects(Event, {
+                where: { userId: req.body.user.userId },
+                include: include
+            })
+            .then((events) => {
+                this.successResponse(res, {events: events});
             })
             .catch(error => {
                 this.errorResponse(res, error);
