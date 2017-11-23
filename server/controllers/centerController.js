@@ -1,6 +1,6 @@
 import models from '../models';
 import services from '../services'
-import EventController from './EventController'
+import EventController from './eventController'
 
 const { Center, User, Event } = models,
       { ModelService } = services;
