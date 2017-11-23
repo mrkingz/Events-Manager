@@ -12,7 +12,7 @@
     "unseed": "sequelize db:seed:undo:all",
     "start:dev": "nodemon --watch server --exec babel-node ./bin/www",
     "start:prod": "babel-node ./bin/www",
-    "test": "SET NODE_ENV=test && mocha --compilers js:babel-core/register server/test/**.test/*.test.js --timeout 20000"
+    "test": "mocha --compilers js:babel-core/register server/test/**.test/*.test.js --timeout 20000"
   },
   "author": "Kingsley Frank-Demesi",
   "license": "ISC",
