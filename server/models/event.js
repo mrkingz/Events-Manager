@@ -1,4 +1,4 @@
-import ValidationService from '../services/ValidationService';
+import ValidationService from '../services/validationService';
 const error = new Error();
 
 module.exports = (sequelize, DataTypes) => {
