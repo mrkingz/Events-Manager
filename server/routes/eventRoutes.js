@@ -13,6 +13,7 @@ eventRouter.route('/api/v1/events')
 .post(EventValidations.validateEvent(),
     EventValidations.isExistEvent(),
     CenterController.vaildateCapacity(),
+    CenterController.isCenterAvailable(),
     EventController.createEvent())
 .get(EventController.getEvents())
 
@@ -24,6 +25,7 @@ eventRouter.route('/api/v1/events/:eventId')
 .put(EventValidations.validateEvent(),
     CenterController.isValidCenter(),
     CenterController.vaildateCapacity(),
+    CenterController.isCenterAvailable(),
     EventController.updateEvent())
 
 
