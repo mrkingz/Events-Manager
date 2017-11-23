@@ -80,7 +80,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         approval: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false,
             validate: {

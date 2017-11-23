@@ -1,5 +1,6 @@
 import models from '../models';
 import services from '../services'
+import EventController from './EventController'
 
 const { Center, User, Event } = models,
       { ModelService } = services;
@@ -46,20 +47,63 @@ class CenterController extends ModelService {
      */
     static updateCenter() {
         return (req, res) => {
-            const {user, ...update} = req.body
-            return this.updateModelObject(Center, {
-                where: {
-                    centerId: req.params.centerId,
-                    userId: req.body.user.userId
-                },
-                attributes: update
-            }, req.body)
-            .then((updated) => {
-                this.successResponse(res, updated);
-            })
-            .catch(error => {
-                this.errorResponse(res, error);
-            })            
+            let doUpdate = true, updateApproval = false;
+            const error = new Error();
+
+            if (req.body.availability) {
+                if (!req.body.date) {
+                    error.code = 400;
+                    doUpdate = false;
+                    error.message = 'Sorry, date is required!';
+                }
+                else {
+                    this.findOneModelObject(Event, {
+                        where: {
+                            centerId: req.params.centerId,
+                            date: req.body.date,  
+                        },
+                        message: `Sorry, there is no event slated for this date`,
+                    })
+                    .then((event) => {   
+                        updateApproval = true;                                             
+                    })
+                    .catch((error) => {
+                        this.errorResponse(res, error);
+                    })
+                }
+            }
+
+            if (doUpdate) {
+                const {user, ...updates} = req.body
+                return this.updateModelObject(Center, {
+                    where: {
+                        centerId: req.params.centerId,
+                        userId: req.body.user.userId
+                    },
+                    attributes: updates
+                }, req.body)
+                .then((center) => {
+                    if(updateApproval) {
+                        return Event.update({approval: (req.body.availability == 'false') ? true : false},
+                            { where: {date: req.body.date}, returning: true, plain:true})
+                        .then(() => {
+                            if(center.status === 'success') {
+                                center.message = center.message +(
+                                    (req.body.availability == 'false')
+                                        ? ' Center no longer available'
+                                        : ' Center is now available'
+                                );
+                            }
+
+                            this.successResponse(res, center);
+                        })
+                    } else this.successResponse(res, center);
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })  
+            }  
+            else this.errorResponse(res, error);        
         }
     }
 
@@ -268,6 +312,45 @@ class CenterController extends ModelService {
                 })
 
             } else return next();
+        }
+    }
+
+    /**
+     * @description Checks if an event center is available for a particular date
+     * @method isCenterAvailable
+     * @static
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static isCenterAvailable() {
+        return (req, res, next) => {
+            let validate = true;
+
+            if(req.method === 'PUT' && !req.body.date)
+                validate = false;
+
+            if (validate) {
+                const date = req.body.date;
+                return this.findOneModelObject(Event, {
+                    where: { 
+                        centerId: req.body.centerId,
+                        date: date
+                     },
+                    attributes: ['approval']
+                })
+                .then((event) => {
+                    if(event.approval) {
+                        const error = new Error();
+                        error.message = `Sorry, ${Center.name.toLowerCase()} is not available for this date `+date;
+                        throw error;
+                    }
+                    else return next();
+                })
+                .catch(error => {
+                    this.errorResponse(res, error);
+                })
+            }
+            else return next();
         }
     }
 }
