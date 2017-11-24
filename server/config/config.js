@@ -35,7 +35,6 @@ module.exports = {
         logging: false,
     },  
     production: {
-        use_env_variable: 'URL',
-        dialect: 'postgres'
+        use_env_variable: 'DATABASE_URL'
     }
 }
