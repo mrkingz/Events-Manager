@@ -112,8 +112,8 @@ A page showing the details of a center and the events slated for that center
   - `address` Address of the event center (optional)
   - `availability` Address of the event center (optional)
   - `description` Description of the event center (optional)
+   ### Note:
   ```sh
-  ### Note:
     When availability of a center is updated, event's approval get updated accordingly
     -e.g., if availability is set to true, the slated event on that date gets cancelled
   ```
