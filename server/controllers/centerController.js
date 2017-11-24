@@ -22,7 +22,7 @@ class CenterController extends ModelService {
      * @static
      * @method createCenter
      * @memberof CenterController
-     * @return {Function} A middleware function that handles the POST request 
+     * @return {function} A middleware function that handles the POST request 
      */
     static createCenter() {
         return (req, res) => {
@@ -43,7 +43,7 @@ class CenterController extends ModelService {
      * @static
      * @method updateCenter
      * @memberof CenterController
-     * @return {Function} A middleware function that handles the PUT request 
+     * @return {function} A middleware function that handles the PUT request 
      */
     static updateCenter() {
         return (req, res) => {
