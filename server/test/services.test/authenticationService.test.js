@@ -1,5 +1,5 @@
 import chai from 'chai';
-import AuthenticationService from '../../services/AuthenticationService';
+import AuthenticationService from '../../services/authenticationService';
 import createKeyPair from 'keypair';
 
 const keyPair = createKeyPair({bits: 512}),

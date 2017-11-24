@@ -1,6 +1,6 @@
 import chai from 'chai';
 import supertest from 'supertest';
-import ValidationService from '../../services/ValidationService';
+import ValidationService from '../../services/validationService';
 import app from '../../../app.js';
 
 const expect = chai.expect,

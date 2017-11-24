@@ -1,5 +1,5 @@
     import bcrypt from 'bcrypt';
-    import ValidationService from '../services/ValidationService';
+    import ValidationService from '../services/validationService';
 
 export default (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
