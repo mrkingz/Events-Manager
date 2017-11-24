@@ -91,11 +91,11 @@ A page showing the details of a center and the events slated for that center
   - `email` A valid email address of the new user
   - `password` Password mininmum character length of 8 and must contain at least an alphabet and a digit
 
-  * POST `api/v1/users/login` for logging in to the application. Required fields are:
+* POST `api/v1/users/login` for logging in to the application. Required fields are:
   - `username` Username of registered user
   - `password` Password of registered user
 
-  POST `api/v1/centers` for adding new event centers by admin. Required fields are:
+* POST `api/v1/centers` for adding new event centers by admin. Required fields are:
   - `name` Name of the event center
   - `capacity` Capacity of the event center
   - `price` Price of the event center
@@ -104,7 +104,7 @@ A page showing the details of a center and the events slated for that center
   - `availability` Address of the event center
   - `description` Description of the event center
 
- PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
+* PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
   - `name` Name of the event center (optional)
   - `capacity` Capacity of the event center (optional)
   - `price` Price of the event center (optional)
@@ -126,7 +126,7 @@ A page showing the details of a center and the events slated for that center
 
 * GET `api/v1/centers?name=value&location=value` for searching event centers by name and location
 
-  POST `api/v1/events` for adding new events by users. Required fields are:
+* POST `api/v1/events` for adding new events by users. Required fields are:
   - `title` Tile of the event
   - `date` Slated date for the event
   - `time` Slated time for the event
@@ -135,7 +135,7 @@ A page showing the details of a center and the events slated for that center
   - `approval` Approval status of the event to use the event center
   - `description` Description of the event 
 
- PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
+* PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
   - `title` Tile of the event (optional)
   - `date` Slated date for the event (optional)
   - `time` Slated time for the event (optional)
