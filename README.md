@@ -159,6 +159,8 @@ A page showing the details of a center and the events slated for that center
 * Run Test `$ npm run tests`
 
 ## Application Limitations
+* Only one admin can exist
+* Only a user with admin privilege can create a center
 * Users can only create account once with their username and  email
 * Users will have to obtain a fresh token after 24 hours when their session has expired
 * Users will only be able to access the full application functionalities only if they are logged in
