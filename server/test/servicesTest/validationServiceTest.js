@@ -8,6 +8,21 @@ const expect = chai.expect,
 			server = supertest.agent(app);
 
 describe('Test class ValidationService', () => {
+	describe('Test method isValidIntegerURI of ValidationService with an invalid URI', () => {
+		const centerId = '12w'
+		it('should return 404 status code', (done) => {
+			server
+			.get(`/api/v1/centers/${centerId}`)
+			.end((err, res) => {
+			 	const middleware = ValidationService.isValidIntegerURI();
+			 	expect(middleware).to.be.a('function');
+			 	expect(res.body).to.be.an('object');
+				 expect(res.statusCode).to.equal(400);
+				 expect(res.body.message).to.be.equal('12w, is not a valid resource identifier');
+			 	return done();
+			})
+		})
+	})
 	describe('Test method isInteger of ValidationService', () => {
 		it('ValidationService.isInteger(1) should be true', () => {
 			expect(ValidationService.isInteger(1)).to.be.equal(true)

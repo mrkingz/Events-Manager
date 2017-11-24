@@ -14,9 +14,20 @@
     "start:dev": "nodemon --watch server --exec babel-node ./server/bin/www",
     "start": "node ./build/bin/www.js",
     "build-server": " node ./node_modules/babel-cli/bin/babel.js -d ./build ./server",
-    "test": "nyc mocha --compilers js:babel-core/register server/test/**.test/*.test.js --timeout 60000 --exit",
-    "tests": "SET NODE_ENV=test && mocha --compilers js:babel-core/register server/test/**.test/*.test.js --timeout 60000 --exit && npm run coverage",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=html --reporter=text mocha server/test/**/*.js --compilers js:babel-core/register --exit",
+    "tests": "SET NODE_ENV=test && mocha --compilers js:babel-core/register server/test/**/*.js",
     "coverage": "npm run test && nyc report --reporter=text-lcov"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
   },
   "author": "Kingsley Frank-Demesi",
   "license": "ISC",
@@ -39,6 +50,7 @@
     "body-parser": "^1.17.2",
     "chai": "^4.1.2",
     "cookie-parser": "^1.4.3",
+    "cross-env": "^5.1.1",
     "dotenv": "^4.0.0",
     "eslint-config": "^0.3.0",
     "express": "^4.15.3",

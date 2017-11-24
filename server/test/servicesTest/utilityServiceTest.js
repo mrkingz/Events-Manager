@@ -8,9 +8,9 @@ describe('Test class UtilityService', () => {
 		it('UtilityService.removeWhiteSpace(\' Continental\') should equal', () => {
 			expect(UtilityService.removeWhiteSpace(' Continental')).to.equal('Continental')
 		});
-		it('UtilityService.removeWhiteSpace(\' Continental    Recipes\', false) should equal', () => {
-			expect(UtilityService.removeWhiteSpace('Continental    Recipes', false))
-			.to.equal('Continental Recipes')
+		it('UtilityService.removeWhiteSpace(\' Continental    Center\', false) should equal', () => {
+			expect(UtilityService.removeWhiteSpace('Continental    Center', false))
+			.to.equal('Continental Center')
 		});
 		it('UtilityService.removeWhiteSpace(\' Continentals \', true) should equal', () => {
 			expect(UtilityService.removeWhiteSpace(' Continentals ', true))
@@ -38,42 +38,42 @@ describe('Test class UtilityService', () => {
 		});
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
-		const category = UtilityService.upperCaseFirst({categoryTitle: 'continental recipes'});
+		const center = UtilityService.upperCaseFirst({name: 'continental center'});
 		it('UtilityService.upperCaseFirst({'
-			+'categoryTitle: \'continental recipes\''
-		  +'}) should should capitalize the first character of the value of categoryTitle', () => {
-			expect(category).to.be.an('object');
-			expect(category).to.have.own.property('categoryTitle').to.be.a('string')
-			.that.is.equal('Continental recipes');
+			+'name: \'continental recipes\''
+		  +'}) should should capitalize the first character of the value of name', () => {
+			expect(center).to.be.an('object');
+			expect(center).to.have.own.property('name').to.be.a('string')
+			.that.is.equal('Continental center');
 		});
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
-		const category = UtilityService.upperCaseFirst({
-			categoryTitle: 'continental recipes'}, {bool: true});
+		const center = UtilityService.upperCaseFirst({
+			name: 'continental center'}, {bool: true});
 		it('UtilityService.upperCaseFirst({'
-			+'categoryTitle: \'continental recipes\''
+			+'name: \'continental center\''
 		  +'}, {bool: true}) should capitalize the first character of every word in the value of categoryTitle', () => {
-			expect(category).to.be.an('object');
-			expect(category).to.have.own.property('categoryTitle').to.be.a('string')
-			.that.is.equal('Continental Recipes');
+			expect(center).to.be.an('object');
+			expect(center).to.have.own.property('name').to.be.a('string')
+			.that.is.equal('Continental Center');
 		});
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
-		let categoryTitle = 'continental recipes';
-		categoryTitle = UtilityService.upperCaseFirst(categoryTitle)
-		it('UtilityService.upperCaseFirst(\'continental recipes\''
+		let name = 'continental center';
+		name = UtilityService.upperCaseFirst(name)
+		it('UtilityService.upperCaseFirst(\'continental center\''
 		  +') should capitalize the first character in the string argument', () => {
-			expect(categoryTitle).to.be.a('string');
-			expect(categoryTitle).to.be.equal('Continental recipes');
+			expect(name).to.be.a('string');
+			expect(name).to.be.equal('Continental center');
 		});
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
-		let categoryTitle = 'continental recipes';
-		categoryTitle = UtilityService.upperCaseFirst(categoryTitle, {bool: true})
-		it('UtilityService.upperCaseFirst(\'continental recipes\''
+		let name = 'continental center';
+		name = UtilityService.upperCaseFirst(name, {bool: true})
+		it('UtilityService.upperCaseFirst(\'continental name\''
 		  +', {bool: true}) should capitalize the first character of every word in the string argument', () => {
-			expect(categoryTitle).to.be.a('string');
-			expect(categoryTitle).to.be.equal('Continental Recipes');
+			expect(name).to.be.a('string');
+			expect(name).to.be.equal('Continental Center');
 		});
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
