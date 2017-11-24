@@ -4,7 +4,6 @@
   "description": "An app that allows events centers managers to manage users applications to use their centers",
   "main": "app.js",
   "scripts": {
-
     "migrate:dev": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate",
     "heroku-postbuild": "npm run migrate:dev && npm run build-server && npm run seed",
     "unmigrate:dev": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate:undo:all",

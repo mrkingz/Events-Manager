@@ -1,7 +1,8 @@
 import chai from 'chai';
 import supertest from 'supertest';
-import ValidationService from '../../services/ValidationService';
-import app from '../../app.js';
+
+import ValidationService from '../../services/validationService';
+import app from '../../../app.js';
 
 const expect = chai.expect,
 			server = supertest.agent(app);

@@ -1,5 +1,5 @@
 import chai from 'chai';
-import UtilityService from '../../services/UtilityService';
+import UtilityService from '../../services/utilityService';
 
 const expect = chai.expect;
 

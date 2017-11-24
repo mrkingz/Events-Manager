@@ -1,8 +1,11 @@
+[![Build Status](https://travis-ci.org/mrkingz/Events-Manager.svg?branch=develop)](https://travis-ci.org/mrkingz/Events-Manager)
+[![Coverage Status](https://coveralls.io/repos/github/mrkingz/events-manager/badge.svg?branch=develop)](https://coveralls.io/github/mrkingz/events-manager?branch=develop)
+
 # Events-Manager
 
 Application for managing event centers. This app provides functionalities that help an event center manager to manage users applications to use any of the centers he or she manages. As the manager, he has the administrative privilege of the app to either decline events if the proposed date is not available or suggest an available date.
 
-Live at https://mrkingz.github.io/Events-Manager/template/index.htm
+Live at https://mrkingz.github.io/events-manager/template/index.html
 
 # Features
 
@@ -95,7 +98,12 @@ A page showing the details of a center and the events slated for that center
   - `username` Username of registered user
   - `password` Password of registered user
 
-  POST `api/v1/centers` for adding new event centers by admin. Required fields are:
+* POST `api/v1/users/login` for logging in to the application. Required fields are:
+  - `username` Username of registered user
+  - `password` Password of registered user
+
+* POST `api/v1/centers` for adding new event centers by admin. Required fields are:
+
   - `name` Name of the event center
   - `capacity` Capacity of the event center
   - `price` Price of the event center
@@ -104,7 +112,8 @@ A page showing the details of a center and the events slated for that center
   - `availability` Address of the event center
   - `description` Description of the event center
 
- PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
+* PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
+
   - `name` Name of the event center (optional)
   - `capacity` Capacity of the event center (optional)
   - `price` Price of the event center (optional)
@@ -112,10 +121,13 @@ A page showing the details of a center and the events slated for that center
   - `address` Address of the event center (optional)
   - `availability` Address of the event center (optional)
   - `description` Description of the event center (optional)
-  ### Note:
+
+   ### Note:
+  ```sh
     When availability of a center is updated, event's approval get updated accordingly
     -e.g., if availability is set to true, the slated event on that date gets cancelled
-
+  ```
+  
 * GET `api/v1/centers` for viewing all event centers
 
 * GET `api/v1/centers/:centerId` for viewing a single event centers
@@ -126,7 +138,7 @@ A page showing the details of a center and the events slated for that center
 
 * GET `api/v1/centers?name=value&location=value` for searching event centers by name and location
 
-  POST `api/v1/events` for adding new events by users. Required fields are:
+* POST `api/v1/events` for adding new events by users. Required fields are:
   - `title` Tile of the event
   - `date` Slated date for the event
   - `time` Slated time for the event
@@ -135,7 +147,7 @@ A page showing the details of a center and the events slated for that center
   - `approval` Approval status of the event to use the event center
   - `description` Description of the event 
 
- PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
+* PUT `api/v1/centers/:centerId` for updating an event centers by admin. Required fields are:
   - `title` Tile of the event (optional)
   - `date` Slated date for the event (optional)
   - `time` Slated time for the event (optional)
@@ -153,6 +165,21 @@ A page showing the details of a center and the events slated for that center
 
 * DELETE `api/v1/events/:eventId` for deleting an event
 
+## Testing
+* Create a test database and name it travis
+* Run Test `$ npm run tests`
 
+## Application Limitations
+* Only one admin can exist
+* Only a user with admin privilege can create a center
+* Users can only create account once with their username and  email
+* Users will have to obtain a fresh token after 48 hours when their session has expired
+* Users will only be able to access the full application functionalities only if they are logged in
+
+## How To Contribute
+* Fork the repository
+* Create a feature branch with a feature.md file
+* Write tests and make them pass
+* Open a pull request
 
 
