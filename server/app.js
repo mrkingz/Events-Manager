@@ -3,7 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
-import routes from './server/routes';
+import routes from './routes';
 
 
 dotenv.config();
