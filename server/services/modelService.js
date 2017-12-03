@@ -1,6 +1,11 @@
 import models from '../models';
 import UtilityService from './utilityService';
 
+const status = { 
+	success: 'Success',
+	failure: 'Fail' 
+};
+
 /**
  * @description 
  * @class ModelService
@@ -21,7 +26,7 @@ import UtilityService from './utilityService';
  		return model.create(this.trimAttributes(options.attributes))
  		.then((newObj) => {
  			return {
- 				status: 'success',
+ 				status: status.success,
  				message: (typeof options.message !== 'undefined') 
  						  ? options.message
  						  : `${model.name} successfully created!`,
@@ -182,7 +187,7 @@ import UtilityService from './utilityService';
 		 	return modelObject.destroy()
 		 	.then(() => {
 		 		return {
-		 			status: 'success',
+		 			status: 'Success',
 		 			message: (typeof options.message === 'undefined') 
 		 								? `${model.name} successfully deleted`
 		 								: options.message
@@ -216,7 +221,7 @@ import UtilityService from './utilityService';
 		 	.then((updatedModel) => {
 		 	 	if(updatedModel) {
 		 	 		return {
-						status: (verify.isEdited) ? 'success' : 'fail',
+						status: (verify.isEdited) ? status.success : status.failure,
 						// Send a proper message to the client
 						message: (verify.isEdited) 
 											? (typeof options.message !== 'undefined') 

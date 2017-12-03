@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for controllers/centerController.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">controllers</a> centerController.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/103</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.58% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.84% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/101</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import models from '../models';
+import services from '../services'
+import EventController from './eventController'
+&nbsp;
+const { Center, User, Event } = models,
+      { ModelService } = services;
+const include = [{
+            model: Event,
+            order: [['title', 'ASC']],
+            include: [{
+                model: User,
+                attributes: ['username', 'email', 'userId']
+            }]
+        }]
+&nbsp;
+/**
+ * @class CenterController
+ */
+class CenterController extends ModelService {
+    /**
+     * @description Creates a center
+     * @static
+     * @method createCenter
+     * @memberof CenterController
+     * @return {function} A middleware function that handles the POST request 
+     */
+    static createCenter() {
+        return (req, res) =&gt; {
+            const {...modelAttributes} = req.body;
+            modelAttributes.userId = req.body.user.userId;
+            return this.createModelObject(Center, {attributes: modelAttributes})
+            .then((center) =&gt; {
+                this.successResponse(res, center, 201)
+            })
+            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                this.errorResponse(res, error);</span>
+            });
+        };
+    }
+&nbsp;
+    /**
+     * @description Updates an event center details
+     * @static
+     * @method updateCenter
+     * @memberof CenterController
+     * @return {function} A middleware function that handles the PUT request 
+     */
+    static updateCenter() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+            let doUpdate = <span class="cstat-no" title="statement not covered" >true,</span> updateApproval = <span class="cstat-no" title="statement not covered" >false;</span>
+            const error = <span class="cstat-no" title="statement not covered" >new Error();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (req.body.availability) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!req.body.date) {</span>
+<span class="cstat-no" title="statement not covered" >                    error.code = 400;</span>
+<span class="cstat-no" title="statement not covered" >                    doUpdate = false;</span>
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Sorry, date is required!';</span>
+                }
+                else {
+<span class="cstat-no" title="statement not covered" >                    this.findOneModelObject(Event, {</span>
+                        where: {
+                            centerId: req.params.centerId,
+                            date: req.body.date,  
+                        },
+                        message: `Sorry, there is no event slated for this date`,
+                    })
+                    .then(<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {   
+<span class="cstat-no" title="statement not covered" >                        updateApproval = true;                                             </span>
+                    })
+                    .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >                        this.errorResponse(res, error);</span>
+                    })
+                }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (doUpdate) {</span>
+                const {user, ...updates} = <span class="cstat-no" title="statement not covered" >req.body</span>
+<span class="cstat-no" title="statement not covered" >                return this.updateModelObject(Center, {</span>
+                    where: {
+                        centerId: req.params.centerId,
+                        userId: req.body.user.userId
+                    },
+                    attributes: updates
+                }, req.body)
+                .then(<span class="fstat-no" title="function not covered" >(c</span>enter) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    if(updateApproval) {</span>
+<span class="cstat-no" title="statement not covered" >                        return Event.update({approval: (req.body.availability == 'false') ? true : false},</span>
+                            { where: { date: req.body.date }, returning: true, plain: true })
+                        .then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                            if(center.status === 'success') {</span>
+<span class="cstat-no" title="statement not covered" >                                center.message = center.message +(</span>
+                                    (req.body.availability === 'false')
+                                        ? ' Center no longer available'
+                                        : ' Center is now available'
+                                );
+                            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            this.successResponse(res, center);</span>
+                        })
+                    } else <span class="cstat-no" title="statement not covered" >this.successResponse(res, center);</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })  
+            }  
+            else <span class="cstat-no" title="statement not covered" >this.errorResponse(res, error);        </span>
+        }
+    }
+&nbsp;
+    /**
+     * @description Gets all event centers
+     * @method getCenters
+     * @static
+     * @memberof CenterController
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static getCenters() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >            return this.findAllModelObjects(Center, {</span>
+                order: [['name', 'ASC']],
+                include: include,
+                offset: req.query.page || 0,
+                limit: 10
+            })
+            .then(<span class="fstat-no" title="function not covered" >(c</span>enters) =&gt; {
+<span class="cstat-no" title="statement not covered" >                this.successResponse(res, {centers: centers}, 302);</span>
+            })
+            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                this.errorResponse(res, error);</span>
+            })
+        }
+    }
+&nbsp;
+    /**
+     * @description Searches for event centers by name and/or location
+     * @static
+     * @method searchCenters
+     * @memberof CenterController
+     * @returns {function} A middleware function that handles the search mechanism
+     */
+     static searchCenters() {
+         return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (!req.query.name &amp;&amp; !req.query.location) {</span>
+<span class="cstat-no" title="statement not covered" >                return next()</span>
+            } else {
+                let name, searchByName,
+                    location, searchByLocation,
+                    searchQuery;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (req.query.name) { //If user searches by name</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    name = req.query.name.split(' ');</span>
+<span class="cstat-no" title="statement not covered" >                    searchByName = name.map(<span class="fstat-no" title="function not covered" >(s</span>earch) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return { name: {$ilike: `%${search}%`}}</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    searchQuery = {$or: searchByName};</span>
+&nbsp;
+                } else <span class="cstat-no" title="statement not covered" >if (req.query.location) { // user searches by location</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    location = req.query.location.split(' ');</span>
+<span class="cstat-no" title="statement not covered" >                    searchByLocation = location.map(<span class="fstat-no" title="function not covered" >(s</span>earch) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return { location: {$ilike: `%${search}%`}}</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    searchQuery = {$or: searchByLocation};</span>
+&nbsp;
+                } else <span class="cstat-no" title="statement not covered" >if (req.query.name &amp;&amp; req.query.location) { // if user searches by name and location</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    searchByName = name.map(<span class="fstat-no" title="function not covered" >(s</span>earch) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return { name: {$ilike: `%${search}%`}}</span>
+                    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    searchByLocation = location.map(<span class="fstat-no" title="function not covered" >(s</span>earch) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        return { location: {$ilike: `%${search}%`}}</span>
+                    });
+                    
+<span class="cstat-no" title="statement not covered" >                    searchQuery: {<span class="cstat-no" title="statement not covered" >$or: {</span></span>
+<span class="cstat-no" title="statement not covered" >                        searchByName, </span>
+                        searchByLocation
+                    }}
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return this.findAllModelObjects(Center, {</span>
+                    where: searchQuery,
+                    order: [['name', 'ASC']],
+                    message: `Sorry, no result matches your search`,
+                    include: include,
+                    offset: req.query.page || 0,
+                    limit: 10
+                })
+                .then(<span class="fstat-no" title="function not covered" >(c</span>enters) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.successResponse(res, {centers: centers}, 302);</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @description Gets all booked or proposed but not yet approved dates of a particular center
+     * @static
+     * @method getBookings
+     * @memberof CenterController
+     * @return {function} A middleware function that handles the GET request 
+     */
+    static getBookings() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >            if(!req.query.approval)</span>
+<span class="cstat-no" title="statement not covered" >                return next();</span>
+            else {
+<span class="cstat-no" title="statement not covered" >                return this.findAllModelObjects(Center, {</span>
+                    where: { centerId: req.params.centerId},
+                    attributes: ['name'],
+                    include: [{
+                        model: Event,
+                        where: {approval: req.query.approval || false },
+                        attributes: ['title', 'date', 'time', 'approval']
+                    }]
+                })
+                .then(<span class="fstat-no" title="function not covered" >(c</span>enter) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.successResponse(res, {</span>
+                        message: ((req.query.approval.toString() === 'true') ? 'Booked' : 'Proposed')+ ' dates',
+                        center
+                    }, 302);
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @description Gets a single event center
+     * @method getCenter
+     * @static
+     * @memberof CenterController
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static getCenter() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >            return this.findOneModelObject(Center, {</span>
+                where: { centerId: req.params.centerId },
+                include: include
+            })
+            .then(<span class="fstat-no" title="function not covered" >(c</span>enter) =&gt; {
+<span class="cstat-no" title="statement not covered" >                this.successResponse(res, {center: center}, 302);</span>
+            })
+            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                this.errorResponse(res, error);</span>
+            })
+        }
+    }
+&nbsp;
+    /**
+     * @description Checks if an event center exist
+     * @method isValidCenter
+     * @static
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static isValidCenter() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >            if(req.body.centerId) {</span>
+<span class="cstat-no" title="statement not covered" >                return this.findOneModelObject(Center, {</span>
+                    where: { centerId: req.body.centerId },
+                    attributes: ['centerId']
+                })
+                .then(<span class="fstat-no" title="function not covered" >(c</span>enter) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    return next();</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })
+            }
+            else <span class="cstat-no" title="statement not covered" >return next();</span>
+        }
+    }
+&nbsp;
+    /**
+     * @description Validatesthe number of estimated guest to make sure it doesn't exceed
+     * the capacity of the given center
+     * @static
+     * @method validateCapacity
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static vaildateCapacity() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+            let validate = <span class="cstat-no" title="statement not covered" >true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if(req.method === 'PUT' &amp;&amp; !req.body.estimatedGuests)</span>
+<span class="cstat-no" title="statement not covered" >                validate = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (validate) {</span>
+<span class="cstat-no" title="statement not covered" >                return this.findOneModelObject(Center, {</span>
+                    where: { centerId: req.body.centerId },
+                    attributes: ['capacity'],
+                })
+                .then(<span class="fstat-no" title="function not covered" >(c</span>enter) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    if(parseInt(center.capacity, 10) &gt;= parseInt(req.body.estimatedGuests, 10))</span>
+<span class="cstat-no" title="statement not covered" >                        return next();</span>
+                    else {
+                        const error = <span class="cstat-no" title="statement not covered" >new Error();</span>
+<span class="cstat-no" title="statement not covered" >                        error.message = `Sorry, number of estimated guests is above the capacity of this ${Center.name.toLowerCase()}`;</span>
+<span class="cstat-no" title="statement not covered" >                        throw error;</span>
+                    }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })
+&nbsp;
+            } else <span class="cstat-no" title="statement not covered" >return next();</span>
+        }
+    }
+&nbsp;
+    /**
+     * @description Checks if an event center is available for a particular date
+     * @method isCenterAvailable
+     * @static
+     * @memberof CenterController
+     * @returns {function} An express middleware function that handles the validaion
+     */
+    static isCenterAvailable() {
+        return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
+            let validate = <span class="cstat-no" title="statement not covered" >true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if(req.method === 'PUT' &amp;&amp; !req.body.date)</span>
+<span class="cstat-no" title="statement not covered" >                validate = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (validate) {</span>
+                const date = <span class="cstat-no" title="statement not covered" >req.body.date;</span>
+<span class="cstat-no" title="statement not covered" >                return this.findOneModelObject(Event, {</span>
+                    where: { 
+                        centerId: req.body.centerId,
+                        date: date
+                     },
+                    attributes: ['approval']
+                })
+                .then(<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    if(event.approval) {</span>
+                        const error = <span class="cstat-no" title="statement not covered" >new Error();</span>
+<span class="cstat-no" title="statement not covered" >                        error.message = `Sorry, ${Center.name.toLowerCase()} is not available for this date `+date;</span>
+<span class="cstat-no" title="statement not covered" >                        throw error;</span>
+                    }
+                    else <span class="cstat-no" title="statement not covered" >return next();</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    this.errorResponse(res, error);</span>
+                })
+            }
+            else <span class="cstat-no" title="statement not covered" >return next();</span>
+        }
+    }
+}
+&nbsp;
+export default CenterController;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 02 2017 13:02:18 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

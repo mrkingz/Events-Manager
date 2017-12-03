@@ -40,7 +40,7 @@ describe('Test class UtilityService', () => {
 	describe('Test method upperCaseFirst of UtilityService', () => {
 		const center = UtilityService.upperCaseFirst({name: 'continental center'});
 		it('UtilityService.upperCaseFirst({'
-			+'name: \'continental recipes\''
+			+'name: \'continental center\''
 		  +'}) should should capitalize the first character of the value of name', () => {
 			expect(center).to.be.an('object');
 			expect(center).to.have.own.property('name').to.be.a('string')
@@ -52,7 +52,7 @@ describe('Test class UtilityService', () => {
 			name: 'continental center'}, {bool: true});
 		it('UtilityService.upperCaseFirst({'
 			+'name: \'continental center\''
-		  +'}, {bool: true}) should capitalize the first character of every word in the value of categoryTitle', () => {
+		  +'}, {bool: true}) should capitalize the first character of every word', () => {
 			expect(center).to.be.an('object');
 			expect(center).to.have.own.property('name').to.be.a('string')
 			.that.is.equal('Continental Center');
@@ -78,26 +78,16 @@ describe('Test class UtilityService', () => {
 	})
 	describe('Test method upperCaseFirst of UtilityService', () => {
 		const recipe = UtilityService.upperCaseFirst({
-			title: 'fried rice and chicken'}, 
+			title: 'Stella Odua and Azeez'}, 
 			{bool: true, skip: ['and']
 		});
 		it('UtilityService.upperCaseFirst({'
-			+'title: \'fruits and vegetables\'}, {bool: true, skip: [\'and\']})'
+			+'title: \'Stella Odua and Azeez\'}, {bool: true, skip: [\'and\']})'
 			+' should capitalize the first character of every word in the value of title'
 			+'excluding the string in the array', () => {
 			expect(recipe).to.be.an('object');
 			expect(recipe).to.have.own.property('title').to.be.a('string')
-			.that.is.equal('Fried Rice and Chicken');
-		});
-	})
-	describe('Test method upperCaseFirst of UtilityService', () => {
-		let categoryTitle = 'fruits and vegetables';
-		categoryTitle = UtilityService.upperCaseFirst(categoryTitle, {bool: true, skip: ['and']})
-		it('UtilityService.upperCaseFirst(\'fruits and vegetables\''
-		  +', {bool: true}) should capitalize the first character of every word in the string argument,'
-		  +' excluding the string the in array', () => {
-			expect(categoryTitle).to.be.a('string');
-			expect(categoryTitle).to.be.equal('Fruits and Vegetables');
+			.that.is.equal('Stella Odua and Azeez');
 		});
 	})
 })

@@ -65,8 +65,8 @@ export default (sequelize, DataTypes) => {
         defaultValue: 2,
         validate: {
             notEmpty: {
-            args: true,
-            msg: 'Role cannot be empty'
+                args: true,
+                msg: 'Role cannot be empty'
             }
         }
     }

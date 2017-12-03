@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for validations/userValidations.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">validations</a> userValidations.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.82% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import services from '../services';
+import models from '../models';
+&nbsp;
+const {User} = models,
+      {ModelService, ValidationService, UtilityService} = services;
+&nbsp;
+/**
+ * @class UserValidations
+ */
+class UserValidations extends ValidationService {
+    /**
+     * @description validates user account details
+     * @static 
+     * @memberof UserValidations
+     * @return {function} An express function the handles the validations
+     **/
+    static validateUser() {
+        return (req, res, next) =&gt; {
+&nbsp;
+        const {...details} = req.body;
+        req.body = details;
+        const error = new Error();
+        error.code = 400;
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(req.method === 'POST') {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof req.body.username !== 'undefined' 
+                &amp;&amp; typeof req.body.email !== 'undefined' 
+                &amp;&amp; typeof req.body.password !== 'undefined') {
+&nbsp;
+                req.body.username = this.removeWhiteSpace(req.body.username);
+                req.body.email = this.removeWhiteSpace(req.body.email);
+                req.body.password = this.removeWhiteSpace(req.body.password);
+&nbsp;
+                /**
+                 * After removing white space(s), check for empty strings
+                 * and validate values
+                 */
+                <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isEmpty(req.body.username)) //if username is empty string
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Username cannot be empty string!';</span>
+                
+                else <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isAlphanumeric(req.body.username)) //if username is valid
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Username can only contain alphabets only!';</span>
+                
+                else <span class="missing-if-branch" title="if path not taken" >I</span>if(req.body.username.length &lt; 3) //if username is too short
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Username must be at least 3 characters!';</span>
+                
+	            //if email is empty or invalid
+	            else if(this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
+	                error.message = 'Enter a valid email address!';
+	        
+	            else <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isEmpty(req.body.password)) // if password is empty string
+<span class="cstat-no" title="statement not covered" >	                error.message = 'Password cannot be empty!'</span>
+	        
+	            else <span class="missing-if-branch" title="if path not taken" >I</span>if(req.body.password.length &lt; 8) //if password is too short
+<span class="cstat-no" title="statement not covered" >	                error.message = 'Password must be at least 8 characters long!';</span>
+	        
+                if(!this.isValidPassword(req.body.password)) //if valid password
+                    error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';	      }
+                else <span class="cstat-no" title="statement not covered" >if(!req.body.username) //if username is not provided</span>
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Username is required!';</span>
+                
+                else <span class="cstat-no" title="statement not covered" >if(!req.body.email) // if email is not provided</span>
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Email is required!'</span>
+                
+                else <span class="cstat-no" title="statement not covered" >if(!req.body.password) // if password is not provided</span>
+<span class="cstat-no" title="statement not covered" >                    error.message = 'Password is required!';</span>
+&nbsp;
+            } else <span class="cstat-no" title="statement not covered" >if(req.method === 'PUT') {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if(typeof req.body.password !== 'undefined') { </span>
+&nbsp;
+                    /**
+                     * After removing white space(s), check for empty strings
+                     * and validate values
+                     */
+<span class="cstat-no" title="statement not covered" >                    req.body.password = this.removeWhiteSpace(req.body.password);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if(this.isEmpty(req.body.password))</span>
+<span class="cstat-no" title="statement not covered" >                        error.message = 'New password cannot be empty!';</span>
+<span class="cstat-no" title="statement not covered" >                    if(!error.message &amp;&amp; req.body.password.length &lt; 8)</span>
+<span class="cstat-no" title="statement not covered" >                        error.message = 'Password must be at leat at least 8 characters long!';</span>
+<span class="cstat-no" title="statement not covered" >                    if(!error.message &amp;&amp; !this.isValidPassword(req.body.password))</span>
+<span class="cstat-no" title="statement not covered" >                        error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';</span>
+                }
+                else <span class="cstat-no" title="statement not covered" >error.message = 'Password is required'</span>
+            }
+&nbsp;
+            return (error.message) // if error message is set, send error to client
+                ? ModelService.errorResponse(res, error) 
+                : next();
+        }
+    }
+&nbsp;
+    /**
+     * @description validate if email is unique
+     * @static
+     * @memberof UserValidations
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static isUniqueEmail() {
+  	    return (req, res, next) =&gt; {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(!req.body.email)
+<span class="cstat-no" title="statement not covered" >                return next();</span>
+            else {
+    		    return ModelService.ifExistModelObject(User, {where: {email: req.body.email}})
+    		    .then(() =&gt; {
+    		 		return next();
+    		    })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    ModelService.errorResponse(res, error, 'Email has been used!')</span>
+                })
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @description validate if username is unique
+     * @static
+     * @memberof UserValidations
+     * @returns {function} A middleware function that handles the GET request
+     */
+    static isUniqueUsername() {
+  	    return (req, res, next) =&gt; {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(!req.body.username)
+<span class="cstat-no" title="statement not covered" >                return next();</span>
+            else {
+                return ModelService
+                .ifExistModelObject(User, {where: {username: req.body.username}})
+                .then(() =&gt; {
+    		 		return next();
+    		    })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >                    ModelService.errorResponse(res, error, 'Username is not available!')</span>
+                })
+            }
+  	    }
+    }
+}
+export default UserValidations;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 02 2017 13:02:18 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

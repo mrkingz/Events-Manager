@@ -56,7 +56,11 @@ class AuthenticationService {
 		}
 		catch(error) {
 			error.code = 401;
-			error.message = 'Access denied! Invalid authentication token provided'
+			if (error.message === 'invalid token')
+				error.message = 'Access denied! Invalid authentication token provided'
+			else if (error.message === 'jwt expired')
+				error.message = 'Sorry, your token has expired. Please signin...'
+
 			return Promise.reject(error)
 		}
 	}
