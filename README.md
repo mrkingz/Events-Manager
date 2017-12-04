@@ -5,7 +5,7 @@
 
 Application for managing event centers. This app provides functionalities that help an event center manager to manage users applications to use any of the centers he or she manages. As the manager, he has the administrative privilege of the app to either decline events if the proposed date is not available or suggest an available date.
 
-Live at https://mrkingz.github.io/events-manager/template/index.html
+Live at https://mrkingz.github.io/Events-Manager/template/index.html
 
 # Features
 
