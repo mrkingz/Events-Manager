@@ -7,8 +7,8 @@ const UserController = controllers.UserController,
       UserValidations = validations.UserValidations,
       authRouter = express.Router();
 
-authRouter.route('/api/v1/users',
-    UserValidations.validateUser(),
+authRouter.route('/api/v1/users')
+ .post(UserValidations.validateUser(),
     UserValidations.isUniqueEmail(), 
     UserValidations.isUniqueUsername(),
     UserController.signup())

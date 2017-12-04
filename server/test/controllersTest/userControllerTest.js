@@ -25,7 +25,7 @@ describe('Test controller classes', () => {
 			.send(users[0])
 			.end((err, res) => {
 				expect(res.statusCode).to.equal(201);
-				expect(res.body.status).to.equal('success');
+				expect(res.body.status).to.equal('Success');
 				expect(res.body.message).to.equal('Signup completed successfully!');
 				if (err) return done(err);
 				done();
@@ -78,7 +78,7 @@ describe('Test method signin of UserController with empty password', () => {
 		.end((err, res) => {
 			token = res.body.token;
 			expect(res.statusCode).to.equal(200);
-			expect(res.body.status).to.equal('success');
+			expect(res.body.status).to.equal('Success');
 			expect(res.body.message).to.equal('Token successfully generated');
 			if (err) return done(err);
 			done();

@@ -24,7 +24,7 @@ describe('Test class centerController', () => {
         .send(users[0])
         .end((err, res) => {
             expect(res.statusCode).to.equal(201);
-            expect(res.body.status).to.equal('success');
+            expect(res.body.status).to.equal('Success');
             expect(res.body.message).to.equal('Signup completed successfully!');
             if (err) return done(err);
             done();
@@ -41,7 +41,7 @@ describe('Test class centerController', () => {
         .send(admin[0])
         .end((err, res) => {
             expect(res.statusCode).to.equal(201);
-            expect(res.body.status).to.equal('success');
+            expect(res.body.status).to.equal('Success');
             expect(res.body.message).to.equal('Signup completed successfully!');
             if (err) return done(err);
             done();
@@ -60,7 +60,7 @@ describe('Test class centerController', () => {
 		.end((err, res) => {
             adminToken = res.body.token;
 			expect(res.statusCode).to.equal(200);
-			expect(res.body.status).to.equal('success');
+			expect(res.body.status).to.equal('Success');
 			expect(res.body.message).to.equal('Token successfully generated');
 			if (err) return done(err);
 			done();
@@ -79,7 +79,7 @@ describe('Test class centerController', () => {
 		.end((err, res) => {
             userToken = res.body.token;
 			expect(res.statusCode).to.equal(200);
-			expect(res.body.status).to.equal('success');
+			expect(res.body.status).to.equal('Success');
 			expect(res.body.message).to.equal('Token successfully generated');
 			if (err) return done(err);
 			done();
@@ -129,7 +129,7 @@ describe('Test class centerController', () => {
         .send(centerData[0])
         .end((err, res) => {
             expect(res.statusCode).to.equal(201);
-            expect(res.body.status).to.equal('success');
+            expect(res.body.status).to.equal('Success');
             expect(res.body.message).to.equal('Center successfully created!');
             if (err) return done(err);
             done();

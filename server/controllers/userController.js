@@ -69,7 +69,7 @@ class UserController extends ModelService {
                         return AuthenticationService.generateJWT({userId, email, username}, secret)
                         .then(jwt => {
                             this.successResponse(res, {
-                                status: 'success',
+                                status: 'Success',
                                 message: 'Token successfully generated',
                                 token: jwt,
                             });

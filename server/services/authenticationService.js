@@ -50,18 +50,18 @@ class AuthenticationService {
 				issuer: process.env.ISSUER,
 				//maxAge: process.env.MAX_AGE
 			};
-			const decoded = jwt.verify(token, secretKey, options)
+			const decoded = jwt.verify(token, secretKey, options);
 			if(decoded)
 				return Promise.resolve(decoded);
 		}
 		catch(error) {
 			error.code = 401;
-			if (error.message === 'invalid token')
-				error.message = 'Access denied! Invalid authentication token provided'
-			else if (error.message === 'jwt expired')
-				error.message = 'Sorry, your token has expired. Please signin...'
+			if (error.message === 'jwt expired')
+				error.message = 'Sorry, your token has expired. Please signin...';
+			else 
+				error.message = 'Access denied! Invalid authentication token provided';
 
-			return Promise.reject(error)
+			return Promise.reject(error);
 		}
 	}
 }

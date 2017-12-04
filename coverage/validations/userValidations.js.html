@@ -198,7 +198,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -343,7 +343,7 @@ class UserValidations extends ValidationService {
         const error = new Error();
         error.code = 400;
 &nbsp;
-        <span class="missing-if-branch" title="else path not taken" >E</span>if(req.method === 'POST') {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (req.method === 'POST') {
             <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof req.body.username !== 'undefined' 
                 &amp;&amp; typeof req.body.email !== 'undefined' 
                 &amp;&amp; typeof req.body.password !== 'undefined') {
@@ -356,39 +356,39 @@ class UserValidations extends ValidationService {
                  * After removing white space(s), check for empty strings
                  * and validate values
                  */
-                <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isEmpty(req.body.username)) //if username is empty string
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (this.isEmpty(req.body.username)) //if username is empty string
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Username cannot be empty string!';</span>
                 
-                else <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isAlphanumeric(req.body.username)) //if username is valid
+                else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.isAlphanumeric(req.body.username)) //if username is valid
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Username can only contain alphabets only!';</span>
                 
-                else <span class="missing-if-branch" title="if path not taken" >I</span>if(req.body.username.length &lt; 3) //if username is too short
+                else <span class="missing-if-branch" title="if path not taken" >I</span>if (req.body.username.length &lt; 3) //if username is too short
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Username must be at least 3 characters!';</span>
                 
 	            //if email is empty or invalid
-	            else if(this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
+	            else if (this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
 	                error.message = 'Enter a valid email address!';
 	        
-	            else <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isEmpty(req.body.password)) // if password is empty string
+	            else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.isEmpty(req.body.password)) // if password is empty string
 <span class="cstat-no" title="statement not covered" >	                error.message = 'Password cannot be empty!'</span>
 	        
-	            else <span class="missing-if-branch" title="if path not taken" >I</span>if(req.body.password.length &lt; 8) //if password is too short
+	            else <span class="missing-if-branch" title="if path not taken" >I</span>if (req.body.password.length &lt; 8) //if password is too short
 <span class="cstat-no" title="statement not covered" >	                error.message = 'Password must be at least 8 characters long!';</span>
 	        
-                if(!this.isValidPassword(req.body.password)) //if valid password
+                if (!this.isValidPassword(req.body.password)) //if valid password
                     error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';	      }
-                else <span class="cstat-no" title="statement not covered" >if(!req.body.username) //if username is not provided</span>
+                else <span class="cstat-no" title="statement not covered" >if (!req.body.username) //if username is not provided</span>
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Username is required!';</span>
                 
-                else <span class="cstat-no" title="statement not covered" >if(!req.body.email) // if email is not provided</span>
+                else <span class="cstat-no" title="statement not covered" >if (!req.body.email) // if email is not provided</span>
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Email is required!'</span>
                 
-                else <span class="cstat-no" title="statement not covered" >if(!req.body.password) // if password is not provided</span>
+                else <span class="cstat-no" title="statement not covered" >if (!req.body.password) // if password is not provided</span>
 <span class="cstat-no" title="statement not covered" >                    error.message = 'Password is required!';</span>
 &nbsp;
-            } else <span class="cstat-no" title="statement not covered" >if(req.method === 'PUT') {</span>
+            } else <span class="cstat-no" title="statement not covered" >if (req.method === 'PUT') {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                if(typeof req.body.password !== 'undefined') { </span>
+<span class="cstat-no" title="statement not covered" >                if (typeof req.body.password !== 'undefined') { </span>
 &nbsp;
                     /**
                      * After removing white space(s), check for empty strings
@@ -396,11 +396,11 @@ class UserValidations extends ValidationService {
                      */
 <span class="cstat-no" title="statement not covered" >                    req.body.password = this.removeWhiteSpace(req.body.password);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                    if(this.isEmpty(req.body.password))</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.isEmpty(req.body.password))</span>
 <span class="cstat-no" title="statement not covered" >                        error.message = 'New password cannot be empty!';</span>
-<span class="cstat-no" title="statement not covered" >                    if(!error.message &amp;&amp; req.body.password.length &lt; 8)</span>
+<span class="cstat-no" title="statement not covered" >                    if (!error.message &amp;&amp; req.body.password.length &lt; 8)</span>
 <span class="cstat-no" title="statement not covered" >                        error.message = 'Password must be at leat at least 8 characters long!';</span>
-<span class="cstat-no" title="statement not covered" >                    if(!error.message &amp;&amp; !this.isValidPassword(req.body.password))</span>
+<span class="cstat-no" title="statement not covered" >                    if (!error.message &amp;&amp; !this.isValidPassword(req.body.password))</span>
 <span class="cstat-no" title="statement not covered" >                        error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';</span>
                 }
                 else <span class="cstat-no" title="statement not covered" >error.message = 'Password is required'</span>
@@ -463,7 +463,7 @@ export default UserValidations;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 02 2017 13:02:19 GMT+0100 (W. Central Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 11:18:40 GMT+0100 (W. Central Africa Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

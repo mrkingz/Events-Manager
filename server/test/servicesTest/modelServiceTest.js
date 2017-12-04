@@ -20,7 +20,7 @@ describe('Test class ModelService', () => {
 			.then((modelObject) => {
 				expect(modelObject).to.be.an('object')
 				expect(modelObject).to.have.own.property('status').to.be.a('string')
-				.that.is.equal('success');
+				.that.is.equal('Success');
 				expect(modelObject).to.have.property('message').to.be.a('string')
 				.that.is.equal('User successfully created!');
 				expect(modelObject.user).to.be.an('object')

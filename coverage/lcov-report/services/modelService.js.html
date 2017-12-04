@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for services/modelService.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">services</a> modelService.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.44% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>37/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.18% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.68% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/76</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import models from '../models';
+import UtilityService from './utilityService';
+&nbsp;
+const status = { 
+	success: 'Success',
+	failure: 'Fail' 
+};
+&nbsp;
+/**
+ * @description 
+ * @class ModelService
+ */
+ class ModelService extends UtilityService {
+ 	/**
+ 	 * @description Create an object of a model; i.e., a row of a table in the database 
+ 	 * @static
+ 	 * @memberof ModelSeervice
+ 	 * @param {Object} model The model to be instantiated
+ 	 * @param {Objects} options 
+ 	 * Note: options.attributes: model attributes
+ 	 *       options.message: optional message to be sent if successful
+ 	 * @returns {Promise.Object} A promise that resolves if object
+ 	 * is successfully created or rejects with an error object if otherwise
+ 	 */
+ 	static createModelObject(model, options) {
+ 		return model.create(this.trimAttributes(options.attributes))
+ 		.then((newObj) =&gt; {
+ 			return {
+ 				status: status.success,
+ 				message: (typeof options.message !== 'undefined') 
+ 						  ? <span class="branch-0 cbranch-no" title="branch not covered" >options.message</span>
+ 						  : `${model.name} successfully created!`,
+ 				[model.name.toLowerCase()]: newObj
+ 			};
+ 		})
+ 		.catch((error) =&gt; {
+		  	const err = this.refactorError(`Could not create ${model.name}`, error);
+		  	return Promise.reject(err);
+ 		});
+ 	}
+&nbsp;
+	/**
+	 * @description Checks if at leats an attribute of a model has been modified
+	 * when update is beign made
+	 * @static
+	 * @memberof ModelService
+	 * @param {Object} model
+	 * @param {Object} updates object with the new attributes
+	 * @returns {Object} An object with two properties--isVerfied and isEdited.
+	 * Note: isVerified is true, if it's a valid form; false, if otherwise 
+	 * isEdited is true, if at least an attributed was edited; false, if otherwise
+	 */
+<span class="fstat-no" title="function not covered" >	st</span>atic verifyUpdate(updates, modelObject) {
+		const modelAttributes = <span class="cstat-no" title="statement not covered" >modelObject.attributes;</span>
+		const formFields = <span class="cstat-no" title="statement not covered" >Object.keys(updates);</span>
+&nbsp;
+		let edited = <span class="cstat-no" title="statement not covered" >false;</span>
+	
+		const commonElem = <span class="cstat-no" title="statement not covered" >formFields.filter(<span class="fstat-no" title="function not covered" >(e</span>lem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >								return modelAttributes.indexOf(elem) &gt; -1;</span>
+						   });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		for (let i = 0; i &lt; commonElem.length; i++) {</span>
+			//Check if at least one attribute of the object has been edited
+<span class="cstat-no" title="statement not covered" >    		if (updates[commonElem[i]].toString().toLowerCase() != modelObject[commonElem[i]].toString().toLowerCase()) {</span>
+<span class="cstat-no" title="statement not covered" >	  			edited = true;</span>
+<span class="cstat-no" title="statement not covered" >	  			break</span>
+	  		}
+	  	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			isVerified: formFields.length === commonElem.length,
+			isEdited: edited,
+		}
+	} 
+&nbsp;
+ 	/**
+ 	 * @description Gets a single object of a model -- equivalent to a database
+ 	 * table row
+ 	 * @memberof ModelService
+ 	 * @static
+ 	 * @param {Object} model
+ 	 * @param {Object} options
+ 	 * @retrns {Promise.Object} A promise which resoolves with the found  
+ 	 * object (table row) or reject with an error object if otherwise
+ 	 * @see findAllModelObjects(model, options)
+ 	 */
+ 	static findOneModelObject(model, options) {
+ 		const error = new Error();
+ 		const {id, message, ...opt} = options;
+ 	    return ((Object.keys(options.where).includes('id'))
+ 			? <span class="branch-0 cbranch-no" title="branch not covered" >model.findById(id, opt)</span>
+ 			: model.findOne(options)
+ 		)
+		.then((object) =&gt; {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if(!object) {
+<span class="cstat-no" title="statement not covered" >    			error.code = 404;</span>
+<span class="cstat-no" title="statement not covered" >    			error.message = (typeof message === 'undefined') </span>
+    						? `${model.name} does not exist!`
+    						: message;
+<span class="cstat-no" title="statement not covered" >    		throw error;</span>
+  		}
+			return object;
+		})
+		.catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >			return Promise.reject(error);</span>
+		})
+	}
+&nbsp;
+&nbsp;
+ 	/**
+ 	 * @description check ifa model object exist
+ 	 * @memberof ModelService
+ 	 * @static
+ 	 * @param {Object} model
+ 	 * @param {Object} options
+ 	 * Note: options.where: the condition by which object will be find
+ 	 *       options.message: the message to send if found
+ 	 * @retrns {Promise.object} A promise that resolve with true if not found;
+ 	 * reject with an error if found
+ 	 */
+ 	static ifExistModelObject(model, options) {
+	 	const {id, message, ...opt} = options;
+    	return ((Object.keys(options.where).includes('id'))
+		  ? <span class="branch-0 cbranch-no" title="branch not covered" >model.findById(options.where.id, opt)</span>
+		  : model.findOne(opt)
+		)
+	 	.then(object =&gt; {
+	 		const error = Error();
+	 		error.code = 409;
+	 		error.message = (typeof options.message !== 'undefined')
+	 										? options.message 
+	 										: `${model.name} already exist`;
+&nbsp;
+	 		return (!object) ? Promise.resolve(true) : <span class="branch-1 cbranch-no" title="branch not covered" >Promise.reject(error);</span>
+	 	})
+ 	}
+&nbsp;
+ 	/**
+ 	 * @description Gets all object of a model -- equivalent to database
+ 	 * table rows
+ 	 * @memberof ModelService
+ 	 * @static
+ 	 * @param {Object} model
+ 	 * @param {Object} options
+ 	 * @retrns {Promise.Object} A promise which resoolves with the found  
+ 	 * object (table row) or reject with an error object if otherwise
+ 	 * @see findOneModelObject(model, options)
+ 	 */
+<span class="fstat-no" title="function not covered" > 	st</span>atic findAllModelObjects(model, options) {
+<span class="cstat-no" title="statement not covered" > 	  return model.findAll(options)</span>
+ 		.then(<span class="fstat-no" title="function not covered" >mo</span>dels =&gt; {
+<span class="cstat-no" title="statement not covered" > 			if(models.length &gt; 0)</span>
+<span class="cstat-no" title="statement not covered" > 				return models;</span>
+ 			else {
+				// Here, we pluralizes the error message properly
+				let name = <span class="cstat-no" title="statement not covered" >model.name.toString();</span>
+<span class="cstat-no" title="statement not covered" >				if(name.toLowerCase().substr(-1) === 'y')</span>
+<span class="cstat-no" title="statement not covered" >					name = name.substr(0, name.length - 1)+'ies'</span>
+				else <span class="cstat-no" title="statement not covered" >name += 's';</span>
+&nbsp;
+ 				const error = <span class="cstat-no" title="statement not covered" >new Error();</span>
+<span class="cstat-no" title="statement not covered" > 				error.code = 404;</span>
+<span class="cstat-no" title="statement not covered" > 				error.message = (typeof options.message === 'undefined')</span>
+ 								 				? `${name} not found!`
+ 								 				: options.message;
+<span class="cstat-no" title="statement not covered" > 				throw error;</span>
+ 			}
+ 		})
+ 		.catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" > 			return Promise.reject(error);</span>
+ 		});
+ 	}
+&nbsp;
+	/**
+	 * @description Deletes a model object; i.e., a table row
+	 * @static
+	 * @memberof ModelService
+	 * @param {Object} model 
+	 * @param {Object} options
+	 * @returns {Promise.Object} A promise that resolve if the delete 
+	 * is successful or rejects with an error object if otherwise
+	 */
+<span class="fstat-no" title="function not covered" >    st</span>atic deleteModelObject(model, options) {
+<span class="cstat-no" title="statement not covered" >		return this.findOneModelObject(model, options)</span>
+		.then(<span class="fstat-no" title="function not covered" >(m</span>odelObject) =&gt; {	
+<span class="cstat-no" title="statement not covered" >		 	return modelObject.destroy()</span>
+		 	.then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >		 		return {</span>
+		 			status: 'Success',
+		 			message: (typeof options.message === 'undefined') 
+		 								? `${model.name} successfully deleted`
+		 								: options.message
+		 		};
+		 	});
+		})
+		.catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >		 	return Promise.reject(error);	</span>
+	  })
+	} 
+&nbsp;
+	/**
+	 * @description Updates a model object; i.e., a table row
+	 * @static
+	 * @memberof ModelService
+	 * @param {Object} model
+	 * @param {Object} attributes
+	 * @param {Object} newAttributes
+	 * @param {Object} updatesObj object with the new attributes
+	 * @returns {Promise.Object} A promise that resolve if the update 
+	 * is successful; rejects if otherwise
+	 */
+<span class="fstat-no" title="function not covered" >    st</span>atic updateModelObject(model, options, updatesObj) {
+<span class="cstat-no" title="statement not covered" >		return this.findOneModelObject(model, {</span>
+			where: this.trimAttributes(options.where),
+		})
+		.then(<span class="fstat-no" title="function not covered" >(m</span>odelObject) =&gt; {	
+			const attributes = <span class="cstat-no" title="statement not covered" >this.trimAttributes(options.attributes);</span>
+		    const verify = <span class="cstat-no" title="statement not covered" >this.verifyUpdate(updatesObj, modelObject);</span>
+<span class="cstat-no" title="statement not covered" >		    return modelObject.update(attributes, {fields: Object.keys(attributes)})</span>
+		 	.then(<span class="fstat-no" title="function not covered" >(u</span>pdatedModel) =&gt; {
+<span class="cstat-no" title="statement not covered" >		 	 	if(updatedModel) {</span>
+<span class="cstat-no" title="statement not covered" >		 	 		return {</span>
+						status: (verify.isEdited) ? status.success : status.failure,
+						// Send a proper message to the client
+						message: (verify.isEdited) 
+											? (typeof options.message !== 'undefined') 
+													? options.message : `${model.name} successfully updated!`
+											: `${model.name} not updated, no change found`,
+						[model.name.toLowerCase()]: updatedModel,
+		 	 		};
+		 	 	} else {
+					const msg =<span class="cstat-no" title="statement not covered" >`Could not update ${model.name}`</span>
+<span class="cstat-no" title="statement not covered" >					throw this.refactorError(msg, error);</span>
+				}
+			})
+    	})
+		.catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >			return Promise.reject(error);		</span>
+		})
+	}
+&nbsp;
+    /**
+ 	 * @description Refactor error object for better readability
+ 	 * @static 
+ 	 * @memberof ModelService
+ 	 * @param {Object} model an object of the model in context
+ 	 * @param {Object} error the error object thrown
+ 	 * @returns {Object} the refactored error object
+ 	 */
+  	static refactorError(message, err) {
+		const error = new Error();
+		error.success = false;
+		let serverErr = false;
+&nbsp;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if(!err.code) {
+			switch(err.name) {
+				case 'SequelizeValidationError':
+				case 'SequelizeUniqueConstraintError':
+					const errorInfo = err.errors[0];
+					const path = errorInfo.path;
+					error.code = 400;
+&nbsp;
+					if (errorInfo.type.toLowerCase() === 'notnull violation')
+						message = this.upperCaseFirst(path) + ' is required!';
+					else message = err.errors[0].message
+					break;
+				default:
+					error.code = 500;
+					serverErr = true;
+			}
+			error.code = error.code || <span class="branch-1 cbranch-no" title="branch not covered" >err.code;</span>
+			error.message = (serverErr) ? `Server error! `+message : message
+		}
+   		return error;
+	}
+	
+   /**
+ 	* @description Process and format error object
+	* @static 
+	* @memberof ModelService
+	* @param {Object} response the server's response object
+	* @param {Object} error the error object to be processed
+	* @returns {Object} the processed error object
+	*/
+	static errorResponse(response, error, msg) {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if(!error.code){ <span class="cstat-no" title="statement not covered" >error.code = 500; <span class="cstat-no" title="statement not covered" ></span>error.message = msg || error.toString();}</span> //remove this later
+		return response.status(error.code).send({
+			status: 'fail',
+			message: msg || error.message
+		});
+	}
+&nbsp;
+   /**
+ 	* @description Returns success message
+	* @static 
+	* @memberof ModelService
+	* @param {Object} response the server's response object
+	* @param {Object} object the data to return
+	* @param {Integer} code status code (default is 200)
+	* @returns {Object} 
+	*/
+	static successResponse(response, object, code) {
+		const statusCode = code || 200;
+		return response.status(statusCode).json(object);
+	}	
+}
+export default ModelService;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 11:18:40 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>
