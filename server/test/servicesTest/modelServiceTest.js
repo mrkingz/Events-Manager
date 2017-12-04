@@ -3,6 +3,7 @@ import models from '../../models';
 import bcrypt from 'bcrypt';
 import ModelService from '../../services/modelService';
 import DBSync from '../dbSync';
+import userData from '../testData/userData';
 
 const expect = chai.expect,
 			{ User } = models,
@@ -14,11 +15,7 @@ describe('Test class ModelService', () => {
     DBSync.clearDatabase();
 	describe('Test method createModelObject', () => {
 		it('should create an object of a model', () => {
-			const attributes = {
-					username: 'mrKingz',
-					email: 'example.mail@gmail.com',
-					password: 'Password1'
-				}
+			const attributes = userData.admin[0];
 			return ModelService.createModelObject(User, { attributes: attributes })
 			.then((modelObject) => {
 				expect(modelObject).to.be.an('object')
@@ -33,7 +30,7 @@ describe('Test class ModelService', () => {
 				.that.is.equal(attributes.username);
 				expect(modelObject.user).to.have.property('email').to.be.a('string')
                 .that.is.equal(attributes.email);
-                expect(modelObject.user).to.have.property('role').to.be.equal(userRole)
+                expect(modelObject.user).to.have.property('role').to.be.equal(adminRole)
 				expect(modelObject.user).to.have.property('password').to.be.a('string')
 				.that.is.not.empty;
 				expect(modelObject.user).to.have.property('createdAt').to.be.an.instanceof(Date)

@@ -172,13 +172,56 @@ class UserController extends ModelService {
             if (req.body.user.role === 1) {
                 return next();
             } else {
-
                 const error = new Error();
                 error.message = "Access denied! You do not have the privilege to perform this operation"
                 error.code  = 403;
                 return this.errorResponse(res, error);
             }
         };
+    }
+
+    /**
+     * @description Resets users' password
+     * @static
+     * @memberof UserController
+     * @returns {function} A middleware funtion that handles the PUT request
+     */
+    static resetPassword() {
+        return (req, res) => {
+            return this.findOneModelObject(User, {
+                where: {userId: req.body.user.userId},
+                attributes: ['userId', 'password']
+            })
+            .then((user) => {
+                // Compare new password with old password
+                const password = this.removeWhiteSpace(req.body.password);
+                return bcrypt.compare(password, user.password)
+                .then((status) => {
+                    if (status) {
+                        const error = new Error();
+                        error.code = 400;
+                        error.message = 'New password must be different from old password'
+                        throw error;
+                    } else {
+                        return this.updateModelObject(User, {
+                            where: {userId: user.userId},
+                            attributes: {password: password}
+                            }, req.body)
+                            .then((updated) => {
+                            this.successResponse(res, {
+                                status: updated.status,
+                                message: (updated.status === 'Success') 
+                                        ? 'New password saved successfully'
+                                        : 'Something went wrong! Could not save new password'
+                            });
+                        })
+                    }
+                })
+            })
+            .catch(error => {
+                this.errorResponse(res, error);
+            })
+        }
     }
 }
 export default UserController;

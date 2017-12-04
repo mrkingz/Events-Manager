@@ -85,11 +85,11 @@ class CenterController extends ModelService {
                 .then((center) => {
                     if(updateApproval) {
                         return Event.update({approval: (req.body.availability == 'false') ? true : false},
-                            { where: {date: req.body.date}, returning: true, plain:true})
+                            { where: { date: req.body.date }, returning: true, plain: true })
                         .then(() => {
                             if(center.status === 'success') {
                                 center.message = center.message +(
-                                    (req.body.availability == 'false')
+                                    (req.body.availability === 'false')
                                         ? ' Center no longer available'
                                         : ' Center is now available'
                                 );
@@ -126,7 +126,7 @@ class CenterController extends ModelService {
                 this.successResponse(res, {centers: centers}, 302);
             })
             .catch(error => {
-                return next(error)//this.errorResponse(res, error);
+                this.errorResponse(res, error);
             })
         }
     }
@@ -303,7 +303,7 @@ class CenterController extends ModelService {
                         return next();
                     else {
                         const error = new Error();
-                        error.message = `Sorry, number of estiamted guests is above the capacity of this ${Center.name.toLowerCase()}`;
+                        error.message = `Sorry, number of estimated guests is above the capacity of this ${Center.name.toLowerCase()}`;
                         throw error;
                     }
                 })

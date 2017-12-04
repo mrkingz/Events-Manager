@@ -17,12 +17,12 @@ class UserValidations extends ValidationService {
     static validateUser() {
         return (req, res, next) => {
 
-        const {role, ...details} = req.body;
+        const {...details} = req.body;
         req.body = details;
         const error = new Error();
         error.code = 400;
 
-        if(req.method === 'POST') {
+        if (req.method === 'POST') {
             if (typeof req.body.username !== 'undefined' 
                 && typeof req.body.email !== 'undefined' 
                 && typeof req.body.password !== 'undefined') {
@@ -35,39 +35,39 @@ class UserValidations extends ValidationService {
                  * After removing white space(s), check for empty strings
                  * and validate values
                  */
-                if(this.isEmpty(req.body.username)) //if username is empty string
+                if (this.isEmpty(req.body.username)) //if username is empty string
                     error.message = 'Username cannot be empty string!';
                 
-                else if(this.isAlphanumeric(req.body.username)) //if username is valid
+                else if (this.isAlphanumeric(req.body.username)) //if username is valid
                     error.message = 'Username can only contain alphabets only!';
                 
-                else if(req.body.username.length < 3) //if username is too short
+                else if (req.body.username.length < 3) //if username is too short
                     error.message = 'Username must be at least 3 characters!';
                 
 	            //if email is empty or invalid
-	            else if(this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
+	            else if (this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
 	                error.message = 'Enter a valid email address!';
 	        
-	            else if(this.isEmpty(req.body.password)) // if password is empty string
+	            else if (this.isEmpty(req.body.password)) // if password is empty string
 	                error.message = 'Password cannot be empty!'
 	        
-	            else if(req.body.password.length < 8) //if password is too short
+	            else if (req.body.password.length < 8) //if password is too short
 	                error.message = 'Password must be at least 8 characters long!';
 	        
-                if(!this.isValidPassword(req.body.password)) //if valid password
+                if (!this.isValidPassword(req.body.password)) //if valid password
                     error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';	      }
-                else if(!req.body.username) //if username is not provided
+                else if (!req.body.username) //if username is not provided
                     error.message = 'Username is required!';
                 
-                else if(!req.body.email) // if email is not provided
+                else if (!req.body.email) // if email is not provided
                     error.message = 'Email is required!'
                 
-                else if(!req.body.password) // if password is not provided
+                else if (!req.body.password) // if password is not provided
                     error.message = 'Password is required!';
 
-            } else if(req.method === 'PUT') {
+            } else if (req.method === 'PUT') {
 
-                if(typeof req.body.password !== 'undefined') { 
+                if (typeof req.body.password !== 'undefined') { 
 
                     /**
                      * After removing white space(s), check for empty strings
@@ -75,11 +75,11 @@ class UserValidations extends ValidationService {
                      */
                     req.body.password = this.removeWhiteSpace(req.body.password);
 
-                    if(this.isEmpty(req.body.password))
+                    if (this.isEmpty(req.body.password))
                         error.message = 'New password cannot be empty!';
-                    if(!error.message && req.body.password.length < 8)
+                    if (!error.message && req.body.password.length < 8)
                         error.message = 'Password must be at leat at least 8 characters long!';
-                    if(!error.message && !this.isValidPassword(req.body.password))
+                    if (!error.message && !this.isValidPassword(req.body.password))
                         error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';
                 }
                 else error.message = 'Password is required'

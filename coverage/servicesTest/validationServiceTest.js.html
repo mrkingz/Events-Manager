@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for servicesTest/validationServiceTest.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">servicesTest</a> validationServiceTest.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>155/155</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>86/86</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>144/144</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chai from 'chai';
+import supertest from 'supertest';
+&nbsp;
+import ValidationService from '../../services/validationService';
+import app from '../../app.js';
+&nbsp;
+const expect = chai.expect,
+			server = supertest.agent(app);
+&nbsp;
+describe('Test class ValidationService', () =&gt; {
+	describe('Test method isValidIntegerURI of ValidationService with an invalid URI', () =&gt; {
+		const centerId = '12w'
+		it('should return 404 status code', (done) =&gt; {
+			server
+			.get(`/api/v1/centers/${centerId}`)
+			.end((err, res) =&gt; {
+			 	const middleware = ValidationService.isValidIntegerURI();
+			 	expect(middleware).to.be.a('function');
+			 	expect(res.body).to.be.an('object');
+				 expect(res.statusCode).to.equal(400);
+				 expect(res.body.message).to.be.equal('12w, is not a valid resource identifier');
+			 	return done();
+			})
+		})
+	})
+	describe('Test method isInteger of ValidationService', () =&gt; {
+		it('ValidationService.isInteger(1) should be true', () =&gt; {
+			expect(ValidationService.isInteger(1)).to.be.equal(true)
+		});
+		it('ValidationService.isInteger(1.2) should be false', () =&gt; {
+			expect(ValidationService.isInteger('1.2')).to.be.equal(false)
+		});
+		it('ValidationService.isInteger([]) should be false', () =&gt; {
+			expect(ValidationService.isInteger([])).to.be.equal(false)
+		});
+		it('ValidationService.isInteger({}) should be false', () =&gt; {
+			expect(ValidationService.isInteger({})).to.be.equal(false)
+		});
+		it('ValidationService.isInteger() to throw Error(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isInteger()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});
+	})
+	describe('Test method isEmpty of ValidationService', () =&gt; {
+		it('ValidationService.isEmpty(\' \') should be true', () =&gt; {
+			expect(ValidationService.isEmpty(' ')).to.be.equal(true)
+		});
+		it('ValidationService.isEmpty(something) should be false', () =&gt; {
+			expect(ValidationService.isEmpty('something')).to.be.equal(false)
+		});
+		it('ValidationService.isEmpty() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isEmpty()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	})
+	describe('Test method isValidPhoneNumber of ValidationService', () =&gt; {
+		it('ValidationService.isValidPhoneNumber(08034710032) should be true', () =&gt; {
+			expect(ValidationService.isValidPhoneNumber('08034710032')).to.be.equal(true)
+		});
+		it('ValidationService.isValidPhoneNumber(0801387137) should be false', () =&gt; {
+			expect(ValidationService.isValidPhoneNumber('0801387137')).to.be.equal(false)
+		});
+		it('ValidationService.isValidPhoneNumber([]) should be false', () =&gt; {
+			expect(ValidationService.isValidPhoneNumber([])).to.be.equal(false)
+		});
+		it('ValidationService.isValidPhoneNumber({}) should be false', () =&gt; {
+			expect(ValidationService.isValidPhoneNumber({})).to.be.equal(false)
+		});
+		it('ValidationService.isValidPhoneNumber() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isValidPhoneNumber()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	})
+	describe('Test method isEmail of ValidationService', () =&gt; {
+		it('ValidationService.isEmail(mike@gmail.com) should be true', () =&gt; {
+			expect(ValidationService.isEmail('mike@gmail.com')).to.be.equal(true)
+		});
+		it('ValidationService.isEmail(mike@mail) should be false', () =&gt; {
+			expect(ValidationService.isEmail('mike@mail')).to.be.equal(false)
+		});
+		it('ValidationService.isEmail([]) should be false', () =&gt; {
+			expect(ValidationService.isEmail([])).to.be.equal(false)
+		});
+		it('ValidationService.isEmail({}) should be false', () =&gt; {
+			expect(ValidationService.isEmail({})).to.be.equal(false)
+		});
+		it('ValidationService.isEmail() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isEmail()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isAlphanumeric of ValidationService', () =&gt; {
+		it('ValidationService.isAlphanumeric(123abc) should be true', () =&gt; {
+			expect(ValidationService.isAlphanumeric('123abc')).to.be.equal(true)
+		});
+		it('ValidationService.isAlphanumeric(123) should be false', () =&gt; {
+			expect(ValidationService.isAlphanumeric('123')).to.be.equal(false)
+		});
+		it('ValidationService.isAlphanumeric([]) should be false', () =&gt; {
+			expect(ValidationService.isAlphanumeric([])).to.be.equal(false)
+		});
+		it('ValidationService.isAlphanumeric({}) should be false', () =&gt; {
+			expect(ValidationService.isAlphanumeric({})).to.be.equal(false)
+		});
+		it('ValidationService.isAlphanumeric() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isAlphanumeric()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isValidPassword of ValidationService', () =&gt; {
+		it('ValidationService.isValidPassword(123A-*abc) should be true', () =&gt; {
+			expect(ValidationService.isValidPassword('123A-*abc')).to.be.equal(true)
+		});
+		it('ValidationService.isValidPassword(123abcde) should be false', () =&gt; {
+			expect(ValidationService.isValidPassword('123abcde')).to.be.equal(false)
+		});
+		it('ValidationService.isValidPassword({asdf:1233}) should be false', () =&gt; {
+			expect(ValidationService.isValidPassword({asfd: 1233})).to.be.equal(false)
+		});
+		it('ValidationService.isValidPassword([]) should be false', () =&gt; {
+			expect(ValidationService.isValidPassword('[]')).to.be.equal(false)
+		});
+		it('ValidationService.isValidPassword() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isValidPassword()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isNumeric of ValidationService', () =&gt; {
+		it('ValidationService.isNumeric(123) should be true', () =&gt; {
+			expect(ValidationService.isNumeric('123')).to.be.equal(true)
+		});
+		it('ValidationService.isNumeric(123.45) should be true', () =&gt; {
+			expect(ValidationService.isNumeric('123.45')).to.be.equal(true)
+		});
+		it('ValidationService.isNumeric(123abcde) should be false', () =&gt; {
+			expect(ValidationService.isNumeric('123abcde')).to.be.equal(false)
+		});
+		it('ValidationService.isNumeric({}) should be false', () =&gt; {
+			expect(ValidationService.isNumeric({})).to.be.equal(false)
+		});
+		it('ValidationService.isNumeric([]) should be false', () =&gt; {
+			expect(ValidationService.isNumeric([])).to.be.equal(false)
+		});
+		it('ValidationService.isNumeric() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isNumeric()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isFloat of ValidationService', () =&gt; {
+		it('ValidationService.isFloat(123.01) should be true', () =&gt; {
+			expect(ValidationService.isFloat('123.01')).to.be.equal(true)
+		});
+		it('ValidationService.isFloat(124.) should be true', () =&gt; {
+			expect(ValidationService.isFloat('124.')).to.be.equal(true)
+		});
+		it('ValidationService.isFloat(.124) should be true', () =&gt; {
+			expect(ValidationService.isFloat('.124')).to.be.equal(true)
+		});
+		it('ValidationService.isFloat(123) should be false', () =&gt; {
+			expect(ValidationService.isFloat('123')).to.be.equal(false)
+		});
+		it('ValidationService.isFloat({}) should be false', () =&gt; {
+			expect(ValidationService.isFloat({})).to.be.equal(false)
+		});
+		it('ValidationService.isFloat([]) should be false', () =&gt; {
+			expect(ValidationService.isFloat([])).to.be.equal(false)
+		});
+		it('ValidationService.isFloat() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isFloat()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isAlphabetic of ValidationService', () =&gt; {
+		it('ValidationService.isAlphabetic(abcdef) should be true', () =&gt; {
+			expect(ValidationService.isAlphabetic('abcdef')).to.be.equal(true)
+		});
+		it('ValidationService.isAlphabetic(124eg) should be false', () =&gt; {
+			expect(ValidationService.isAlphabetic('124eg')).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic(123) should be false', () =&gt; {
+			expect(ValidationService.isAlphabetic('123')).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic(#@^&amp;) should be false', () =&gt; {
+			expect(ValidationService.isAlphabetic('#@^&amp;')).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic({}) should be false', () =&gt; {
+			expect(ValidationService.isAlphabetic({})).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic([]) should be false', () =&gt; {
+			expect(ValidationService.isAlphabetic([])).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isAlphabetic()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isString of ValidationService', () =&gt; {
+		it('ValidationService.isString(abcdef) should be true', () =&gt; {
+			expect(ValidationService.isString('abcdef')).to.be.equal(true)
+		});
+		it('ValidationService.isString(124eg) should be true', () =&gt; {
+			expect(ValidationService.isString('124eg')).to.be.equal(true)
+		});
+		it('ValidationService.isString(123) should be true', () =&gt; {
+			expect(ValidationService.isString('123')).to.be.equal(true)
+		});
+		it('ValidationService.isString([]) should be false', () =&gt; {
+			expect(ValidationService.isString([])).to.be.equal(false)
+		});
+		it('ValidationService.isAlphabetic({}) should be false', () =&gt; {
+			expect(ValidationService.isString({})).to.be.equal(false)
+		});
+		it('ValidationService.isString() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isString()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isValidName of ValidationService', () =&gt; {
+		it('ValidationService.isValidName(Open Palace) should be true', () =&gt; {
+			expect(ValidationService.isValidName('Open Palace')).to.be.equal(true)
+		});
+		it('ValidationService.isValidName(Don_jed\'s) should be false', () =&gt; {
+			expect(ValidationService.isValidName('Don_jed\'s')).to.be.equal(false)
+		});
+		it('ValidationService.isValidName(Yar\'Adua) should be true', () =&gt; {
+			expect(ValidationService.isValidName('Yar\'Adua')).to.be.equal(true)
+		});
+		it('ValidationService.isValidName([]) should be false', () =&gt; {
+			expect(ValidationService.isValidName([])).to.be.equal(false)
+		});
+		it('ValidationService.isValidName({}) should be false', () =&gt; {
+			expect(ValidationService.isValidName({})).to.be.equal(false)
+		});
+		it('ValidationService.isValidName() to throw SyntaxError(Expect one argument, none found instead)', () =&gt; {
+			expect(() =&gt; { ValidationService.isValidName()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 01 2017 20:32:11 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

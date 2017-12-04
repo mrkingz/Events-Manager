@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for test/servicesTest/utilityServiceTest.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">test/servicesTest</a> utilityServiceTest.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chai from 'chai';
+import UtilityService from '../../services/utilityService';
+&nbsp;
+const expect = chai.expect;
+&nbsp;
+describe('Test class UtilityService', () =&gt; {
+	describe('Test method removeWhiteSpace of UtilityService', () =&gt; {
+		it('UtilityService.removeWhiteSpace(\' Continental\') should equal', () =&gt; {
+			expect(UtilityService.removeWhiteSpace(' Continental')).to.equal('Continental')
+		});
+		it('UtilityService.removeWhiteSpace(\' Continental    Center\', false) should equal', () =&gt; {
+			expect(UtilityService.removeWhiteSpace('Continental    Center', false))
+			.to.equal('Continental Center')
+		});
+		it('UtilityService.removeWhiteSpace(\' Continentals \', true) should equal', () =&gt; {
+			expect(UtilityService.removeWhiteSpace(' Continentals ', true))
+			.to.equal('Continentals')
+		});
+	})
+	describe('Test method trimAttributes of UtilityService', () =&gt; {
+		const user = UtilityService.trimAttributes({
+			firstname: ' John',
+			lastname: ' Okon ', 
+			email: 'something@gmail.com'
+		});
+		it('UtilityService.trimAttributes({'
+			+'firstanme: \' John  \','
+			+'lastanme: \' Okon  \','
+			+'email: \'something@gmail.com\' ,'
+		  +'}) should remove trailing  and leading white spaces from the object string property', () =&gt; {
+			expect(user).to.be.an('object');
+			expect(user).to.have.own.property('firstname').to.be.a('string')
+			.that.is.equal('John');
+			expect(user).to.have.own.property('lastname').to.be.a('string')
+			.that.is.equal('Okon');
+			expect(user).to.have.own.property('email').to.be.a('string')
+			.that.is.equal('something@gmail.com');
+		});
+	})
+	describe('Test method upperCaseFirst of UtilityService', () =&gt; {
+		const center = UtilityService.upperCaseFirst({name: 'continental center'});
+		it('UtilityService.upperCaseFirst({'
+			+'name: \'continental center\''
+		  +'}) should should capitalize the first character of the value of name', () =&gt; {
+			expect(center).to.be.an('object');
+			expect(center).to.have.own.property('name').to.be.a('string')
+			.that.is.equal('Continental center');
+		});
+	})
+	describe('Test method upperCaseFirst of UtilityService', () =&gt; {
+		const center = UtilityService.upperCaseFirst({
+			name: 'continental center'}, {bool: true});
+		it('UtilityService.upperCaseFirst({'
+			+'name: \'continental center\''
+		  +'}, {bool: true}) should capitalize the first character of every word', () =&gt; {
+			expect(center).to.be.an('object');
+			expect(center).to.have.own.property('name').to.be.a('string')
+			.that.is.equal('Continental Center');
+		});
+	})
+	describe('Test method upperCaseFirst of UtilityService', () =&gt; {
+		let name = 'continental center';
+		name = UtilityService.upperCaseFirst(name)
+		it('UtilityService.upperCaseFirst(\'continental center\''
+		  +') should capitalize the first character in the string argument', () =&gt; {
+			expect(name).to.be.a('string');
+			expect(name).to.be.equal('Continental center');
+		});
+	})
+	describe('Test method upperCaseFirst of UtilityService', () =&gt; {
+		let name = 'continental center';
+		name = UtilityService.upperCaseFirst(name, {bool: true})
+		it('UtilityService.upperCaseFirst(\'continental name\''
+		  +', {bool: true}) should capitalize the first character of every word in the string argument', () =&gt; {
+			expect(name).to.be.a('string');
+			expect(name).to.be.equal('Continental Center');
+		});
+	})
+	describe('Test method upperCaseFirst of UtilityService', () =&gt; {
+		const recipe = UtilityService.upperCaseFirst({
+			title: 'Stella Odua and Azeez'}, 
+			{bool: true, skip: ['and']
+		});
+		it('UtilityService.upperCaseFirst({'
+			+'title: \'Stella Odua and Azeez\'}, {bool: true, skip: [\'and\']})'
+			+' should capitalize the first character of every word in the value of title'
+			+'excluding the string in the array', () =&gt; {
+			expect(recipe).to.be.an('object');
+			expect(recipe).to.have.own.property('title').to.be.a('string')
+			.that.is.equal('Stella Odua and Azeez');
+		});
+	})
+})</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 02 2017 13:02:18 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>
