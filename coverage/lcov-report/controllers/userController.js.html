@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.19% </span>
+        <span class="strong">67.16% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>41/67</span>
+        <span class='fraction'>45/67</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
+        <span class="strong">48.48% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>15/33</span>
+        <span class='fraction'>16/33</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">72% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>18/25</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.19% </span>
+        <span class="strong">67.16% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>41/67</span>
+        <span class='fraction'>45/67</span>
       </div>
     </div>
   </div>
@@ -288,11 +288,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -394,30 +394,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -440,13 +440,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -566,7 +566,7 @@ class UserController extends ModelService {
                         return AuthenticationService.generateJWT({userId, email, username}, secret)
                         .then(jwt =&gt; {
                             this.successResponse(res, {
-                                status: 'Success',
+                                status: this.getStatus().success,
                                 message: 'Token successfully generated',
                                 token: jwt,
                             });
@@ -666,13 +666,13 @@ class UserController extends ModelService {
      */    
     static checkPrivilege() {
         return (req, res, next) =&gt; {
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (req.body.user.role === 1) {
+            if (req.body.user.role === 1) {
                 return next();
             } else {
-                const error = <span class="cstat-no" title="statement not covered" >new Error();</span>
-<span class="cstat-no" title="statement not covered" >                error.message = "Access denied! You do not have the privilege to perform this operation"</span>
-<span class="cstat-no" title="statement not covered" >                error.code  = 403;</span>
-<span class="cstat-no" title="statement not covered" >                return this.errorResponse(res, error);</span>
+                const error = new Error();
+                error.message = "Sorry, you are not authorized to perform this operation!"
+                error.code  = 403;
+                return this.errorResponse(res, error);
             }
         };
     }
@@ -707,7 +707,7 @@ class UserController extends ModelService {
                             .then(<span class="fstat-no" title="function not covered" >(u</span>pdated) =&gt; {
 <span class="cstat-no" title="statement not covered" >                            this.successResponse(res, {</span>
                                 status: updated.status,
-                                message: (updated.status === 'Success') 
+                                message: (updated.status === this.getStatus().success) 
                                         ? 'New password saved successfully'
                                         : 'Something went wrong! Could not save new password'
                             });
@@ -727,7 +727,7 @@ export default UserController;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 17:27:55 GMT+0100 (W. Central Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 20:37:25 GMT+0100 (W. Central Africa Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

@@ -286,7 +286,7 @@ const status = {
 	static errorResponse(response, error, msg) {
 		if(!error.code){ error.code = 500; error.message = msg || error.toString();} //remove this later
 		return response.status(error.code).send({
-			status: 'fail',
+			status: status.failure,
 			message: msg || error.message
 		});
 	}
@@ -303,6 +303,18 @@ const status = {
 	static successResponse(response, object, code) {
 		const statusCode = code || 200;
 		return response.status(statusCode).json(object);
-	}	
+	}
+	
+
+   /**
+ 	* @description Returns status message object
+	* @static 
+	* @method
+	* @memberof ModelService
+	* @returns {Object} 
+	*/
+	static getStatus() {
+		return status;
+	}
 }
 export default ModelService;

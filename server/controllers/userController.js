@@ -69,7 +69,7 @@ class UserController extends ModelService {
                         return AuthenticationService.generateJWT({userId, email, username}, secret)
                         .then(jwt => {
                             this.successResponse(res, {
-                                status: 'Success',
+                                status: this.getStatus().success,
                                 message: 'Token successfully generated',
                                 token: jwt,
                             });
@@ -173,7 +173,7 @@ class UserController extends ModelService {
                 return next();
             } else {
                 const error = new Error();
-                error.message = "Access denied! You do not have the privilege to perform this operation"
+                error.message = "Sorry, you are not authorized to perform this operation!"
                 error.code  = 403;
                 return this.errorResponse(res, error);
             }
@@ -210,7 +210,7 @@ class UserController extends ModelService {
                             .then((updated) => {
                             this.successResponse(res, {
                                 status: updated.status,
-                                message: (updated.status === 'Success') 
+                                message: (updated.status === this.getStatus().success) 
                                         ? 'New password saved successfully'
                                         : 'Something went wrong! Could not save new password'
                             });

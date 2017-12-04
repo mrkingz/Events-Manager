@@ -87,7 +87,7 @@ class CenterController extends ModelService {
                         return Event.update({approval: (req.body.availability == 'false') ? true : false},
                             { where: { date: req.body.date }, returning: true, plain: true })
                         .then(() => {
-                            if(center.status === 'success') {
+                            if(center.status === this.getStatus().success) {
                                 center.message = center.message +(
                                     (req.body.availability === 'false')
                                         ? ' Center no longer available'
