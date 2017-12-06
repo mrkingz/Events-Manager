@@ -66,10 +66,6 @@ describe('Users', () => {
                 if (err) return done(err);
                 done();
             });
-        } else {
-            expect(res.statusCode).to.equal(401);
-            expect(res.body.status).to.equal('Fail');
-            expect(res.body.message).to.equal('Access denied! Token not provided');
         }
     })
 })
@@ -160,10 +156,6 @@ describe('Test class centerController', () => {
                 if (err) return done(err);
                 done();
             });
-        } else {
-            expect(res.statusCode).to.equal(401);
-            expect(res.body.status).to.equal('Fail');
-            expect(res.body.message).to.equal('Access denied! Token not provided');            
         }
     })
 })
