@@ -122,8 +122,6 @@ describe('Test class centerController', () => {
 	    expect(res.body.message).to.equal('Token successfully generated');
 	    if (err) return done(err);
 	    done();
-	    if (err) return done(err);
-	    done();
 	});
     })
 
@@ -133,7 +131,7 @@ describe('Test class centerController', () => {
     	.set('Connection', 'keep alive')
     	.set('Accept', 'application/json')
     	.set('Content-Type', 'application/json')
-    	.set('token', userToken)
+    	.set('token', adminToken)
     	.type('form')
     	.send(centerData[0])
     	.end((err, res) => {
