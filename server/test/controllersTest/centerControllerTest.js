@@ -35,15 +35,19 @@ describe('Users', () => {
 		.type('form')
 		.send(users[0])
 		.end((err, res) => {
-            if(!err) {
+            if(res.statusCode === 200) {
                 userToken = res.body.token;
                 expect(res.statusCode).to.equal(200);
                 expect(res.body.status).to.equal('Success');
                 expect(res.body.message).to.equal('Token successfully generated');
-                done();
+            } else {
+                expect(res.statusCode).to.equal(500);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Server error! Could not generate token'); 
             }
-			else return done(err);
-		});
+            if (err) return done(err);
+            done();
+        });
 	})
     it('should created a new center', (done) => {
         server
@@ -118,10 +122,16 @@ describe('Test class centerController', () => {
 		.type('form')
 		.send(admin[0])
 		.end((err, res) => {
-            adminToken = res.body.token;
-			//expect(res.statusCode).to.equal(200);
-			//expect(res.body.status).to.equal('Success');
-			expect(res.body.message).to.equal('Token successfully generated');
+            if(res.statusCode === 200) {
+                adminToken = res.body.token;
+                expect(res.statusCode).to.equal(200);
+                expect(res.body.status).to.equal('Success');
+                expect(res.body.message).to.equal('Token successfully generated');
+            } else {
+                expect(res.statusCode).to.equal(500);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Server error! Could not generate token');               
+            }
 			if (err) return done(err);
 			done();
 		});
