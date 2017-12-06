@@ -26,29 +26,29 @@ describe('Users', () => {
         });
     })
 
-	it('should return JSON with a generated token', (done) => {
-		server
-		.post('/api/v1/users/login')
-		.set('Connection', 'keep alive')
-		.set('Accept', 'application/json')
-		.set('Content-Type', 'application/json')
-		.type('form')
-		.send(users[0])
-		.end((err, res) => {
-            if(res.statusCode === 200) {
-                userToken = res.body.token;
-                expect(res.statusCode).to.equal(200);
-                expect(res.body.status).to.equal('Success');
-                expect(res.body.message).to.equal('Token successfully generated');
-            } else {
-                expect(res.statusCode).to.equal(500);
-                expect(res.body.status).to.equal('Fail');
-                expect(res.body.message).to.equal('Server error! Could not generate token'); 
-            }
-            if (err) return done(err);
-            done();
-        });
-	})
+    it('should return JSON with a generated token', (done) => {
+	server
+	.post('/api/v1/users/login')
+	.set('Connection', 'keep alive')
+	.set('Accept', 'application/json')
+	.set('Content-Type', 'application/json')
+	.type('form')
+	.send(users[0])
+	.end((err, res) => {
+	    if(res.statusCode === 200) {
+		userToken = res.body.token;
+		expect(res.statusCode).to.equal(200);
+		expect(res.body.status).to.equal('Success');
+		expect(res.body.message).to.equal('Token successfully generated');
+	    } else {
+		expect(res.statusCode).to.equal(500);
+		expect(res.body.status).to.equal('Fail');
+		expect(res.body.message).to.equal('Server error! Could not generate token'); 
+	    }
+	    if (err) return done(err);
+	    done();
+	});
+    })
     it('should created a new center', (done) => {
         if(userToken) {
             server
@@ -64,9 +64,9 @@ describe('Users', () => {
                 expect(res.body.status).to.equal('Fail');
                 expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
                 if (err) return done(err);
-                done();
             });
         }
+	done();
     })
 })
 
@@ -115,15 +115,15 @@ describe('Test class centerController', () => {
     })
 
     //Login as admin 
-	it('should return JSON with a token for an admin', (done) => {
-		server
-		.post('/api/v1/users/login')
-		.set('Connection', 'keep alive')
-		.set('Accept', 'application/json')
-		.set('Content-Type', 'application/json')
-		.type('form')
-		.send(admin[0])
-		.end((err, res) => {
+    it('should return JSON with a token for an admin', (done) => {
+	server
+	.post('/api/v1/users/login')
+	.set('Connection', 'keep alive')
+	.set('Accept', 'application/json')
+	.set('Content-Type', 'application/json')
+	.type('form')
+	.send(admin[0])
+	.end((err, res) => {
             if(res.statusCode === 200) {
                 adminToken = res.body.token;
                 expect(res.statusCode).to.equal(200);
@@ -134,10 +134,10 @@ describe('Test class centerController', () => {
                 expect(res.body.status).to.equal('Fail');
                 expect(res.body.message).to.equal('Server error! Could not generate token');               
             }
-			if (err) return done(err);
-			done();
-		});
-	})
+	    if (err) return done(err);
+	    done();
+	});
+    })
 
     it('should created a new center', (done) => {
         if(adminToken) {
@@ -154,9 +154,9 @@ describe('Test class centerController', () => {
                 expect(res.body.status).to.equal('Success');
                 expect(res.body.message).to.equal('Center successfully created!');
                 if (err) return done(err);
-                done();
             });
         }
+	done();
     })
 })
 
