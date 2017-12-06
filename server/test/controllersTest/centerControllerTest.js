@@ -50,21 +50,27 @@ describe('Users', () => {
         });
 	})
     it('should created a new center', (done) => {
-        server
-        .post('/api/v1/centers')
-        .set('Connection', 'keep alive')
-        .set('Accept', 'application/json')
-        .set('Content-Type', 'application/json')
-        .set('token', userToken)
-        .type('form')
-        .send(centerData[0])
-        .end((err, res) => {
-            expect(res.statusCode).to.equal(403);
+        if(userToken) {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', userToken)
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) => {
+                expect(res.statusCode).to.equal(403);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
+                if (err) return done(err);
+                done();
+            });
+        } else {
+            expect(res.statusCode).to.equal(401);
             expect(res.body.status).to.equal('Fail');
-            expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
-            if (err) return done(err);
-            done();
-        });
+            expect(res.body.message).to.equal('Access denied! Token not provided');
+        }
     })
 })
 
@@ -138,21 +144,27 @@ describe('Test class centerController', () => {
 	})
 
     it('should created a new center', (done) => {
-        server
-        .post('/api/v1/centers')
-        .set('Connection', 'keep alive')
-        .set('Accept', 'application/json')
-        .set('Content-Type', 'application/json')
-        .set('token', adminToken)
-        .type('form')
-        .send(centerData[0])
-        .end((err, res) => {
-            expect(res.statusCode).to.equal(201);
-            expect(res.body.status).to.equal('Success');
-            expect(res.body.message).to.equal('Center successfully created!');
-            if (err) return done(err);
-            done();
-        });
+        if(adminToken) {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', adminToken)
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) => {
+                expect(res.statusCode).to.equal(201);
+                expect(res.body.status).to.equal('Success');
+                expect(res.body.message).to.equal('Center successfully created!');
+                if (err) return done(err);
+                done();
+            });
+        } else {
+            expect(res.statusCode).to.equal(401);
+            expect(res.body.status).to.equal('Fail');
+            expect(res.body.message).to.equal('Access denied! Token not provided');            
+        }
     })
 })
 

@@ -250,7 +250,7 @@ const status = {
  	 */
   	static refactorError(message, err) {
 		const error = new Error();
-		error.success = false;
+		error.status = status.failure;
 		let serverErr = false;
 
 		if(!err.code) {

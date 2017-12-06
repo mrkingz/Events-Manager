@@ -5,7 +5,7 @@ import userData from '../testData/userData';
 import app from '../../app.js';
 import DBSync from '../dbSync';
 
-let token;
+let userToken;
 const expect = chai.expect,
       users = userData.users,
 	  server = supertest.agent(app);
@@ -71,10 +71,16 @@ describe('Test controller classes', () => {
 		.type('form')
 		.send(users[0])
 		.end((err, res) => {
-			token = res.body.token;
-			expect(res.statusCode).to.equal(200);
-			expect(res.body.status).to.equal('Success');
-			expect(res.body.message).to.equal('Token successfully generated');
+            if(res.statusCode === 200) {
+                userToken = res.body.token;
+                expect(res.statusCode).to.equal(200);
+                expect(res.body.status).to.equal('Success');
+                expect(res.body.message).to.equal('Token successfully generated');
+            } else {
+                expect(res.statusCode).to.equal(500);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Server error! Could not generate token'); 
+            }
 			if (err) return done(err);
 			done();
 		});
