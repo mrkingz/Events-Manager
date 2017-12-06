@@ -35,12 +35,14 @@ describe('Users', () => {
 		.type('form')
 		.send(users[0])
 		.end((err, res) => {
-            userToken = res.body.token;
-			expect(res.statusCode).to.equal(200);
-			expect(res.body.status).to.equal('Success');
-			expect(res.body.message).to.equal('Token successfully generated');
-			if (err) return done(err);
-			done();
+            if(!err) {
+                userToken = res.body.token;
+                expect(res.statusCode).to.equal(200);
+                expect(res.body.status).to.equal('Success');
+                expect(res.body.message).to.equal('Token successfully generated');
+                done();
+            }
+			else return done(err);
 		});
 	})
     it('should created a new center', (done) => {
