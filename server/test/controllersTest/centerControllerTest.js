@@ -35,38 +35,30 @@ describe('Users', () => {
 	.type('form')
 	.send(users[0])
 	.end((err, res) => {
-	    if(res.statusCode === 200) {
-		userToken = res.body.token;
-		expect(res.statusCode).to.equal(200);
-		expect(res.body.status).to.equal('Success');
-		expect(res.body.message).to.equal('Token successfully generated');
-	    } else {
-		expect(res.statusCode).to.equal(500);
-		expect(res.body.status).to.equal('Fail');
-		expect(res.body.message).to.equal('Server error! Could not generate token'); 
-	    }
+	    userToken = res.body.token;
+	    expect(res.statusCode).to.equal(200);
+	    expect(res.body.status).to.equal('Success');
+	    expect(res.body.message).to.equal('Token successfully generated');
 	    if (err) return done(err);
 	    done();
 	});
     })
     it('should created a new center', (done) => {
-        if(userToken) {
-            server
-            .post('/api/v1/centers')
-            .set('Connection', 'keep alive')
-            .set('Accept', 'application/json')
-            .set('Content-Type', 'application/json')
-            .set('token', userToken)
-            .type('form')
-            .send(centerData[0])
-            .end((err, res) => {
-                expect(res.statusCode).to.equal(403);
-                expect(res.body.status).to.equal('Fail');
-                expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
-                if (err) return done(err);
-            });
-        }
-	done();
+    	server
+    	.post('/api/v1/centers')
+    	.set('Connection', 'keep alive')
+    	.set('Accept', 'application/json')
+    	.set('Content-Type', 'application/json')
+    	.set('token', userToken)
+    	.type('form')
+    	.send(centerData[0])
+    	.end((err, res) => {
+	    expect(res.statusCode).to.equal(403);
+	    expect(res.body.status).to.equal('Fail');
+	    expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
+	    if (err) return done(err);
+	    done();
+        });
     })
 })
 
@@ -124,39 +116,33 @@ describe('Test class centerController', () => {
 	.type('form')
 	.send(admin[0])
 	.end((err, res) => {
-            if(res.statusCode === 200) {
-                adminToken = res.body.token;
-                expect(res.statusCode).to.equal(200);
-                expect(res.body.status).to.equal('Success');
-                expect(res.body.message).to.equal('Token successfully generated');
-            } else {
-                expect(res.statusCode).to.equal(500);
-                expect(res.body.status).to.equal('Fail');
-                expect(res.body.message).to.equal('Server error! Could not generate token');               
-            }
+	    adminToken = res.body.token;
+	    expect(res.statusCode).to.equal(200);
+	    expect(res.body.status).to.equal('Success');
+	    expect(res.body.message).to.equal('Token successfully generated');
+	    if (err) return done(err);
+	    done();
 	    if (err) return done(err);
 	    done();
 	});
     })
 
     it('should created a new center', (done) => {
-        if(adminToken) {
-            server
-            .post('/api/v1/centers')
-            .set('Connection', 'keep alive')
-            .set('Accept', 'application/json')
-            .set('Content-Type', 'application/json')
-            .set('token', adminToken)
-            .type('form')
-            .send(centerData[0])
-            .end((err, res) => {
-                expect(res.statusCode).to.equal(201);
-                expect(res.body.status).to.equal('Success');
-                expect(res.body.message).to.equal('Center successfully created!');
-                if (err) return done(err);
-            });
-        }
-	done();
+    	server
+    	.post('/api/v1/centers')
+    	.set('Connection', 'keep alive')
+    	.set('Accept', 'application/json')
+    	.set('Content-Type', 'application/json')
+    	.set('token', userToken)
+    	.type('form')
+    	.send(centerData[0])
+    	.end((err, res) => {
+	    expect(res.statusCode).to.equal(201);
+	    expect(res.body.status).to.equal('Success');
+	    expect(res.body.message).to.equal('Center successfully created!');
+	    if (err) return done(err);
+	    done();
+        });
     })
 })
 
