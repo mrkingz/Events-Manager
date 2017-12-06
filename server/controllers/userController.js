@@ -12,6 +12,7 @@ class UserController extends ModelService {
     /**
      * @description Signup a new user
      * @static
+     * @method
      * @memberof UserController
      * @return {Function} A middleware function that handles the POST request 
      */
@@ -46,6 +47,7 @@ class UserController extends ModelService {
     /**
      * @description Authenticates a user with username and password 
      * @static
+     * @method
      * @memberof UserController
      * @return {Function} A middleware function that handles the authenitication
      */
@@ -95,6 +97,7 @@ class UserController extends ModelService {
      *       if request method is PUT, validates password only
      * @static
      * @memberof UserController
+     * @method
      * @return {Function} A middleware function that handles the validation
      */
     static validateAuthCredentials() {
@@ -118,6 +121,7 @@ class UserController extends ModelService {
     /**
      * @description Verifies user's token and validates user's access
      * @memberof UserController
+     * @method
      * @static
      * @return {Function} A middleware function that validates user's token
      */
@@ -182,6 +186,7 @@ class UserController extends ModelService {
 
     /**
      * @description Resets users' password
+     * @method
      * @static
      * @memberof UserController
      * @returns {function} A middleware funtion that handles the PUT request
