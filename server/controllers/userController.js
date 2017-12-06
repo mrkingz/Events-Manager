@@ -75,6 +75,9 @@ class UserController extends ModelService {
                                 message: 'Token successfully generated',
                                 token: jwt,
                             });
+                        })
+                        .catch(error => {
+                            throw error;
                         });
                     }
                     else throw error;
