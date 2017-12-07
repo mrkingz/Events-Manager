@@ -82,7 +82,7 @@ class UserValidations extends ValidationService {
                     if (!error.message && !this.isValidPassword(req.body.password))
                         error.message = 'Password must containat 1 or more lower and upper case letter, 1 digit (Special charecters can be included)!';
                 }
-                else error.message = 'Password is required'
+                else error.message = 'New password is required'
             }
 
             return (error.message) // if error message is set, send error to client
