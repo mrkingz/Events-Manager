@@ -19,6 +19,13 @@
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
+    "exclude": [
+      "client",
+      "server/test",
+      "server/bin",
+      "server/migrations",
+      "server/seeders"
+    ],
     "require": [
       "babel-register"
     ],
