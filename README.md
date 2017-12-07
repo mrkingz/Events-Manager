@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mrkingz/Events-Manager.svg?branch=develop)](https://travis-ci.org/mrkingz/Events-Manager)
-
+[![Coverage Status](https://coveralls.io/repos/github/mrkingz/Events-Manager/badge.svg?branch=develop)](https://coveralls.io/github/mrkingz/Events-Manager?branch=develop)
 
 # Events-Manager
 
