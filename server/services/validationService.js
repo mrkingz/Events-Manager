@@ -232,6 +232,24 @@ class ValidationService extends UtilityService {
 	 	  return (str.toString().match(exp)) ? true : false;
 		}
 	}
+
+	/**
+	 * @description Validates username
+	 * Note: Username can only contain letters, numbers, and any of the following special characteres
+	 * in between hyphen, period, underscore, and must start with at least an alphabet
+	 * @method isValidUsername
+	 * @memberof ValidationService
+	 * @param {string} str
+	 * @returns {boolean} true if str is a valid username; false, if otherwise
+	 */
+	static isValidUsername(str) {
+		if(typeof str == 'undefined')
+			throw syntaxError;
+		else {
+			const exp = /(^([a-zA-Z]+[0-9]*([_]{0,1}|[\\.]{0,1}|[-]{0,1})[a-zA-Z]+[0-9]*))$/;
+	 	  	return (str.toString().match(exp)) ? true : false;
+		}
+	}
 } 
 
 export default ValidationService;

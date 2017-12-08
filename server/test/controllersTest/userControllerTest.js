@@ -54,6 +54,38 @@ describe('Test UserController class', () => {
 			done();
 		});
 	})
+	it('should return username too short error message', (done) => {
+		server
+		.post('/api/v1/users')
+		.set('Connection', 'keep alive')
+		.set('Accept', 'application/json')
+		.set('Content-Type', 'application/json')
+		.type('form')
+		.send(users[5])
+		.end((err, res) => {
+			expect(res.statusCode).to.equal(400);
+			expect(res.body.status).to.equal('Fail');
+			expect(res.body.message).to.equal('Username must be at least 3 characters!');
+			if (err) return done(err);
+			done();
+		});
+	})
+	it('should return username too short error message', (done) => {
+		server
+		.post('/api/v1/users')
+		.set('Connection', 'keep alive')
+		.set('Accept', 'application/json')
+		.set('Content-Type', 'application/json')
+		.type('form')
+		.send(users[6])
+		.end((err, res) => {
+			expect(res.statusCode).to.equal(400);
+			expect(res.body.status).to.equal('Fail');
+			expect(res.body.message).to.equal('Username can only contain letters, numbers, any of these special characteres (_,.,-) in between, and must start with at least an alphabet!');
+			if (err) return done(err);
+			done();
+		});
+	})
 	it('should return a username not available error message', (done) => {
 		server
 		.post('/api/v1/users')
@@ -201,6 +233,8 @@ describe('Test UserController class', () => {
 			done();
 		});
 	})
+
+
 	it('should not reset user password', (done) => {
 		server
 		.put('/api/v1/users')
