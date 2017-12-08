@@ -140,7 +140,7 @@ class ValidationService extends UtilityService {
 		if(typeof str == 'undefined')
 			throw syntaxError
 		else {
-			str = this.removeWhiteSpace(str.replace(',', ''));
+			str = this.removeWhiteSpace(str.toString().replace(',', ''));
 		 	return (this.isNumeric(str))? true : false;
 		}
 	}
