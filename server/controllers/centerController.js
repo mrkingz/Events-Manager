@@ -81,7 +81,7 @@ class CenterController extends ModelService {
                         userId: req.body.user.userId
                     },
                     attributes: updates
-                }, req.body)
+                })
                 .then((center) => {
                     if(updateApproval) {
                         return Event.update({approval: (req.body.availability == 'false') ? true : false},

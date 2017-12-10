@@ -14,8 +14,8 @@
     "start:dev": "nodemon --watch server --exec babel-node ./server/bin/www",
     "start": "node ./build/bin/www.js",
     "build-server": " node ./node_modules/babel-cli/bin/babel.js -d ./build ./server",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=html --reporter=text mocha server/test/**/*.js --compilers js:babel-core/register --exit",
-    "tests": "SET NODE_ENV=test && mocha --compilers js:babel-core/register server/test/**/*.js --compilers js:babel-core/register --exit",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=html --reporter=text mocha --timeout 10000 server/test/**/*.js --compilers js:babel-core/register --exit",
+    "tests": "SET NODE_ENV=test && mocha --timeout 10000 --compilers js:babel-core/register server/test/**/*.js --compilers js:babel-core/register --exit",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {

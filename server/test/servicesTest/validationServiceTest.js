@@ -10,7 +10,7 @@ const expect = chai.expect,
 describe('Test class ValidationService', () => {
 	describe('Test method isValidIntegerURI of ValidationService with an invalid URI', () => {
 		const centerId = '12w'
-		it('should return 404 status code', (done) => {
+		it('should return 400 status code', (done) => {
 			server
 			.get(`/api/v1/centers/${centerId}`)
 			.end((err, res) => {

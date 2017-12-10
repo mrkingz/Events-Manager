@@ -214,7 +214,7 @@ class UserController extends ModelService {
                         return this.updateModelObject(User, {
                             where: {userId: user.userId},
                             attributes: {password: password}
-                            }, req.body)
+                            })
                             .then((updated) => {
                             this.successResponse(res, {
                                 status: updated.status,
