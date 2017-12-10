@@ -10,7 +10,7 @@ const expect = chai.expect,
 describe('Test class ValidationService', () => {
 	describe('Test method isValidIntegerURI of ValidationService with an invalid URI', () => {
 		const centerId = '12w'
-		it('should return 404 status code', (done) => {
+		it('should return 400 status code', (done) => {
 			server
 			.get(`/api/v1/centers/${centerId}`)
 			.end((err, res) => {
@@ -119,6 +119,52 @@ describe('Test class ValidationService', () => {
 			expect(() => { ValidationService.isValidPassword()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
 		});	
 	});
+	describe('Test method isValidCurrency of ValidationService', () => {
+		it('ValidationService.isValidCurrency(123A-*abc) should be true', () => {
+			expect(ValidationService.isValidCurrency('123')).to.be.equal(true)
+		});
+		it('ValidationService.isValidCurrency(123.9) should be true', () => {
+			expect(ValidationService.isValidCurrency('123.9')).to.be.equal(true)
+		});
+		it('ValidationService.isValidCurrency(.95) should be true', () => {
+			expect(ValidationService.isValidCurrency('.95')).to.be.equal(true)
+		});
+		it('ValidationService.isValidCurrency(123.) should be true', () => {
+			expect(ValidationService.isValidCurrency('123.')).to.be.equal(true)
+		});
+		it('ValidationService.isValidCurrency(12..9) should be false', () => {
+			expect(ValidationService.isValidCurrency('12..9')).to.be.equal(false)
+		});
+		it('ValidationService.isValidCurrency({a: 1233}) should be false', () => {
+			expect(ValidationService.isValidCurrency({a: 1233})).to.be.equal(false)
+		});
+		it('ValidationService.isValidCurrency([]) should be false', () => {
+			expect(ValidationService.isValidCurrency('[]')).to.be.equal(false)
+		});
+		it('ValidationService.isValidCurrency() to throw SyntaxError(Expect one argument, none found instead)', () => {
+			expect(() => { ValidationService.isValidCurrency()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isBoolean of ValidationService', () => {
+		it('ValidationService.isBoolean(123A-*abc) should be true', () => {
+			expect(ValidationService.isBoolean('true')).to.be.equal(true)
+		});
+		it('ValidationService.isBoolean(123abcde) should be false', () => {
+			expect(ValidationService.isBoolean('123abcde')).to.be.equal(false)
+		});
+		it('ValidationService.isBoolean(false) should be true', () => {
+			expect(ValidationService.isBoolean(false)).to.be.equal(true)
+		});
+		it('ValidationService.isBoolean([]) should be false', () => {
+			expect(ValidationService.isBoolean('[]')).to.be.equal(false)
+		});
+		it('ValidationService.isBoolean({}) should be false', () => {
+			expect(ValidationService.isBoolean({})).to.be.equal(false)
+		});
+		it('ValidationService.isBoolean() to throw SyntaxError(Expect one argument, none found instead)', () => {
+			expect(() => { ValidationService.isBoolean()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
 	describe('Test method isNumeric of ValidationService', () => {
 		it('ValidationService.isNumeric(123) should be true', () => {
 			expect(ValidationService.isNumeric('123')).to.be.equal(true)
@@ -223,6 +269,59 @@ describe('Test class ValidationService', () => {
 		});
 		it('ValidationService.isValidName() to throw SyntaxError(Expect one argument, none found instead)', () => {
 			expect(() => { ValidationService.isValidName()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
+		});	
+	});
+	describe('Test method isValidUsername of ValidationService', () => {
+		it('ValidationService.isValidUsername(bright) should be true', () => {
+			expect(ValidationService.isValidUsername('bright')).to.be.equal(true)
+		});
+		it('ValidationService.isValidUsername(bright) should be true', () => {
+			expect(ValidationService.isValidUsername('bright_ng')).to.be.equal(true)
+		});
+		it('ValidationService.isValidUsername(bright) should be true', () => {
+			expect(ValidationService.isValidUsername('bright.ng')).to.be.equal(true)
+		});
+		it('ValidationService.isValidUsername(bright) should be true', () => {
+			expect(ValidationService.isValidUsername('bright-ng')).to.be.equal(true)
+		});
+		it('ValidationService.isValidUsername(bright) should be true', () => {
+			expect(ValidationService.isValidUsername('bright2000')).to.be.equal(true)
+		});
+		it('ValidationService.isValidUsername(Don_) should be false', () => {
+			expect(ValidationService.isValidUsername('Don_')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(Don.) should be false', () => {
+			expect(ValidationService.isValidUsername('Don.')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(Don-) should be false', () => {
+			expect(ValidationService.isValidUsername('Don-')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(_Don) should be false', () => {
+			expect(ValidationService.isValidUsername('_Don')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(-Don) should be false', () => {
+			expect(ValidationService.isValidUsername('-Don')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(.Don) should be false', () => {
+			expect(ValidationService.isValidUsername('.Don')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(9Don) should be false', () => {
+			expect(ValidationService.isValidUsername('9Don')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(Don_jed\'s) should be false', () => {
+			expect(ValidationService.isValidUsername('Don_jed\'s')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername(Yar\'Adua) should be true', () => {
+			expect(ValidationService.isValidUsername('Yar\'Adua')).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername([]) should be false', () => {
+			expect(ValidationService.isValidUsername([])).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername({}) should be false', () => {
+			expect(ValidationService.isValidUsername({})).to.be.equal(false)
+		});
+		it('ValidationService.isValidUsername() to throw SyntaxError(Expect one argument, none found instead)', () => {
+			expect(() => { ValidationService.isValidUsername()}).to.throw(SyntaxError, 'Expect one argument, none found instead')
 		});	
 	});
 })

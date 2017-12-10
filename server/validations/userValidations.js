@@ -38,12 +38,13 @@ class UserValidations extends ValidationService {
                 if (this.isEmpty(req.body.username)) //if username is empty string
                     error.message = 'Username cannot be empty string!';
                 
-                else if (this.isAlphanumeric(req.body.username)) //if username is valid
-                    error.message = 'Username can only contain alphabets only!';
-                
                 else if (req.body.username.length < 3) //if username is too short
                     error.message = 'Username must be at least 3 characters!';
-                
+ 
+                else if (!this.isValidUsername(req.body.username)) //if username is valid
+                    error.message = 'Username can only contain letters, numbers, any of these special characteres '
+                    +'(_,.,-) in between, and must start with at least an alphabet!';                    
+
 	            //if email is empty or invalid
 	            else if (this.isEmpty(req.body.email) || !this.isEmail(req.body.email))
 	                error.message = 'Enter a valid email address!';

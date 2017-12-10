@@ -13,7 +13,8 @@ const status = {
  class ModelService extends UtilityService {
  	/**
  	 * @description Create an object of a model; i.e., a row of a table in the database 
- 	 * @static
+	* @static
+	 * @method createModelObject
  	 * @memberof ModelSeervice
  	 * @param {Object} model The model to be instantiated
  	 * @param {Objects} options 
@@ -43,6 +44,7 @@ const status = {
 	 * @description Checks if at leats an attribute of a model has been modified
 	 * when update is beign made
 	 * @static
+	 * @method verifyUpdate
 	 * @memberof ModelService
 	 * @param {Object} model
 	 * @param {Object} updates object with the new attributes
@@ -62,7 +64,8 @@ const status = {
 
 		for (let i = 0; i < commonElem.length; i++) {
 			//Check if at least one attribute of the object has been edited
-    		if (updates[commonElem[i]].toString().toLowerCase() != modelObject[commonElem[i]].toString().toLowerCase()) {
+			if (updates[commonElem[i]].toString().toLowerCase() 
+				!= modelObject[commonElem[i]].toString().toLowerCase()) {
 	  			edited = true;
 	  			break
 	  		}
@@ -77,7 +80,8 @@ const status = {
  	/**
  	 * @description Gets a single object of a model -- equivalent to a database
  	 * table row
- 	 * @memberof ModelService
+	 * @memberof ModelService
+	 * @method findOneModelObject
  	 * @static
  	 * @param {Object} model
  	 * @param {Object} options
@@ -86,8 +90,10 @@ const status = {
  	 * @see findAllModelObjects(model, options)
  	 */
  	static findOneModelObject(model, options) {
- 		const error = new Error();
- 		const {id, message, ...opt} = options;
+		 
+ 		const error = new Error(),
+			  { id, message, ...opt } = options;
+			   
  	    return ((Object.keys(options.where).includes('id'))
  			? model.findById(id, opt)
  			: model.findOne(options)
@@ -98,8 +104,8 @@ const status = {
     			error.message = (typeof message === 'undefined') 
     						? `${model.name} does not exist!`
     						: message;
-    		throw error;
-  		}
+				throw error;
+			}
 			return object;
 		})
 		.catch(error => {
@@ -110,7 +116,8 @@ const status = {
 
  	/**
  	 * @description check ifa model object exist
- 	 * @memberof ModelService
+	 * @memberof ModelService
+	 * @method ifExistModelObject
  	 * @static
  	 * @param {Object} model
  	 * @param {Object} options
@@ -129,8 +136,8 @@ const status = {
 	 		const error = Error();
 	 		error.code = 409;
 	 		error.message = (typeof options.message !== 'undefined')
-	 										? options.message 
-	 										: `${model.name} already exist`;
+							? options.message 
+							: `${model.name} already exist`;
 
 	 		return (!object) ? Promise.resolve(true) : Promise.reject(error);
 	 	})
@@ -139,7 +146,8 @@ const status = {
  	/**
  	 * @description Gets all object of a model -- equivalent to database
  	 * table rows
- 	 * @memberof ModelService
+	 * @memberof ModelService
+	 * @method findAllModelObjects
  	 * @static
  	 * @param {Object} model
  	 * @param {Object} options
@@ -176,6 +184,7 @@ const status = {
 	 * @description Deletes a model object; i.e., a table row
 	 * @static
 	 * @memberof ModelService
+	 * @method deleteModelObject
 	 * @param {Object} model 
 	 * @param {Object} options
 	 * @returns {Promise.Object} A promise that resolve if the delete 
@@ -203,20 +212,19 @@ const status = {
 	 * @description Updates a model object; i.e., a table row
 	 * @static
 	 * @memberof ModelService
+	 * @method updateModelObject
 	 * @param {Object} model
-	 * @param {Object} attributes
-	 * @param {Object} newAttributes
-	 * @param {Object} updatesObj object with the new attributes
+	 * @param {Object} options
 	 * @returns {Promise.Object} A promise that resolve if the update 
 	 * is successful; rejects if otherwise
 	 */
-    static updateModelObject(model, options, updatesObj) {
+    static updateModelObject(model, options) {
 		return this.findOneModelObject(model, {
 			where: this.trimAttributes(options.where),
 		})
 		.then((modelObject) => {	
 			const attributes = this.trimAttributes(options.attributes);
-		    const verify = this.verifyUpdate(updatesObj, modelObject);
+		    const verify = this.verifyUpdate(options.attributes, modelObject);
 		    return modelObject.update(attributes, {fields: Object.keys(attributes)})
 		 	.then((updatedModel) => {
 		 	 	if(updatedModel) {
@@ -242,7 +250,8 @@ const status = {
 
     /**
  	 * @description Refactor error object for better readability
- 	 * @static 
+	 * @static 
+	 * @method refactorError
  	 * @memberof ModelService
  	 * @param {Object} model an object of the model in context
  	 * @param {Object} error the error object thrown
@@ -278,13 +287,13 @@ const status = {
    /**
  	* @description Process and format error object
 	* @static 
+	* @method errorResponse
 	* @memberof ModelService
 	* @param {Object} response the server's response object
 	* @param {Object} error the error object to be processed
 	* @returns {Object} the processed error object
 	*/
 	static errorResponse(response, error, msg) {
-		if(!error.code){ error.code = 500; error.message = msg || error.toString();} //remove this later
 		return response.status(error.code).send({
 			status: status.failure,
 			message: msg || error.message
@@ -294,6 +303,7 @@ const status = {
    /**
  	* @description Returns success message
 	* @static 
+	* @method successResponse
 	* @memberof ModelService
 	* @param {Object} response the server's response object
 	* @param {Object} object the data to return
@@ -307,9 +317,9 @@ const status = {
 	
 
    /**
- 	* @description Returns status message object
+ 	* @description Returns the global status object
 	* @static 
-	* @method
+	* @method getStatus
 	* @memberof ModelService
 	* @returns {Object} 
 	*/

@@ -104,7 +104,7 @@ class EventController extends ModelService {
                     userId: req.body.user.userId
                 },
                 attributes: update
-            }, req.body)
+            })
             .then((updated) => {
                 this.successResponse(res, updated);
             })

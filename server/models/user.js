@@ -36,12 +36,12 @@ export default (sequelize, DataTypes) => {
         },
         validate: {
             notEmpty: {
-            args: true,
-            msg: 'Username is required!'
+                args: true,
+                msg: 'Username is required!'
             },
             len: {
-            args: [3, 25],
-            msg: 'Username must be between 3 to 25 characters long'
+                args: [3, 25],
+                msg: 'Username must be between 3 to 25 characters long'
             },
         },
     },

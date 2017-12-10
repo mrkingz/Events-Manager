@@ -33,8 +33,12 @@ export default {
         username: 'don_philly5',
         email: 'don_philly5@gmail.com',			
     }, {
-        username: 'don_philly6',
-        password: null,
+        username: 'do',
+        password: passwords[0],
+        email: 'don_philly6',			
+    }, {
+        username: '_do89',
+        password: passwords[0],
         email: 'don_philly6',			
     }]
 };
