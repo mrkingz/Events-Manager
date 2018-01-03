@@ -7,7 +7,7 @@ Application for managing event centers. This app provides functionalities that h
 
 Live at https://mrkingz.github.io/Events-Manager/template/index.html
 
-# Application Features
+# Features
 
 User signup and signin pages
 A page where an authenticated user can add a new event
