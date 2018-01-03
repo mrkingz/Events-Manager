@@ -6,7 +6,7 @@ const syntaxError  = new SyntaxError('Expect one argument, none found instead')
  * @description 
  * @class ValidationService
  */
-class ValidationService extends UtilityService {
+export default class ValidationService extends UtilityService {
 	/**
 	 * @description Validates if param is a valid resource identfifier
 	 * Note: this method only validate for a number param
@@ -251,5 +251,3 @@ class ValidationService extends UtilityService {
 		}
 	}
 } 
-
-export default ValidationService;

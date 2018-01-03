@@ -21,24 +21,39 @@ export default {
         username: 'don_philly2',
         password: passwords[0],
         email: 'don_philly2@gmail.com',       
-    }, {
-        username: 'don_philly3',
-        password: 'Badmos12',
-        email: 'don_philly3',		
-    }, {
-        username: 'don_philly1',
+    },{
+        username: 'don_philz3',
         password: passwords[0],
-        email: 'don_philly4@yahoo.com',			
+        email: 'don_philz3@gmail.com',
     }, {
-        username: 'don_philly5',
-        email: 'don_philly5@gmail.com',			
+        username: 'don_philly4',
+        password: passwords[0],
+        email: 'don_philly4',		
+    }, {
+        password: passwords[0],
+        email: 'don_philly5@yahoo.com',			
     }, {
         username: 'do',
         password: passwords[0],
-        email: 'don_philly6',			
+        email: 'don_philly6@gmail.com',			
     }, {
         username: '_do89',
         password: passwords[0],
-        email: 'don_philly6',			
+        email: 'don_philly7@gamil.com',			
+    }, {
+        username: 'don_philly8',
+        email: 'don_philly8@gmail.com',			
+    }, {
+        username: 'don_philly1',
+        password: 'password',
+        email: 'don_philly9@gmail.com',			
+    }, {
+        username: 'don_philly1',
+        password: passwords[0],
+        email: 'don_philly1@gmail.com',	
+    }, {
+        username: 'don_philly1',
+        password: passwords[0],
+        email: 'don_philly11@gmail.com',
     }]
 };

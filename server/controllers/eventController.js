@@ -56,7 +56,7 @@ class EventController extends ModelService {
                 include: include
             })
             .then((event) => {
-                this.successResponse(res, {event: event});
+                this.successResponse(res, {event: event}, 302);
             })
             .catch(error => {
                 this.errorResponse(res, error);
@@ -79,7 +79,7 @@ class EventController extends ModelService {
                 include: include
             })
             .then((events) => {
-                this.successResponse(res, {events: events});
+                this.successResponse(res, {events: events}, 302);
             })
             .catch(error => {
                 this.errorResponse(res, error);

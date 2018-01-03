@@ -76,10 +76,7 @@ class CenterController extends ModelService {
             if (doUpdate) {
                 const {user, ...updates} = req.body
                 return this.updateModelObject(Center, {
-                    where: {
-                        centerId: req.params.centerId,
-                        userId: req.body.user.userId
-                    },
+                    where: { centerId: req.params.centerId },
                     attributes: updates
                 })
                 .then((center) => {
@@ -90,8 +87,8 @@ class CenterController extends ModelService {
                             if(center.status === this.getStatus().success) {
                                 center.message = center.message +(
                                     (req.body.availability === 'false')
-                                        ? ' Center no longer available'
-                                        : ' Center is now available'
+                                        ? ' No longer available!'
+                                        : ' Now available'
                                 );
                             }
 
@@ -331,7 +328,7 @@ class CenterController extends ModelService {
 
             if (validate) {
                 const date = req.body.date;
-                return this.findOneModelObject(Event, {
+                return Event.findOne({
                     where: { 
                         centerId: req.body.centerId,
                         date: date
@@ -339,7 +336,7 @@ class CenterController extends ModelService {
                     attributes: ['approval']
                 })
                 .then((event) => {
-                    if(event.approval) {
+                    if(event && event.approval) {
                         const error = new Error();
                         error.message = `Sorry, ${Center.name.toLowerCase()} is not available for this date `+date;
                         throw error;

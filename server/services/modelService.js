@@ -10,7 +10,7 @@ const status = {
  * @description 
  * @class ModelService
  */
- class ModelService extends UtilityService {
+export default class ModelService extends UtilityService {
  	/**
  	 * @description Create an object of a model; i.e., a row of a table in the database 
 	* @static
@@ -327,4 +327,3 @@ const status = {
 		return status;
 	}
 }
-export default ModelService;
