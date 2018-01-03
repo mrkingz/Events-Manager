@@ -4,12 +4,13 @@ import models from '../models';
  * @description
  * @class UtilityService
  */
-class UtilityService {
+export default class UtilityService {
 	/**
 	 * Converts the first character of a string to upper case
 	 * If an object is passed, the method only convert its string 
 	 * propeties
 	 * @static
+	 * @method upperCaseFirst
 	 * @memberof UtilityService
 	 * @param {(Object|String)} attributes The object whose string properties
 	 * is or the string to be converted
@@ -74,6 +75,7 @@ class UtilityService {
 	/**
 	 * Removes any leading/trialing white space character from object's attributes
 	 * @static
+	 * @method trimAttributes
 	 * @memberof UtilityService
 	 * @param {Object} attributes The object with the attributes to trim
 	 * @returns {Object} An object with trimed attributes
@@ -90,6 +92,7 @@ class UtilityService {
 	/**
 	 * Removes all white space character, if any
 	 * @static
+	 * @method removeWhiteSpace
 	 * @memberof UtilityService
 	 * @param {Strng} string The string to remove white space(s)
 	 * @param {Boolean} removeAll:  if false, multiple white space will reduced to single;
@@ -101,5 +104,3 @@ class UtilityService {
 	 	return (all) ? string.trim().replace(/[ ]+/g, '') : string.trim().replace(/[ ]+/g, ' ')
 	}
 }
-
-export default UtilityService;

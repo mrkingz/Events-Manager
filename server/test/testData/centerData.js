@@ -3,8 +3,8 @@ export default [{
     capacity: 2000,
     price: '20000',
     location: 'Owerri',
-    address: '16, binta Road, Owerri',
-    description: 'Nice place',
+    address: '16, Binta Road, Owerri',
+    description: 'Nice Place',
     userId: 1,			
 },{
     name: 'Open Space Event Center',
@@ -12,7 +12,7 @@ export default [{
     price: '20000',
     location: 'Owerri',
     address: '16, Abiola Road, Lagos',
-    description: 'Nice place',
+    description: 'Nice Place',
     userId: 1,	
 }, {
     name: 'The Palace Event Center',
@@ -20,7 +20,7 @@ export default [{
     price: '20000',
     location: 'Owerri',
     address: '16, Udu Road, Delta',
-    description: 'Nice place',
+    description: 'Nice Place',
     userId: 1,	
 }, {
     name: 'The Palace Event Center',
@@ -28,13 +28,13 @@ export default [{
     price: '20000',
     location: 'Owerri',
     address: '16, Udu Road, Delta',
-    description: 'Nice place',
+    description: 'Nice Place',
     userId: 1,	
 }, {
     capacity: 2000,
     price: '20000',
     location: 'Owerri',
     address: '16, Udu Road, Delta',
-    description: 'Nice place',
+    description: 'Nice Place',
     userId: 1,	
 }];

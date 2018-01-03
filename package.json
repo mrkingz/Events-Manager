@@ -23,6 +23,7 @@
       "client",
       "server/test",
       "server/bin",
+      "server/config",
       "server/migrations",
       "server/seeders"
     ],

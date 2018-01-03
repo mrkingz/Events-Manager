@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for test/routesTest/centerRoutesTest.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">test/routesTest</a> centerRoutesTest.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.58% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>87/95</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>23/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>87/87</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chai from 'chai';
+import supertest from 'supertest';
+import UserController from '../../controllers/eventController';
+import ModelService from '../../services/modelService';
+import models from '../../models'
+import app from '../../app.js';
+import DBSync from '../dbSync';
+import centerData from '../testData/centerData';
+import userData from '../testData/userData';
+&nbsp;
+let userToken, adminToken;
+const expect = chai.expect,
+      { User } = models,
+      users = userData.users,
+      admin = userData.admin,
+      server = supertest.agent(app);
+      
+	
+describe('Test centerRoutes', () =&gt; {
+&nbsp;
+    DBSync.clearDatabase();
+&nbsp;
+    describe('Test with user token', () =&gt; {
+&nbsp;
+        before((done) =&gt; {
+            ModelService.createModelObject(User, { attributes: users[2] })
+            .then(() =&gt; {
+                return done();
+            });
+        })
+&nbsp;
+        before((done) =&gt; {
+            server
+            .post('/api/v1/users/login')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .type('form')
+            .send(users[2])
+            .end((err, res) =&gt; {
+                userToken = res.body.token;
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should deny access for token not provided', (done) =&gt; {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) =&gt; {
+                expect(res.statusCode).to.equal(401);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Access denied! Token not provided');
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should deny access for invalid token', (done) =&gt; {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', 'token')
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) =&gt; {
+                expect(res.statusCode).to.equal(401);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Access denied! Invalid authentication token provided');
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should created a new center', (done) =&gt; {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', userToken)
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) =&gt; {
+                expect(res.statusCode).to.equal(403);
+                expect(res.body.status).to.equal('Fail');
+                expect(res.body.message).to.equal('Sorry, you are not authorized to perform this operation!');
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+    })
+&nbsp;
+    describe('Test with admin token', () =&gt; {
+&nbsp;
+        before((done) =&gt; {
+            ModelService.createModelObject(User, { attributes: admin[0] })
+            .then(() =&gt; {
+                return done();
+            });
+        })
+        
+        before((done) =&gt; {
+            server
+            .post('/api/v1/users/login')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .type('form')
+            .send(admin[0])
+            .end((err, res) =&gt; {
+                adminToken = res.body.token;
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should created a new center', (done) =&gt; {
+            server
+            .post('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', adminToken)
+            .type('form')
+            .send(centerData[0])
+            .end((err, res) =&gt; {
+                expect(res.statusCode).to.equal(201);
+                expect(res.body.status).to.equal('Success');
+                expect(res.body.message).to.equal('Center successfully created!');
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should get all centers', (done) =&gt; {
+            const attributes = centerData[0]
+            server
+            .get('/api/v1/centers')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', adminToken)
+            .type('form')
+            .end((err, res) =&gt; {
+                const centers = res.body.centers;
+                expect(res.statusCode).to.equal(302);
+				expect(centers).to.be.an.instanceOf(Array);
+				expect(centers[0]).to.have.property('centerId');
+				expect(centers[0]).to.have.property('name').to.be.a('string')
+				.that.is.equal(attributes.name);
+				expect(centers[0]).to.have.property('capacity').to.be.a('number')
+                .that.is.equal(attributes.capacity);
+                expect(centers[0]).to.have.property('price').to.be.equal(attributes.price)
+				expect(centers[0]).to.have.property('location').to.be.a('string')
+				.that.is.equal(attributes.location);
+				expect(centers[0]).to.have.property('address').to.be.a('string')
+				.that.is.equal(attributes.address);
+				expect(centers[0]).to.have.property('description').to.be.a('string')
+				.that.is.equal(attributes.description);
+				expect(centers[0]).to.have.property('createdAt')
+				expect(centers[0]).to.have.property('updatedAt')
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+&nbsp;
+        it('should get all centers', (done) =&gt; {
+            const attributes = centerData[0]
+            server
+            .get('/api/v1/centers/1')
+            .set('Connection', 'keep alive')
+            .set('Accept', 'application/json')
+            .set('Content-Type', 'application/json')
+            .set('token', adminToken)
+            .type('form')
+            .end((err, res) =&gt; {
+                const center = res.body.center;
+                expect(res.statusCode).to.equal(302);
+				expect(center).to.be.an('object');
+				expect(center).to.have.property('centerId');
+				expect(center).to.have.property('name').to.be.a('string')
+				.that.is.equal(attributes.name);
+				expect(center).to.have.property('capacity').to.be.a('number')
+                .that.is.equal(attributes.capacity);
+                expect(center).to.have.property('price').to.be.equal(attributes.price)
+				expect(center).to.have.property('location').to.be.a('string')
+				.that.is.equal(attributes.location);
+				expect(center).to.have.property('address').to.be.a('string')
+				.that.is.equal(attributes.address);
+				expect(center).to.have.property('description').to.be.a('string')
+				.that.is.equal(attributes.description);
+				expect(center).to.have.property('createdAt')
+				expect(center).to.have.property('updatedAt')
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return done(err);</span>
+                done();
+            });
+        })
+    })
+})
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 10 2017 15:54:16 GMT+0100 (W. Central Africa Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

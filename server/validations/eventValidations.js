@@ -27,7 +27,7 @@ class EventValidations extends ValidationService {
                 req.body.title = this.removeWhiteSpace(bodyObj.title, false);
                 req.body.centerId = this.removeWhiteSpace(bodyObj.centerId);
                 req.body.date = this.removeWhiteSpace(bodyObj.date);
-                req.body.time = this.removeWhiteSpace(bodyObj.time);            
+                req.body.time = this.removeWhiteSpace(bodyObj.time, false);            
                 req.body.estimatedGuests = this.removeWhiteSpace(bodyObj.estimatedGuests);
 	            req.body.description = this.removeWhiteSpace(bodyObj.description, false);
 
@@ -66,7 +66,7 @@ class EventValidations extends ValidationService {
                     error.message = 'Please, enter a valid description!'
 
             } else if (!req.body.title) //if name is not provided
-                    error.message = 'Event Title is required!';
+                    error.message = 'Event title is required!';
             
                 else if (!req.body.centerId) // if capacity is not provided
                     error.message = 'Proposed center is required!';
